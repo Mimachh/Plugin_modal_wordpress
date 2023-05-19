@@ -73,3 +73,6 @@ function run_myPopUp()
     $plugin->run();
 }
 run_myPopUp();
+
+//include mpu-functions.php
+require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
