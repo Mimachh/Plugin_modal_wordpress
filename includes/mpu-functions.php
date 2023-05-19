@@ -1,6 +1,5 @@
 <?php
 
-
 require_once dirname(dirname(__FILE__)) . '/admin/myPopUp-main.php';
 require_once dirname(dirname(__FILE__)) . '/admin/myPopUp-options.php';
 
