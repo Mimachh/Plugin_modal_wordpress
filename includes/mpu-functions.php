@@ -1,6 +1,6 @@
 <?php
 
-// require_once('mpu-first-acp-page.php');
+require_once('mpu-first-acp-page.php');
 
 
 require_once dirname(dirname(__FILE__)) . '/admin/myPopUp-options.php';
@@ -41,6 +41,3 @@ function myPopUp_options_page()
         'optionsHTML' // callback
     );
 }
-
-
-
