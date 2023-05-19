@@ -100,4 +100,13 @@ class MyPopUp_Admin
 
         wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/plugin-name-admin.js', array('jquery'), $this->version, false);
     }
+
+    private function load_dependencies()
+    {
+
+        /**
+         * The class responsible for defining all actions that occur in the admin area.
+         */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'admin/myPopUp-options.php';
+    }
 }

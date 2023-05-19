@@ -17,3 +17,16 @@ function mpu_Add_My_Admin_Link()
         'includes/mpu-first-acp-page.php' // The 'slug' - file to display when clicking the link
     );
 }
+
+// Hook to submenu
+add_action('admin_menu', 'myPopUp_options_page');
+function myPopUp_options_page()
+{
+    add_submenu_page(
+        'myPopUp',
+        'myPopUp Options',
+        'manage_options',
+        'myPopUp',
+        'includes/mypopup_options.php'
+    );
+}
