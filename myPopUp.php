@@ -26,7 +26,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('PLUGIN_NAME_VERSION', '1.0.0');
+const MYPOPUP_VERSION = '1.0.0';
 
 /**
  * The code that runs during plugin activation.
@@ -42,7 +42,7 @@ function activate_myPopUp()
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-plugin-name-deactivator.php
  */
-function deactivate_plugin_name()
+function deactivate_myPopUp()
 {
     require_once plugin_dir_path(__FILE__) . 'includes/class-myPopUp-deactivator.php';
     MyPopUp_Deactivator::deactivate();
@@ -66,10 +66,10 @@ require plugin_dir_path(__FILE__) . 'includes/class-myPopUp.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name()
+function run_myPopUp()
 {
 
     $plugin = new MyPopUp();
     $plugin->run();
 }
-run_plugin_name();
+run_myPopUp();
