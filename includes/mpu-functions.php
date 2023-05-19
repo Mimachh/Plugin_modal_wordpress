@@ -19,7 +19,7 @@ function mpu_Add_My_Admin_Link()
         'MyPopUp', // Text to show on the menu link
         'manage_options', // Capability requirement to see the link
         'admin-main-page', // The 'slug' - file to display when clicking the link
-        'myPopUp_main_page_html'
+        'myPopUp_options_page_html'
     );
 }
 
@@ -32,11 +32,8 @@ function myPopUp_options_page()
         'admin-main-page', // slug parent
         'myPopUp Options', // header title
         'Options', // nom du sous menu
-        'manage_options',
+        'manage_options', // capability
         'myPopUp-options', // URL slug
         'myPopUp_options_page_html' // callback
     );
 }
-
-
-
