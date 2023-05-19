@@ -15,5 +15,7 @@ function mpu_Add_My_Admin_Link()
         'MyPopUp', // Text to show on the menu link
         'manage_options', // Capability requirement to see the link
         'includes/mpu-first-acp-page.php' // The 'slug' - file to display when clicking the link
+        'dashicons-admin-generic',
+        4
     );
 }

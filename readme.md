@@ -11,3 +11,9 @@
 - créer un scenario une fois que le formulaire est validé
 
 ## Renommer le dossier au nom du projet
+
+## WP-hook to get the content of different folders
+
+---bash
+https://developer.wordpress.org/plugins/plugin-basics/determining-plugin-and-content-directories/
+---bash
