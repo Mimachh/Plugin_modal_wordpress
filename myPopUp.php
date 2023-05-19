@@ -15,5 +15,19 @@
  * @package         My_PopUp
  */
 
-// Include mpu-functions.php, use require_once to stop the script if mpu-functions.php is not found
-require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
+
+// If this file is called directly, abort.
+if (!defined('WPINC')) {
+    die;
+}
+
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Rename this for your plugin and update it as you release new versions.
+ */
+define('myPopUp_VERSION', '1.0.0');
+
+if (is_admin()) {
+    require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
+}
