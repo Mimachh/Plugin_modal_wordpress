@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    dialog {
+        max-width: 50ch;
+    }
+    /* 👇 Optional. change the background style. */
+    dialog::backdrop {
+      background-color: rgba(255, 128, 30, .75);
+      backdrop-filter: blur(3px);
+      /* opacity: 0.3; */
+    }
+  
+    /* 👇 style1: fadeIn */
+    dialog[open] {
+      animation: myFadeIn 0.8s ease normal;
+    }
+    @keyframes myFadeIn{
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+    /* 👇 style2: top2center */
+    dialog#top2center[open] {
+      /* // Find your favorite style from here: https://cubic-bezier.com/
+      // animation: myTop2Center 3.0s ease normal; */
+      animation: myTop2Center 1.2s cubic-bezier(.33,1.44,.83,.22)
+    }
+    @keyframes myTop2Center{
+      from {
+        transform: translateY(-200%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
+  </style>
+<body>
+    Il faut sur son form une methode 'dialog' pour que le submit ferme la modale
+    <button class="open-button">Ouvrir la modale</button>
+
+    <dialog>
+        <header>FadeIn</header>
+        <form>
+          <button>Close</button>
+        </form>
+      </dialog>
+      
+      <dialog id="top2center">
+        <header>Top2Center</header>
+        <form>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tenetur esse cumque distinctio, magnam aperiam, amet totam enim ab nesciunt, nostrum expedita quae dolores suscipit ullam ut facilis maxime minima?
+          <button>Close</button>
+        </form>
+      </dialog>
+
+      <script>
+        document.querySelectorAll(`dialog`).forEach(dialogElem=>{
+          const testName = dialogElem.querySelector(`header`).innerText
+          const frag = document.createRange().createContextualFragment(`<button>${testName}</button><br>`)
+          const showBtn = frag.querySelector(`button`)
+          const closeBtn = dialogElem.querySelector(`button`)
+          showBtn.onclick = () => dialogElem.showModal()
+          closeBtn.onclick = () => dialogElem.close()
+          dialogElem.querySelector(`form`).onsubmit = () => false // To stop submit event.
+          document.body.append(frag)
+        })
+      </script>
+</body>
+</html>
