@@ -1,8 +1,7 @@
 <?php
 
-require_once('mpu-first-acp-page.php');
 
-
+require_once dirname(dirname(__FILE__)) . '/admin/myPopUp-main.php';
 require_once dirname(dirname(__FILE__)) . '/admin/myPopUp-options.php';
 
 /*
@@ -22,8 +21,8 @@ function mpu_Add_My_Admin_Link()
         'MyPopUp', // Title of the page
         'MyPopUp', // Text to show on the menu link
         'manage_options', // Capability requirement to see the link
-        'adminPage', // The 'slug' - file to display when clicking the link
-        'myPopUp_options_page_html'
+        'admin-main-page', // The 'slug' - file to display when clicking the link
+        'myPopUp_main_page_html' // The function to run (callback)
     );
 }
 
@@ -33,11 +32,11 @@ add_action('admin_menu', 'myPopUp_options_page');
 function myPopUp_options_page()
 {
     add_submenu_page(
-        'adminPage', // slug parent
+        'admin-main-page', // slug parent
         'myPopUp Options', // header title
         'Options', // nom du sous menu
-        'manage_options',
+        'manage_options', // capability
         'myPopUp-options', // URL slug
-        'optionsHTML' // callback
+        'myPopUp_options_page_html' // callback
     );
 }
