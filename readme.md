@@ -1,4 +1,4 @@
-## Liste des fonctionnalités
+# Liste des fonctionnalités
 
 - ouvrir la modale
 - unscroll le body
@@ -10,4 +10,4 @@
 - fermer si clic en dehors de la fenetre
 - créer un scenario une fois que le formulaire est validé
 
-### Renommer le dossier au nom du projet
+## Renommer le dossier au nom du projet

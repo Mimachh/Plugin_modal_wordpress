@@ -14,3 +14,6 @@
  *
  * @package         My_PopUp
  */
+
+// Include mpu-functions.php, use require_once to stop the script if mpu-functions.php is not found
+require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
