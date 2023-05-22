@@ -5,7 +5,7 @@ function myPopUp_options_page_html()
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
         <form action="options.php" method="post">
-            
+
             <?php
             // output security fields for the registered setting "myPopUp_options"
             settings_fields('myPopUp_options');
@@ -16,6 +16,7 @@ function myPopUp_options_page_html()
             submit_button(__('Save Settings', 'textdomain'));
             ?>
         </form>
+
     </div>
 <?php
 }

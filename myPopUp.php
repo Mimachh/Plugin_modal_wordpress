@@ -76,3 +76,17 @@ run_myPopUp();
 
 //include mpu-functions.php
 require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
+
+//backend style
+function enqueue_admin_styles()
+{
+    wp_enqueue_style('myPopUp-admin', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
+}
+add_action('admin_enqueue_scripts', 'enqueue_admin_styles');
+
+//frontend style
+function enqueue_public_styles()
+{
+    wp_enqueue_style('myPopUp-public', plugin_dir_url(__FILE__) . 'css/myPopUp-public.css');
+}
+add_action('admin_enqueue_scripts', 'enqueue_public_styles');
