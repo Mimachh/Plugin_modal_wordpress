@@ -37,3 +37,10 @@ function myPopUp_options_page()
         'myPopUp_options_page_html' // callback
     );
 }
+
+function global_styles()
+{
+    wp_enqueue_style(plugin_dir_url(__FILE__) . 'css/globalPluginStyle.css');
+}
+
+add_action('wp_enqueue_scripts', 'global_styles');
