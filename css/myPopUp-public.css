@@ -40,6 +40,9 @@
     gap: 1em;
   }
 
+
+
+  
 .modale1 {
     background-color: red;
 }
@@ -50,4 +53,12 @@
 
 .modale3 {
     background-color: green;
+}
+
+.xl {
+  font-size: 1em;
+}
+
+.sm {
+  font-size: 0.5em;
 }

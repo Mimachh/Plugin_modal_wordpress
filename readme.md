@@ -21,9 +21,12 @@ https://developer.wordpress.org/plugins/plugin-basics/determining-plugin-and-con
 Modification
 
 
-Pour la modale : tu ajoutes le shortcode [first-modal]
+V1. Pour la modale : tu ajoutes le shortcode [first-modal]
 
-Tu peux maintenant ajouter une couleur en background. En utilisant
+V2.Tu peux maintenant ajouter une couleur en background. En utilisant
 [first-modal color=""]
 Un attribut qui personnalise la modale, j'ai fait 3 classes css "modale1", "modale2", "modale3". Par défault si tu ne met rien ça sera modale1 qio s'affiche.
 Tu peux tester [first-modal color="modale2"] pour voir la différence.
+
+V3. J'ai simulé un shortcode venant d'une base de données et ayant un ID. Si tu passe un identifiant ça change la couleur et la font size. Tu as deux modèles différents
+[first-modal id="1"] [first-modal id="2"]
