@@ -28,6 +28,7 @@ function createModalHTML($atts) {
           'opening_action' => 'Délai'
       )
     );
+    
     $idToFind = $atts['id'];
     
     $foundEntry = null;
@@ -42,20 +43,26 @@ function createModalHTML($atts) {
     if ($foundEntry !== null) {
       // L'entrée a été trouvée
 
-      $color = "";
-      if (preg_match('/Couleur: ([a-zA-Z0-9]+)/', $foundEntry['style'], $matches)) {
-        $color = $matches[1];
-        // echo "<br>";
-        // echo "Couleur : " . $color;
-      }
-      $fontSize = "";
-      if (preg_match('/Font-size: ([a-zA-Z0-9]+)/', $foundEntry['style'], $matches)) {
-        $fontSize = $matches[1];
-        // echo "<br>";
-        // echo "Font : " . $fontSize;
-      }
 
-      $classes = $color . ' ' . $fontSize;
+      function extractStyleDetails($style) {
+        $details = array(
+            'couleur' => '',
+            'font-size' => '',
+        );
+    
+          // Utilisation de l'expression régulière pour extraire les détails
+          if (preg_match('/Couleur: ([a-zA-Z0-9]+)/', $style, $matches)) {
+              $details['couleur'] = $matches[1];
+          }
+          if (preg_match('/Font-size: ([a-zA-Z0-9]+)/', $style, $matches)) {
+              $details['font-size'] = $matches[1];
+          }
+      
+          return $details;
+      }
+      $details = extractStyleDetails($foundEntry['style']);
+
+      $classes = $details['couleur'] . ' ' . $details['font-size'];
 
       
       $modale = 
