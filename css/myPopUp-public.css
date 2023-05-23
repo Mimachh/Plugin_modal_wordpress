@@ -39,3 +39,15 @@
     display: grid;
     gap: 1em;
   }
+
+.modale1 {
+    background-color: red;
+}
+
+.modale2 {
+    background-color: blue;
+}
+
+.modale3 {
+    background-color: green;
+}

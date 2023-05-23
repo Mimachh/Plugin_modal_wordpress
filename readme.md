@@ -22,3 +22,8 @@ Modification
 
 
 Pour la modale : tu ajoutes le shortcode [first-modal]
+
+Tu peux maintenant ajouter une couleur en background. En utilisant
+[first-modal color=""]
+Un attribut qui personnalise la modale, j'ai fait 3 classes css "modale1", "modale2", "modale3". Par défault si tu ne met rien ça sera modale1 qio s'affiche.
+Tu peux tester [first-modal color="modale2"] pour voir la différence.
