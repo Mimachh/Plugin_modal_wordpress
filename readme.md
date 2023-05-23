@@ -19,3 +19,6 @@ https://developer.wordpress.org/plugins/plugin-basics/determining-plugin-and-con
 ---bash
 
 Modification
+
+
+Pour la modale : tu ajoutes le shortcode [first-modal]

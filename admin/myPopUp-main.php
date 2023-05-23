@@ -18,6 +18,7 @@ function myPopUp_main_page_html()
         </div>
     </div>
 
+    <a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>">ojokz</a>
     </div>
 <?php
 }
