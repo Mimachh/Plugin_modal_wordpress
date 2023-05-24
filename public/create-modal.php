@@ -16,7 +16,10 @@ function createModalHTML($atts)
   // Imaginons que l'attribut passé est un ID d'un shortcode crée par l'utilisateur, avec des champs de couleur, de texte etc.
   // Il suffit ici de faire une requête dans la bdd, de récupérer les infos du shortcode dont c'est l'ID et de les passer ensuite à la modale.
   // Je simule un shortcode qui viendrait de la bdd
-
+// [first-modal id="monpremiershortcode"]  Edit Delete
+// [first-modal id="monpremiershortcode"]
+// [first-modal id="monpremiershortcode"]
+// [first-modal id="monpremiershortcode"]
   $shortcodes = array(
     array(
       'id' => 1,
@@ -63,7 +66,6 @@ function createModalHTML($atts)
       return $details;
     }
     $details = extractStyleDetails($foundEntry['style']);
-    print_r($details);
 
     $classes = $details['couleur'] . ' ' . $details['font-size'];
 
@@ -77,7 +79,7 @@ function createModalHTML($atts)
         Mon style est dans css/myPopUp-public.css et mon js dans js/myPopUp.js 
         </p>
         <p>j\'ai ensuite appelé cette fonction dans myPopUp.php à la racine, juste avant les css, et d\'ailleurs j\ai modifié l\'appel du css et js public car le "admin_enqueue" ne marchait pas.</p>
-        <button onclick="closeMyModal()" class="button close-button">close modal</button>
+        <button onclick="closeMympu_Modal()" class="button close-button">close modal</button>
         <form class="mpu_form" method="dialog">
           <label>Your name <input type="text"></label>
           <label>Your email <input type="email"></label>

@@ -21,13 +21,6 @@ function mpu_Add_My_Admin_Link()
         'admin-main-page', // The 'slug' - file to display when clicking the link
         'myPopUp_main_page_html'
     );
-}
-
-
-// Hook to submenu
-add_action('admin_menu', 'myPopUp_options_page');
-function myPopUp_options_page()
-{
     add_submenu_page(
         'admin-main-page', // slug parent
         'myPopUp Options', // header title
@@ -36,7 +29,22 @@ function myPopUp_options_page()
         'myPopUp-options', // URL slug
         'myPopUp_options_page_html' // callback
     );
+    add_submenu_page(
+        'admin-main-page', // slug parent
+        'myPopUp Shortcode', // header title
+        'Shortcode', // nom du sous menu
+        'manage_options', // capability
+        'edit.php?post_type=mpu_shortcode' // URL slug
+
+    );
 }
+
+add_action('admin_menu', 'mpu_Remove_Custom_Post_Menu');
+
+function mpu_Remove_Custom_Post_Menu() {
+    remove_menu_page('edit.php?post_type=mpu_shortcode');
+}
+
 
 
 

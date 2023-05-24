@@ -74,13 +74,6 @@ function run_myPopUp()
 }
 run_myPopUp();
 
-//include mpu-functions.php
-require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
-
-
-//include la première modale
-require_once plugin_dir_path(__FILE__) . 'public/create-modal.php';
-
 //backend style
 function enqueue_admin_styles()
 {
@@ -95,3 +88,17 @@ function enqueue_public_styles()
     wp_enqueue_script('myPopUp-public-js', plugin_dir_url(__FILE__) . 'js/myPopUp-public.js');
 }
 add_action('wp_enqueue_scripts', 'enqueue_public_styles');
+
+
+//include mpu-functions.php
+require_once plugin_dir_path(__FILE__) . 'includes/mpu-functions.php';
+
+
+//include la première modale
+require_once plugin_dir_path(__FILE__) . 'public/create-modal.php';
+
+//include le custom post type
+require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/init.php';
+require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields.php';
+
+
