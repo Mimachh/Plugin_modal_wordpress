@@ -2,7 +2,7 @@
   max-width: 50ch;
   border: 0;
   box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
-  margin: auto auto;
+  margin: auto auto !important;
   text-align: center;
 }
 
