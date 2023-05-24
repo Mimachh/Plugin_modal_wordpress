@@ -1,64 +1,52 @@
-.modal {
-
-    max-width: 50ch;
-    border: 0;
-    box-shadow: 0 0 1em rgb(0 0 0 / .3);
-    margin: auto auto;
-    text-align: center;
-  }
-  
-  .modal::backdrop {
-    background: rgb(0 0 0 / 0.4);
-  }
-  
-  /* extra styling */
-  
- 
-  
-  h1 em {
-    color: var(--cyan-9);
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-  }
-  
-  .button {
-    border: 0;
-    cursor: pointer;
-    background: red;
-    color: black;
-    font-weight: 700;
-    padding: 2px 4px;
-  }
-  
-  .button:hover,
-  .button:focus {
-    background: var(--cyan-9);
-  }
-  
-  form {
-    display: grid;
-    gap: 1em;
-  }
-
-
-
-  
-.modale1 {
-    background-color: red;
+.mpu_modal {
+  max-width: 50ch;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+  margin: auto auto;
+  text-align: center;
 }
 
-.modale2 {
-    background-color: blue;
+.mpu_modal::backdrop {
+  background: rgb(0 0 0 / 0.4);
 }
 
-.modale3 {
-    background-color: green;
+/* extra styling */
+
+.mpu_button {
+  border: 0;
+  cursor: pointer;
+  background: red;
+  color: black;
+  font-weight: 700;
+  padding: 2px 4px;
 }
 
-.xl {
+.mpu_button:hover,
+.mpu_button:focus {
+  background: var(--cyan-9);
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+
+.mpu_modale1 {
+  background-color: red;
+}
+
+.mpu_modale2 {
+  background-color: blue;
+}
+
+.mpu_modale3 {
+  background-color: green;
+}
+
+.mpu_xl {
   font-size: 1em;
 }
 
-.sm {
+.mpu_sm {
   font-size: 0.5em;
 }

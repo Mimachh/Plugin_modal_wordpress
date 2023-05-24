@@ -11,11 +11,10 @@
 //   modal.close();
 // });
 
-
-function openMyModal() {
-    modal.showModal();
+function openMympu_Modal() {
+  modal.showModal();
 }
 
-function closeMyModal() {
-    modal.close();
+function closeMympu_Modal() {
+  modal.close();
 }

@@ -20,7 +20,6 @@ https://developer.wordpress.org/plugins/plugin-basics/determining-plugin-and-con
 
 Modification
 
-
 V1. Pour la modale : tu ajoutes le shortcode [first-modal]
 
 V2.Tu peux maintenant ajouter une couleur en background. En utilisant
@@ -30,3 +29,5 @@ Tu peux tester [first-modal color="modale2"] pour voir la différence.
 
 V3. J'ai simulé un shortcode venant d'une base de données et ayant un ID. Si tu passe un identifiant ça change la couleur et la font size. Tu as deux modèles différents
 [first-modal id="1"] [first-modal id="2"]
+
+WARNING : POUR POUVOIR UTILISER BULMA SUR LES MODALES IL FAUDRAIT QUE TU REGARDES CETTE PAGE https://bulma.io/documentation/components/modal/ PARCE QUE QUAND ON IMPORTE BULMA DANS LA FEUILLE DE STYLE CA CREE UN CONFLIT ET LA MODALE NE FONCTIONNE PLUS
