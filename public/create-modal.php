@@ -20,18 +20,18 @@ function createModalHTML($atts)
   $shortcodes = array(
     array(
       'id' => 1,
-      'style' => 'Couleur: modale1, Font-size: xl',
+      'style' => 'Couleur: mpu_modale1, Font-size: mpu_xl',
       'opening_action' => 'Click'
     ),
     array(
       'id' => 2,
-      'style' => 'Couleur: modale2, Font-size: sm',
+      'style' => 'Couleur: mpu_modale2, Font-size: mpu_sm',
       'opening_action' => 'Délai'
     )
   );
 
   $idToFind = $atts['id'];
-
+ 
   $foundEntry = null;
   foreach ($shortcodes as $shortcode) {
     if ($shortcode['id'] == $idToFind) {
@@ -53,16 +53,17 @@ function createModalHTML($atts)
       );
 
       // Utilisation de l'expression régulière pour extraire les détails
-      if (preg_match('/Couleur: ([a-zA-Z0-9]+)/', $style, $matches)) {
+      if (preg_match('/Couleur: ([a-zA-Z0-9_]+)/', $style, $matches)) {
         $details['couleur'] = $matches[1];
       }
-      if (preg_match('/Font-size: ([a-zA-Z0-9]+)/', $style, $matches)) {
+      if (preg_match('/Font-size: ([a-zA-Z0-9_]+)/', $style, $matches)) {
         $details['font-size'] = $matches[1];
       }
 
       return $details;
     }
     $details = extractStyleDetails($foundEntry['style']);
+    print_r($details);
 
     $classes = $details['couleur'] . ' ' . $details['font-size'];
 
@@ -70,7 +71,7 @@ function createModalHTML($atts)
     $modale =
       '
       <button onclick="openMympu_Modal()" id="open-button" class="mpu_button open-button">Vas y clique</button>
-      <dialog class="modal ' . $classes . '" id="modal">
+      <dialog class="mpu_modal ' . $classes . ' " id="modal">
         <h2 class="mpu_title">Titre</h2>
         <p class="mpu_subtitle">Si tu me cherche je suis dans public/create-modal.php <br>
         Mon style est dans css/myPopUp-public.css et mon js dans js/myPopUp.js 
