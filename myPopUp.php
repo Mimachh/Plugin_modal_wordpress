@@ -78,8 +78,13 @@ run_myPopUp();
 function enqueue_admin_styles()
 {
     wp_enqueue_style('myPopUp-admin', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
+    wp_localize_script('mpu-localize-main-script', 'siteData', array(
+        'root_url' => get_site_url(),
+        'nonce' => wp_create_nonce('wp_rest'),
+    ));
 }
 add_action('admin_enqueue_scripts', 'enqueue_admin_styles');
+
 
 //frontend style
 function enqueue_public_styles()
