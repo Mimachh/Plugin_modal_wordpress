@@ -106,4 +106,7 @@ require_once plugin_dir_path(__FILE__) . 'public/create-modal.php';
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/init.php';
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields.php';
 
+// Api rest route
+require_once plugin_dir_path(__FILE__) . 'admin/api-route/mpu-shortcode-route.php';
+
 
