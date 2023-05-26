@@ -79,6 +79,7 @@ function enqueue_admin_styles()
 {
     wp_enqueue_style('myPopUp-admin-css', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
     wp_enqueue_script('myPopUp-admin-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin.js');
+    wp_enqueue_script('myPopUp-admin-options-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-options.js');
     wp_localize_script('myPopUp-admin-js', 'siteData', array(
         'root_url' => get_site_url(),
         'nonce' => wp_create_nonce('wp_rest'),
@@ -109,5 +110,3 @@ require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields.
 
 // Api rest route
 require_once plugin_dir_path(__FILE__) . 'admin/api-route/mpu-shortcode-route.php';
-
-

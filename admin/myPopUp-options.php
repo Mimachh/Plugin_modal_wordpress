@@ -7,10 +7,10 @@ function myPopUp_options_page_html()
 
         <div class="tabs is-centered is-box is-medium mt-6">
             <ul>
-                <li class="is-active"><a>Activation</a></li>
-                <li><a>Visuel</a></li>
-                <li><a>conditions</a></li>
-                <li><a>Options supplémentaires</a></li>
+                <li class="is-active mpu-activation"><a>Activation</a></li>
+                <li><a class="mpu-visuel">Visuel</a></li>
+                <li><a class="mpu-conditions">conditions</a></li>
+                <li><a class="mpu-options-supp">Options supplémentaires</a></li>
             </ul>
         </div>
 
