@@ -10,14 +10,15 @@ function mpu_shortcode_create_route() {
     ));
 }
 function createMpuShortcode($data) {
-    if(is_admin()) {
-        $mpu_shortcode_title = sanitize_text_field($data['mpu_title']);
+  
+        $mpu_shortcode_title = sanitize_text_field($data['custom-field']);
     
+        
         $existQuery = new WP_Query(array(
             'post_type' => 'mpu_shortcode',
             'meta_query' => array(
                 array(
-                    'key' => 'mpu_title',
+                    'key' => 'custom-field',
                     'compare' => '=',
                     'value' => $mpu_shortcode_title,
                 )
@@ -29,15 +30,12 @@ function createMpuShortcode($data) {
                 'post_type' => 'mpu_shortcode',
                 'post_status' => 'publish',
                 'meta_input' => array(
-                   'mpu_title' => $mpu_shortcode_title
+                   'custom-field' => $mpu_shortcode_title
                 ),
             ));
         } else {
             die('Existe déjà');
         }
-    
-    } else {
-        die("Only admin");
-    }
+ 
 }
     

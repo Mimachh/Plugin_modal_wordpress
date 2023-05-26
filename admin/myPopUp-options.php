@@ -5,6 +5,9 @@ function myPopUp_options_page_html()
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
         <div class="container is-fluid">
+
+        <input type="text" class="custom-field" name="custom-field" placeholder="Custom field">
+        <button type="submit" class="submit">Submit</button>
             <form class="my-5" action="options.php" method="post">
 
                 <div class="field">

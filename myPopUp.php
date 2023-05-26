@@ -77,8 +77,9 @@ run_myPopUp();
 //backend style
 function enqueue_admin_styles()
 {
-    wp_enqueue_style('myPopUp-admin', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
-    wp_localize_script('mpu-localize-main-script', 'siteData', array(
+    wp_enqueue_style('myPopUp-admin-css', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
+    wp_enqueue_script('myPopUp-admin-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin.js');
+    wp_localize_script('myPopUp-admin-js', 'siteData', array(
         'root_url' => get_site_url(),
         'nonce' => wp_create_nonce('wp_rest'),
     ));
