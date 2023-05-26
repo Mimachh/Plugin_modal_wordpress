@@ -41,7 +41,6 @@ window.onload = () => {
       case 'activation':
         console.log('activation');
         // document.querySelector('.mpu-activation').style.display = 'block';
-
         break;
       case 'visuel':
         console.log('visuel');
