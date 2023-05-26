@@ -22,8 +22,39 @@ function myPopUp_main_page_html()
 
 
         </div>
+
+        <a href="" class="button is-info mb-4">Créer une modale</a>
+
+        <table class="table table is-striped is-hoverable is-fullwidth ">
+            <thead>
+                <tr>
+                <th><abbr title="ID">ID</abbr></th>
+                <th><abbr title="Titre">Titre</abbr></th>
+                <th><abbr title="Shortcode">Shortcode</abbr></th>
+                <th><abbr title="Edit">-</abbr></th>
+                <th><abbr title="Delete">-</abbr></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                <th><abbr title="ID">ID</abbr></th>
+                <th><abbr title="Titre">Titre</abbr></th>
+                <th><abbr title="Shortcode">Shortcode</abbr></th>
+                <th><abbr title="Edit">-</abbr></th>
+                <th><abbr title="Delete">-</abbr></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                <th>1</th>
+                <td>Ma newsletter modale</td>
+                <td>[mpu_modal name="Ma newsletter modale"]</td>
+                <td><a href="" class="button is-warning">Editer</a></td>
+                <td><a href="" class="button is-danger">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    </div>
 <?php
 }
