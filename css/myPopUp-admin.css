@@ -7,3 +7,7 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+select.is-hovered {
+  background-color: white;
+  z-index: 5;
+}
