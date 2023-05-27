@@ -55,6 +55,6 @@ function myPopUp_main_page_html()
             </tbody>
         </table>
     </div>
-
+   <?php  display_mpu_shortcode_posts(); ?>
 <?php
 }
