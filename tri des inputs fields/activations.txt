@@ -1,0 +1,9 @@
+////// ACTIVATION /////////
+
+
+//
+Enable PopUp : "mpu_activate" => switch
+Display all pages : "mpu_is_all_pages" => switch 
+except : "mpu_is_except" => checkbox group
+include: "mpu_is_include" => checkbox group
+

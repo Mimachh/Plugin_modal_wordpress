@@ -1,0 +1,50 @@
+////// CONDITIONS /////////
+
+//
+Popup trigger : 
+ICI le choix global : "mpu_is_triggered" => radio puis ajout de nouveaux champs?
+
+    - onload 
+        -> delai ? 
+    - onclick
+        -> button ?
+    - onhover
+        -> quel element? 
+    - after visiting x pages
+        -> combien de pages? 
+    - inactivity
+        -> delai?
+    - scrolling to element
+        -> quel élément?
+    - open by scrolling down
+        ->je sais pas
+   
+
+//
+Pop up closing :
+Choix se fait sur un checkbox group : "mpu_closing_way" => checkbox group
+    - by pressing esc 
+    - outofthebox
+
+Hide close button: "mpu_is_close_button_hide" => switch
+
+Custom close button: "mpu_is_custom_close_button" => switch / puis ça ouvre un nouveau champs
+    -> "mpu_custom_close_img" => file   après a voir s'ils mettent ce qu'ils veulent ou si on fait un select et ils choisissent dedans
+
+Position close button : "mpu_close_button_position" => select
+
+Auto close delay : "mpu_is_auto_close" => switch
+Timer close : "mpu_auto_close_delai => number??
+
+Close the popup on scroll : "mpu_is_scroll_close_it" => switch
+Close by classname on click: "mpu_is_close_with_classname" => text
+
+
+
+
+
+
+Programmer le popup (date de départ, date de fin)
+    "mpu_is_automatic_programed" => switch
+        + "mpu_automatic_programed_start" => date
+        + "mpu_automatic_programed_end" => date

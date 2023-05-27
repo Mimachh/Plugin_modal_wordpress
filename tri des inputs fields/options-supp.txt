@@ -1,0 +1,31 @@
+////// OPTIONS SUPP /////////
+
+Enable pop sound: 
+    "mpu_is_sound_on_open" => switch
+    "mpu_sound_open" => file audio
+
+    "mpu_is_sound_on_closing" => switch
+    "mpu_sound_closing" => file audio
+
+Nombre de fois qu'il doit être display : "mpu_onscroll_number_appears" => number
+
+Popup Name : affiché dans la popup liste
+Popup Category (donc taxonomy)
+    ## Les deux champs ici je ne sais pas trop pour l'instant 
+
+Enable social media link : "mpu_is_social_media_link" => switch
+    if oui
+    il faut le choix des icones et pour chaque icone le lien a remplir vers son compte
+    "mpu_is_social_media_facebook" => switch
+        + "mpu_social_media_facebook_icon => select
+        + "mpu_social_media_facebook_link" => text
+    
+    "mpu_is_social_media_instagram" => switch
+        + "mpu_social_media_instagram_icon => select
+        + "mpu_social_media_instagram_link" => text
+
+Disable page scrolling : "mpu_is_body_scrollable" => switch
+
+Action when clicking on popup button : "mpu_which_inner_button_doing" => select
+
+Custom css

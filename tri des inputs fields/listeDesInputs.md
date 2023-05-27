@@ -1,17 +1,15 @@
+////// ACTIVATION /////////
+
+
 //
 Enable PopUp : "mpu_activate" => switch
 Display all pages : "mpu_is_all_pages" => switch 
 except : "mpu_is_except" => checkbox group
 include: "mpu_is_include" => checkbox group
 
-//
-Ajout de leur logo : "mpu_add_site_logo" => switch
 
-//
-Popup Title : "mpu_header_title" => text
-Custom Content: "mpu_body_content" => textarea
-Popup description: "mpu_description" => textarea
 
+////// CONDITIONS /////////
 
 //
 Popup trigger : 
@@ -31,7 +29,7 @@ ICI le choix global : "mpu_is_triggered" => radio puis ajout de nouveaux champs?
         -> quel élément?
     - open by scrolling down
         ->je sais pas
-            
+   
 
 //
 Pop up closing :
@@ -53,19 +51,17 @@ Close the popup on scroll : "mpu_is_scroll_close_it" => switch
 Close by classname on click: "mpu_is_close_with_classname" => text
 
 
-//
-Popup Name : affiché dans la popup liste
-Popup Category (donc taxonomy)
-    ## Les deux champs ici je ne sais pas trop pour l'instant 
 
-Overlay : liste des overlay possible "mpu_overlay" => radio a revoir dans le detail
-    - backdrop
-        + "mpu_overlay_opacity_value" => number 
-        + "mpu_overlay_color" => colorpicker
-        + "mpu_overlay_blur_value" => number
-    - none 
-    
-Nombre de fois qu'il doit être display : "mpu_onscroll_number_appears" => number
+
+
+
+Programmer le popup (date de départ, date de fin)
+    "mpu_is_automatic_programed" => switch
+        + "mpu_automatic_programed_start" => date
+        + "mpu_automatic_programed_end" => date
+
+
+////// OPTIONS SUPP /////////
 
 Enable pop sound: 
     "mpu_is_sound_on_open" => switch
@@ -74,6 +70,11 @@ Enable pop sound:
     "mpu_is_sound_on_closing" => switch
     "mpu_sound_closing" => file audio
 
+Nombre de fois qu'il doit être display : "mpu_onscroll_number_appears" => number
+
+Popup Name : affiché dans la popup liste
+Popup Category (donc taxonomy)
+    ## Les deux champs ici je ne sais pas trop pour l'instant 
 
 Enable social media link : "mpu_is_social_media_link" => switch
     if oui
@@ -86,18 +87,46 @@ Enable social media link : "mpu_is_social_media_link" => switch
         + "mpu_social_media_instagram_icon => select
         + "mpu_social_media_instagram_link" => text
 
-
-
-Programmer le popup (date de départ, date de fin)
-    "mpu_is_automatic_programed" => switch
-        + "mpu_automatic_programed_start" => date
-        + "mpu_automatic_programed_end" => date
-
-L'auteur du popup : "mpu_is_author_visible" => switch
-
 Disable page scrolling : "mpu_is_body_scrollable" => switch
 
 Action when clicking on popup button : "mpu_which_inner_button_doing" => select
+
+Custom css
+
+
+
+
+
+
+
+
+////// VISUEL /////////
+
+
+//
+Ajout de leur logo : "mpu_add_site_logo" => switch
+
+//
+Popup Title : "mpu_header_title" => text
+Custom Content: "mpu_body_content" => textarea
+Popup description: "mpu_description" => textarea
+
+
+         
+//
+
+
+Overlay : liste des overlay possible "mpu_overlay" => radio a revoir dans le detail
+    - backdrop
+        + "mpu_overlay_opacity_value" => number 
+        + "mpu_overlay_color" => colorpicker
+        + "mpu_overlay_blur_value" => number
+    - none 
+    
+
+L'auteur du popup : "mpu_is_author_visible" => switch
+
+
 
 Style template : "mpu_template_choice" => select
 
@@ -165,4 +194,7 @@ button style a revoir
 
 Transform: "mpu_animation_opening" => select ou radio avec liste des animations dispo
 
-Custom css
+
+
+
+

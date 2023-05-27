@@ -1,0 +1,94 @@
+
+////// VISUEL /////////
+
+
+//
+Ajout de leur logo : "mpu_add_site_logo" => switch
+
+//
+Popup Title : "mpu_header_title" => text
+Custom Content: "mpu_body_content" => textarea
+Popup description: "mpu_description" => textarea
+
+
+         
+//
+
+
+Overlay : liste des overlay possible "mpu_overlay" => radio a revoir dans le detail
+    - backdrop
+        + "mpu_overlay_opacity_value" => number 
+        + "mpu_overlay_color" => colorpicker
+        + "mpu_overlay_blur_value" => number
+    - none 
+    
+
+L'auteur du popup : "mpu_is_author_visible" => switch
+
+
+
+Style template : "mpu_template_choice" => select
+
+Display content :
+show title : "mpu_is_title_visible" => switch
+show description: "mpu_is_description_visible" => switch
+
+Full screen mod desktop : "mpu_is_desktop_full_screen" => switch
+    if non
+    Width : "mpu_desktop_width" => number
+    Height: "mpu_desktop_height" => number
+    Min height: "mpu_desktop_min_height" => number
+
+Full screen mod mobile : "mpu_is_mobile_full_screen" => switch
+    if non      
+    Mobile max-width: "mpu_mobile_max_width" => number
+    Mobile height: "mpu_mobile_max_height" => number
+    Min height: "mpu_mobile_min_height" => number
+
+Breakpoint : "mpu_mobile_breakpoint" => number
+
+
+Padding interne : "mpu_inner_padding" => number   A voir si on laisse chaque padding indépendant
+
+//
+Text style : "mpu_text_style" => select ?
+Text color: "mpu_text_color" => color picker
+Font family: "mpu_font_family" => select
+Font size : "mpu_font_size" => number
+Text shadow: "mpu_text_shadow" => select ou radio
+Après tout ça c'est géré par Gutenberg
+
+
+Dans la pro :
+Title style : "mpu_title_style" => select
+Poid : "mpu_title_weight" => number ou select
+Taille : "mpu_title_size" => number
+Spacing : "mpu_title_letter_spacing" => number
+Alignement: 
+    "mpu_title_align" => select
+    "mpu_content_align" => select
+    "mpu_button_align" => select
+
+
+//
+Background : "mpu_inner_background" => radio
+    - color: "mpu_inner_background_color" => color picker
+    - image: "mpu_inner_background_image" => file
+        + cover
+        + repeat
+        + contain
+        // Radio
+
+
+border: "mpu_border_style" => radio
+    - none
+    - solid
+        + "mpu_border_solid_weight" => number
+        + "mpu_border_color" => color picker
+    - dashed
+        + "mpu_border_solid_weight" => number
+        + "mpu_border_color" => color picker
+
+button style a revoir
+
+Transform: "mpu_animation_opening" => select ou radio avec liste des animations dispo
