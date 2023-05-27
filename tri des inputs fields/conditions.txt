@@ -1,5 +1,6 @@
 ////// CONDITIONS /////////
 
+
 //
 Popup trigger : 
 ICI le choix global : "mpu_is_triggered" => radio puis ajout de nouveaux champs?
@@ -26,6 +27,7 @@ Choix se fait sur un checkbox group : "mpu_closing_way" => checkbox group
     - by pressing esc 
     - outofthebox
 
+
 Hide close button: "mpu_is_close_button_hide" => switch
 
 Custom close button: "mpu_is_custom_close_button" => switch / puis ça ouvre un nouveau champs
@@ -48,3 +50,63 @@ Programmer le popup (date de départ, date de fin)
     "mpu_is_automatic_programed" => switch
         + "mpu_automatic_programed_start" => date
         + "mpu_automatic_programed_end" => date
+
+
+Conditions = array(
+    array(
+        'name' => 'mpu_is_triggered',
+        'button_type' => 'radio',
+        'options' => array(
+            'value' => 'onload',
+            'value' => 'onclick',
+            'value' => 'onhover',
+            'value' => 'after visiting x pages',
+            'value' => 'inactivity',
+            'value' => 'scrolling to element',
+            'value' => 'open by scrolling down',
+        )
+    ),
+    array(
+        'name' => 'mpu_closing_way',
+        'button_type' => 'checkbox group',
+        'options' => array(
+            'value' => 'by pressing esc',
+            'value' => 'outofthebox',
+        )
+    ),
+    array(
+        'name' => 'mpu_is_close_button_hide',
+        'button_type' => 'switch'
+    ),
+    array(
+        'name' => 'mpu_is_custom_close_button',
+        'button_type' => 'switch'
+    ),
+    array(
+        'name' => 'mpu_is_custom_close_button',
+        'button_type' => 'switch',
+        'new button' => array(
+            'name' => 'mpu_custom_close_img',
+            'button_type' => 'file'
+        )
+    ),
+    array(
+        'name' => 'mpu_close_button_position',
+        'button_type' => 'select'
+    ),
+    array(
+        'name' => 'mpu_is_automatic_programed',
+        'button_type' => 'switch',
+        'new button' => array(
+            array(
+            'name' => 'mpu_automatic_programed_start',
+            'button_type' => 'date'
+            ),
+            array(
+            'name' => 'mpu_automatic_programed_end',
+            'button_type' => 'date'
+            )
+        )
+    ),
+);
+

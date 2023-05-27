@@ -9,10 +9,6 @@ Enable pop sound:
 
 Nombre de fois qu'il doit être display : "mpu_onscroll_number_appears" => number
 
-Popup Name : affiché dans la popup liste
-Popup Category (donc taxonomy)
-    ## Les deux champs ici je ne sais pas trop pour l'instant 
-
 Enable social media link : "mpu_is_social_media_link" => switch
     if oui
     il faut le choix des icones et pour chaque icone le lien a remplir vers son compte
@@ -29,3 +25,69 @@ Disable page scrolling : "mpu_is_body_scrollable" => switch
 Action when clicking on popup button : "mpu_which_inner_button_doing" => select
 
 Custom css
+
+
+Popup Name : affiché dans la popup liste
+Popup Category (donc taxonomy)
+    ## Les deux champs ici je ne sais pas trop pour l'instant 
+
+
+
+Options supp = array(
+    array(
+        'name' => 'mpu_is_sound_on_open',
+        'button_type' => 'switch',
+        'new_button' => array(
+            'name' => 'mpu_sound_open',
+            'button_type' => 'file audio'
+        )
+    ),
+    array(
+        'name' => 'mpu_is_sound_on_closing',
+        'button_type' => 'switch',
+        'new_button' => array(
+            'name' => 'mpu_sound_closing',
+            'button_type' => 'file audio'
+        )
+    ),
+    array(
+        'name' => 'mpu_onscroll_number_appears',
+        'button_type' => 'number'
+    ),
+    array(
+        'name' => 'mpu_is_body_scrollable',
+        'button_type' => 'switch'
+    ),
+    array(
+        'name' => 'mpu_which_inner_button_doing',
+        'button_type' => 'select',
+        'values' => array(
+            'name' => 'Redirect',
+            'name' => 'Autre actions'
+        )
+    ),
+    array(
+        'name' => 'mpu_is_custom_css',
+        'button_type' => 'switch'
+    ),
+    array(
+        'name' => 'mpu_is_social_media_link',
+        'button_type' => 'switch',
+        'new_button' => array(
+            array(
+                'name' => 'mpu_is_social_media_facebook',
+                'button_type' => 'switch',
+                'new_input' => array(
+                    array(
+                        'name' => 'mpu_social_media_facebook_icon',
+                        'input_type' => 'select' ou radio avec icones
+                    ),
+                    array(
+                        'name' => 'mpu_social_media_facebook_link',
+                        'input_type' => 'text'
+                    ),
+                )
+            )
+        )
+    ),
+);

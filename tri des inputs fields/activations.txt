@@ -7,3 +7,23 @@ Display all pages : "mpu_is_all_pages" => switch
 except : "mpu_is_except" => checkbox group
 include: "mpu_is_include" => checkbox group
 
+
+
+Activation = array(
+    array(
+        'name' => 'mpu_activate',
+        'button_type' => 'switch'
+    )
+    array(
+        'name' => 'mpu_is_all_pages',
+        'button_type' => 'switch'
+    )
+    array(
+        'name' => 'mpu_is_except',
+        'button_type' => 'checkbox group'
+    )
+    array(
+        'name' => 'mpu_is_include',
+        'button_type' => 'checkbox group'
+    )
+);
