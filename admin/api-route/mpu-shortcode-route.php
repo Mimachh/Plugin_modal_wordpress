@@ -8,6 +8,11 @@ function mpu_shortcode_create_route() {
         'methods' => 'POST',
         'callback' => 'createMpuShortcode'
     ));
+
+    register_rest_route('mpu-shortcodes/v1', 'manageShortcodes', array(
+        'methods' => 'PUT',
+        'callback' => 'editMpuShortcode'
+    ));
 }
 function createMpuShortcode($data) {
   
@@ -51,3 +56,6 @@ function createMpuShortcode($data) {
  
 }
     
+function editMpuShortcode() {
+    // créer la logique de la fonction
+}

@@ -44,7 +44,7 @@ function display_mpu_shortcode_posts() {
                         <th><?php echo $post_position; ?></th>
                         <td><?php echo $post_title; ?></td>
                         <td>[mpu_modal name="<?php echo $post_title; ?>"]</td>
-                        <td><a href="<?php echo  get_edit_post_link(); ?>" class="button is-warning">Editer</a></td>
+                        <td><a href="<?php echo admin_url('admin.php?page=myPopUp-options&id=' . get_the_ID()); ?>" class="button is-warning">Editer</a></td>
                         <td><button class="delete-post button is-danger" data-post-id="' . get_the_ID() . '">Delete</button></td>
                     </tr>
                 <?php } ?>

@@ -15,6 +15,20 @@ function myPopUp_options_page_html()
         </div>
 
         <div class="container is-fluid">
+
+      <?php
+          if(isset($_GET['id'])) { 
+            $post_id = $_GET['id'];
+            // Récupérer l'ID du custom post type
+            // Récupérer les données du custom post type
+            $post = get_post($post_id);
+            $post_title = $post->post_title;
+            echo 'le titre récupéré est : ' . $post_title;
+            ?>
+          
+            <button>Nouveau bouton edit</button>
+          <?php }
+      ?>
             <div class="mpu_title-error-message" style="color: red; display: none;"></div>
 
 
@@ -22,7 +36,7 @@ function myPopUp_options_page_html()
                     <!-- formulaire de création de la première modale -->
                 <label for="mpu_shortcode_title">Titre du shortcode :</label>
                 <div class="control">
-                    <input type="text" name="post_title" class="input is primary mpu_post_title" id="mpu_shortcode_title" value="<?php echo get_option('post_title'); ?>" required>
+                <input type="text" name="post_title" class="input is primary mpu_post_title" id="mpu_shortcode_title" value="" placeholder="" required> 
                 </div>
             </div>
 

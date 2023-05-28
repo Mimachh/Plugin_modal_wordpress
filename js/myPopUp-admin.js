@@ -110,4 +110,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
         });
 
    
-  });
+});
+
+// Autre bouton pour le edit des formulaires
