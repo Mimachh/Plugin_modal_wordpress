@@ -3,8 +3,12 @@
 
 document.addEventListener('DOMContentLoaded', function(event) {
 
+        // Titre du shortcode
         const mpuTitle = document.querySelector('.mpu_post_title');
+
+        // Message d'erreur
         const errorMessage = document.querySelector('.mpu_title-error-message');
+        
         //   Activation fields
         const mpuActivate = document.querySelector('.mpu_activate');
             
@@ -12,7 +16,49 @@ document.addEventListener('DOMContentLoaded', function(event) {
         const mpuIsExcept = document.querySelectorAll('.mpu_is_except');
         const mpuIsInclude = document.querySelectorAll('.mpu_is_include');
         
+        // Les div qui apparaissent et disparaissent
+        const mpuIsExceptDiv = document.querySelector('.mpu_exclure_div');
+        const mpuIsIncludeDiv = document.querySelector('.mpu_inclure_div');
+
+        // Par défaut sur toutes les pages est décoché
+        mpuIsAllPages.checked = false;
+        // Cacher le groupe de div "Except" par défaut
+        hideElementGroup(mpuIsExceptDiv);
+        // Afficher le groupe de div "Inclure" par défaut
+        showElementGroup(mpuIsIncludeDiv);
+
+        // Fonction pour cacher un groupe de div
+        function hideElementGroup(element) {
+            element.style.display = 'none';
+            clearInputs(element);
+        }
         
+        // Fonction pour afficher un groupe de div
+        function showElementGroup(element) {
+            element.style.display = 'block';
+        }
+
+        function clearInputs(element) {
+            const checkboxes = element.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+        }
+
+        // Gestionnaire d'événements pour l'option "Afficher sur toutes les pages"
+        mpuIsAllPages.addEventListener('change', function() {
+            if (mpuIsAllPages.checked) {
+                // Si l'option est cochée, cacher le groupe de div "Inclure" et vider ses valeurs
+                hideElementGroup(mpuIsIncludeDiv);
+                showElementGroup(mpuIsExceptDiv);
+            } else {
+                // Si l'option n'est pas cochée, cacher le groupe de div "Except" et vider ses valeurs
+                hideElementGroup(mpuIsExceptDiv);
+                // Afficher le groupe de div "Inclure"
+                showElementGroup(mpuIsIncludeDiv);
+            }
+        });
+
         const submitButton = document.querySelector('.mpu_submit');
         
         submitButton.addEventListener('click', function () {

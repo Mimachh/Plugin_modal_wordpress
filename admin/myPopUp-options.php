@@ -30,7 +30,7 @@ function myPopUp_options_page_html()
                 <label for="mpu_is_all_pages">Afficher sur toutes les pages ? (articles compris ?)</label>
             </div>
 
-            <div>
+            <div class="mpu_inclure_div">
                 <label for="mpu-is-include">Inclure :</label>
                 <?php
                 $mpu_pages = get_pages();
@@ -44,7 +44,7 @@ function myPopUp_options_page_html()
                 ?>
             </div>
 
-            <div>
+            <div class="mpu_exclure_div">
                 <label for="mpu-is-except">Except:</label>
                 <?php
                     $mpu_pages = get_pages();
