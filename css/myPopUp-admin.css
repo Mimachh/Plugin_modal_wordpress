@@ -1,5 +1,14 @@
 @import 'https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css';
 
+:root {
+  --single-post-paginate-primary-color: #0f0e17;
+  --single-post-paginate-secondary-color: #ff8906;
+  --single-post-paginate-tertiary-color: #f25f4c;
+  --single-post-paginate-disabled-color: #a7a9be;
+  --single-post-paginate-headline-color: #fffffe;
+}
+
+
 h1 {
   font-size: 15rem;
   font-weight: 700;
@@ -10,4 +19,67 @@ h1 {
 select.is-hovered {
   background-color: white;
   z-index: 5;
+}
+
+
+/*  Switch Button */
+
+.mpu-input-field .mpu_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.mpu-input-field .mpu_switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.mpu-input-field .mpu_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--single-post-paginate-disabled-color);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.mpu-input-field .mpu_slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.mpu-input-field input:checked + .mpu_slider {
+  background-color: var(--single-post-paginate-secondary-color);
+}
+
+.mpu-input-field input:focus + .mpu_slider {
+  box-shadow: 0 0 1px var(--single-post-paginate-secondary-color);
+}
+
+.mpu-input-field input:checked + .mpu_slider:before {
+  -webkit-transform: translateX(28px);
+  -ms-transform: translateX(28px);
+  transform: translateX(28px);
+}
+
+/* Rounded mpu_sliders */
+.mpu-input-field .mpu_slider.mpu_round {
+  border-radius: 34px;
+}
+
+.mpu-input-field .mpu_slider.mpu_round:before {
+  border-radius: 50%;
 }

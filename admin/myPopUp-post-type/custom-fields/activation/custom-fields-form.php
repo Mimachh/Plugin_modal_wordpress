@@ -18,6 +18,16 @@ function render_mpu_is_all_pages_meta_box($post) {
     <?php
 }
 
+// Fonction pour afficher le champ 'mpu_is_all_articles'
+function render_mpu_is_all_articles_meta_box($post) {
+    $value = get_post_meta($post->ID, 'mpu_is_all_articles', true);
+    ?>
+    <label for="mpu-is-all-articles">All articles:</label>
+    <input type="checkbox" name="mpu_is_all_articles" id="mpu-is-all-articles" value="1" <?php checked($value, '1'); ?>>
+    <?php
+}
+
+
 // Fonction pour afficher le champ 'mpu_is_except'
 function render_mpu_is_except_meta_box($post) {
     $value = get_post_meta($post->ID, 'mpu_is_except', true);
@@ -44,7 +54,7 @@ function render_mpu_is_include_meta_box($post) {
 
 function save_custom_field_values($post_id) {
     // Enregistrez les valeurs pour 'mpu_activate' et 'mpu_is_all_pages'
-    $fields = array('mpu_activate', 'mpu_is_all_pages');
+    $fields = array('mpu_activate', 'mpu_is_all_pages', 'mpu_is_all_articles');
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
             $value = sanitize_text_field($_POST[$field]);

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         
         //   Activation fields
         const mpuActivate = document.querySelector('.mpu_activate');
-            
+        const mpuIsAllArticles = document.querySelector('.mpu_is_all_articles');
         const mpuIsAllPages = document.querySelector('.mpu_is_all_pages');
         const mpuIsExcept = document.querySelectorAll('.mpu_is_except');
         const mpuIsInclude = document.querySelectorAll('.mpu_is_include');
@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 'mpu_activate': mpuActivate.checked ? '1' : '0',
                 'mpu_is_all_pages': mpuIsAllPages.checked ? '1' : '0',
                 'mpu_is_except': Array.from(mpuIsExcept).filter(input => input.checked).map(input => input.value),
-                'mpu_is_include': Array.from(mpuIsInclude).filter(input => input.checked).map(input => input.value)
+                'mpu_is_include': Array.from(mpuIsInclude).filter(input => input.checked).map(input => input.value),
+                'mpu_is_all_articles': mpuIsAllArticles.value
             };
 
             // Vérification du titre
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     errorMessage.textContent = 'Le titre existe déjà.';
                 }
                 // Réinitialisation des champs
-                // document.querySelector('.custom-field').value = '';
+                mpuTitle.value ="";
             } else {
                 const response = JSON.parse(xhr.responseText);
                 console.log('Dommage');

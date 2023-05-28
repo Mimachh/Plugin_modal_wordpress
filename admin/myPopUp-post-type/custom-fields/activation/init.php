@@ -15,6 +15,12 @@ function mpu_register_custom_field_activation() {
         'show_in_rest' => true,
     ));
 
+    register_meta('mpu_shortcode', 'mpu_is_all_articles', array(
+        'type' => 'boolean',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
     register_meta('mpu_shortcode', 'mpu_is_except', array(
         'type' => 'array',
         'single' => false,
@@ -47,6 +53,16 @@ function mpu_add_custom_field_activation_meta_box() {
         'mpu-is-all-pages-meta-box',
         'Activation',
         'render_mpu_is_all_pages_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Boîte méta pour 'mpu_is_all_articles'
+    add_meta_box(
+        'mpu-is-all-articles-meta-box',
+        'Activation',
+        'render_mpu_is_all_articles_meta_box',
         'mpu_shortcode',
         'normal',
         'default'

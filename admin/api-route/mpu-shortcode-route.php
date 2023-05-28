@@ -16,6 +16,7 @@ function createMpuShortcode($data) {
         $mpu_is_all_pages = sanitize_text_field($data['mpu_is_all_pages']);
         $mpu_is_except = array_map('sanitize_text_field', $data['mpu_is_except']);
         $mpu_is_include = array_map('sanitize_text_field', $data['mpu_is_include']);
+        $mpu_is_all_articles = sanitize_text_field($data['mpu_is_all_articles']);
 
 
         // $existQuery = new WP_Query(array(
@@ -40,6 +41,7 @@ function createMpuShortcode($data) {
                    'mpu_is_all_pages' => $mpu_is_all_pages,
                    'mpu_is_except' => $mpu_is_except,
                    'mpu_is_include' => $mpu_is_include,
+                   'mpu_is_all_articles' => $mpu_is_all_articles
                 ),
             ));
         } else {
