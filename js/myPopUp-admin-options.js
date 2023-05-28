@@ -1,8 +1,8 @@
 'use strict';
 
-// document Query Selector by class in the menu
-window.onload = () => {
-  const mpuActivation = document.querySelector('.mpu-activation');
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    const mpuActivation = document.querySelector('.mpu-activation');
   const mpuVisuel = document.querySelector('.mpu-visuel');
   const mpuConditions = document.querySelector('.mpu-conditions');
   const mpuOptionsSupp = document.querySelector('.mpu-options-supp');
@@ -71,4 +71,4 @@ window.onload = () => {
   }
 
   menuDisplay();
-};
+});

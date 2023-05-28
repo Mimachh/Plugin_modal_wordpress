@@ -11,30 +11,40 @@ function mpu_shortcode_create_route() {
 }
 function createMpuShortcode($data) {
   
-        $mpu_shortcode_title = sanitize_text_field($data['custom-field']);
-    
-        
-        $existQuery = new WP_Query(array(
-            'post_type' => 'mpu_shortcode',
-            'meta_query' => array(
-                array(
-                    'key' => 'custom-field',
-                    'compare' => '=',
-                    'value' => $mpu_shortcode_title,
-                )
-            )
-        ));
-    
-        if($existQuery->found_posts == 0) {
+        $mpu_post_title = sanitize_text_field($data['mpu_post_title']);
+        $mpu_activate = sanitize_text_field($data['mpu_activate']);
+        $mpu_is_all_pages = sanitize_text_field($data['mpu_is_all_pages']);
+        $mpu_is_except = array_map('sanitize_text_field', $data['mpu_is_except']);
+        $mpu_is_include = array_map('sanitize_text_field', $data['mpu_is_include']);
+
+
+        // $existQuery = new WP_Query(array(
+        //     'post_type' => 'mpu_shortcode',
+        //     'meta_query' => array(
+        //         array(
+        //             'key' => 'post_title',
+        //             'compare' => '=',
+        //             'value' => $mpu_post_title,
+        //         )
+        //     )
+        // ));
+        $existing_post_id = post_exists($mpu_post_title);
+
+        if (!$existing_post_id) {
             return wp_insert_post(array(
                 'post_type' => 'mpu_shortcode',
                 'post_status' => 'publish',
+                'post_title' => $mpu_post_title,
                 'meta_input' => array(
-                   'custom-field' => $mpu_shortcode_title
+                   'mpu_activate' => $mpu_activate,
+                   'mpu_is_all_pages' => $mpu_is_all_pages,
+                   'mpu_is_except' => $mpu_is_except,
+                   'mpu_is_include' => $mpu_is_include,
                 ),
             ));
         } else {
-            die('Existe déjà');
+            wp_send_json_error('Existe déjà');
+           
         }
  
 }

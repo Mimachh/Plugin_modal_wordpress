@@ -31,3 +31,11 @@ V3. J'ai simulé un shortcode venant d'une base de données et ayant un ID. Si t
 [first-modal id="1"] [first-modal id="2"]
 
 WARNING : POUR POUVOIR UTILISER BULMA SUR LES MODALES IL FAUDRAIT QUE TU REGARDES CETTE PAGE https://bulma.io/documentation/components/modal/ PARCE QUE QUAND ON IMPORTE BULMA DANS LA FEUILLE DE STYLE CA CREE UN CONFLIT ET LA MODALE NE FONCTIONNE PLUS
+
+
+
+
+
+28/05/2023
+J'ai fait une partie du formulaire dans des nouveaux dossier dans la partie admin puis post type.
+Ajout d'un message d'erreur si le titre existe déjà, et un message d'erreur si le titre est vide.

@@ -15,9 +15,50 @@ function myPopUp_options_page_html()
         </div>
 
         <div class="container is-fluid">
+            <div class="mpu_title-error-message" style="color: red; display: none;"></div>
 
-            <input type="text" class="custom-field" name="custom-field" placeholder="Custom field">
-            <button type="submit" class="submit">Submit</button>
+            <label for="mpu_shortcode_title">Titre du shortcode :</label>
+            <input type="text" name="post_title" class="mpu_post_title" id="mpu_shortcode_title" required>
+            
+            <div>
+                <input type="checkbox" class="mpu_activate" value="1" name="mpu_activate">
+                <label for="mpu_activate">Activer le Shortcode</label>
+            </div>
+
+            <div>
+                <input type="checkbox" class="mpu_is_all_pages" value="1" name="mpu_is_all_pages">
+                <label for="mpu_is_all_pages">Afficher sur toutes les pages ? (articles compris ?)</label>
+            </div>
+
+            <div>
+                <label for="mpu-is-include">Inclure :</label>
+                <?php
+                $mpu_pages = get_pages();
+
+                foreach ($mpu_pages as $page) {
+                    $page_id = $page->ID;
+                    $page_title = $page->post_title;
+                    ?>
+                        <input type="checkbox" name="mpu_is_include[]" class="mpu_is_include" value="<?php echo $page_id; ?>"> <?php echo $page_title; ?>
+                <?php }
+                ?>
+            </div>
+
+            <div>
+                <label for="mpu-is-except">Except:</label>
+                <?php
+                    $mpu_pages = get_pages();
+
+                    foreach ($mpu_pages as $page) {
+                        $page_id = $page->ID;
+                        $page_title = $page->post_title;
+                        ?>
+                            <input type="checkbox" name="mpu_is_except[]" class="mpu_is_except" value="<?php echo $page_id; ?>"> <?php echo $page_title; ?>
+                    <?php }
+                ?>
+            </div>
+
+            <button type="submit" class="mpu_submit">Submit</button>
             <form class="my-5" action="options.php" method="post">
 
                 <div class="field">
