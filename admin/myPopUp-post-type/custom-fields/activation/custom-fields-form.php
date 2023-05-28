@@ -64,7 +64,6 @@ function save_custom_field_values($post_id) {
         //     delete_post_meta($post_id, $field);
         // }
     }
-
     // Enregistrez les valeurs pour 'mpu_is_except' et 'mpu_is_include'
     $checkbox_fields = array('mpu_is_except', 'mpu_is_include');
     foreach ($checkbox_fields as $field) {
