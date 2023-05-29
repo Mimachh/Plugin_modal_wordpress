@@ -317,4 +317,299 @@ function render_mpu_button_align_meta_box($post) {
     </select>
 
     <?php
+
+// Is desktop full screen
+function render_mpu_is_desktop_full_screen_meta_box($post) {
+    $is_desktop_full_screen = get_post_meta($post->ID, 'mpu_is_desktop_full_screen', true);
+    ?>
+
+    <label for="mpu-is-desktop-full-screen">Desktop Full Screen:</label>
+    <input type="checkbox" name="mpu_is_desktop_full_screen" id="mpu-is-desktop-full-screen" <?php checked($is_desktop_full_screen, 1); ?>>
+
+    <?php
+}
+}
+
+// Desktop min width
+function render_mpu_desktop_min_width_meta_box($post) {
+    $desktop_min_width = get_post_meta($post->ID, 'mpu_desktop_min_width', true);
+    ?>
+
+    <label for="mpu-desktop-min-width">Desktop Min Width:</label>
+    <input type="number" name="mpu_desktop_min_width" id="mpu-desktop-min-width" value="<?php echo esc_attr($desktop_min_width); ?>">
+    
+    <?php
+}
+
+// Desktop max width
+function render_mpu_desktop_max_width_meta_box($post) {
+    $desktop_max_width = get_post_meta($post->ID, 'mpu_desktop_max_width', true);
+    ?>
+
+    <label for="mpu-desktop-max-width">Desktop Max Width:</label>
+    <input type="number" name="mpu_desktop_max_width" id="mpu-desktop-max-width" value="<?php echo esc_attr($desktop_max_width); ?>">
+    
+    <?php
+}
+
+// Desktop min height
+function render_mpu_desktop_min_height_meta_box($post) {
+    $desktop_min_height = get_post_meta($post->ID, 'mpu_desktop_min_height', true);
+    ?>
+
+    <label for="mpu-desktop-min-height">Desktop Min Height:</label>
+    <input type="number" name="mpu_desktop_min_height" id="mpu-desktop-min-height" value="<?php echo esc_attr($desktop_min_height); ?>">
+    
+    <?php
+}
+
+// Desktop max height
+function render_mpu_desktop_max_height_meta_box($post) {
+    $desktop_max_height = get_post_meta($post->ID, 'mpu_desktop_max_height', true);
+    ?>
+
+    <label for="mpu-desktop-max-height">Desktop Max Height:</label>
+    <input type="number" name="mpu_desktop_max_height" id="mpu-desktop-max-height" value="<?php echo esc_attr($desktop_max_height); ?>">
+    
+    <?php
+}
+
+// Is mobile full screen
+function render_mpu_is_mobile_full_screen_meta_box($post) {
+    $is_mobile_full_screen = get_post_meta($post->ID, 'mpu_is_mobile_full_screen', true);
+    ?>
+
+    <label for="mpu-is-mobile-full-screen">Mobile Full Screen:</label>
+    <input type="checkbox" name="mpu_is_mobile_full_screen" id="mpu-is-mobile-full-screen" <?php checked($is_mobile_full_screen, 1); ?>>
+
+    <?php
+}
+
+// Mobile max width
+function render_mpu_mobile_max_width_meta_box($post) {
+    $mobile_max_width = get_post_meta($post->ID, 'mpu_mobile_max_width', true);
+    ?>
+
+    <label for="mpu-mobile-max-width">Mobile Max Width:</label>
+    <input type="number" name="mpu_mobile_max_width" id="mpu-mobile-max-width" value="<?php echo $mobile_max_width; ?>">
+
+    <?php
+}
+
+// Mobile max height
+function render_mpu_mobile_max_height_meta_box($post) {
+    $mobile_max_height = get_post_meta($post->ID, 'mpu_mobile_max_height', true);
+    ?>
+
+    <label for="mpu-mobile-max-height">Mobile Max Height:</label>
+    <input type="number" name="mpu_mobile_max_height" id="mpu-mobile-max-height" value="<?php echo $mobile_max_height; ?>">
+
+    <?php
+}
+
+// Mobile min height
+function render_mpu_mobile_min_height_meta_box($post) {
+    $mobile_min_height = get_post_meta($post->ID, 'mpu_mobile_min_height', true);
+    ?>
+
+    <label for="mpu-mobile-min-height">Mobile Min Height:</label>
+    <input type="number" name="mpu_mobile_min_height" id="mpu-mobile-min-height" value="<?php echo $mobile_min_height; ?>">
+
+    <?php
+}
+
+// Mobile min width
+function render_mpu_mobile_min_width_meta_box($post) {
+    $mobile_min_width = get_post_meta($post->ID, 'mpu_mobile_min_width', true);
+    ?>
+
+    <label for="mpu-mobile-min-width">Mobile Min Width:</label>
+    <input type="number" name="mpu_mobile_min_width" id="mpu-mobile-min-width" value="<?php echo $mobile_min_width; ?>">
+
+    <?php
+}
+
+// Is shadow title
+function render_mpu_is_title_shadow_meta_box($post) {
+    $is_title_shadow = get_post_meta($post->ID, 'mpu_is_title_shadow', true);
+    ?>
+
+    <label for="mpu-is-title-shadow">Title Shadow:</label>
+    <input type="checkbox" name="mpu_is_title_shadow" id="mpu-is-title-shadow" <?php checked($is_title_shadow, 1); ?>>
+
+    <?php
+}
+
+// Shadow type
+function render_mpu_title_shadow_type_meta_box($post) {
+    $title_shadow_type = get_post_meta($post->ID, 'mpu_title_shadow_type', true);
+    ?>
+
+    <label for="mpu-title-shadow-type">Title Shadow Type:</label><br>
+    <input type="radio" name="mpu_title_shadow_type" value="inner" <?php checked($title_shadow_type, 'inner'); ?>>
+    <label for="mpu-title-shadow-type-inner">Inner</label><br>
+
+    <input type="radio" name="mpu_title_shadow_type" value="outer" <?php checked($title_shadow_type, 'outer'); ?>>
+    <label for="mpu-title-shadow-type-outer">Outer</label><br>
+
+    <?php
+}
+
+// Shadow size
+function render_mpu_title_shadow_size_meta_box($post) {
+    $title_shadow_size = get_post_meta($post->ID, 'mpu_title_shadow_size', true);
+    ?>
+
+    <label for="mpu-title-shadow-size">Title Shadow Size:</label><br>
+    <select name="mpu_title_shadow_size" id="mpu-title-shadow-size">
+        <option value="small" <?php selected($title_shadow_size, 'small'); ?>>Small</option>
+        <option value="medium" <?php selected($title_shadow_size, 'medium'); ?>>Medium</option>
+        <option value="large" <?php selected($title_shadow_size, 'large'); ?>>Large</option>
+    </select>
+
+    <?php
+}
+
+// Shadow color
+function render_mpu_title_shadow_color_meta_box($post) {
+    $title_shadow_color = get_post_meta($post->ID, 'mpu_title_shadow_color', true);
+    ?>
+
+    <label for="mpu-title-shadow-color">Title Shadow Color:</label><br>
+    <input type="color" name="mpu_title_shadow_color" id="mpu-title-shadow-color" value="<?php echo esc_attr($title_shadow_color); ?>">
+
+    <?php
+}
+
+// Inner background
+function render_mpu_inner_background_meta_box($post) {
+    $inner_background = get_post_meta($post->ID, 'mpu_inner_background', true);
+    ?>
+
+    <label for="mpu-inner-background">Inner Background:</label>
+    <input type="radio" name="mpu_inner_background" value="color" <?php checked($inner_background, 'color'); ?>>
+    <label for="mpu-inner-background">Color</label>
+
+    <input type="radio" name="mpu_inner_background" value="image" <?php checked($inner_background, 'image'); ?>>
+    <label for="mpu-inner-background">Image</label>
+
+    <input type="radio" name="mpu_inner_background" value="transparent" <?php checked($inner_background, 'transparent'); ?>>
+    <label for="mpu-inner-background">Transparent</label>
+
+    <?php
+}
+
+// Inner background color
+function render_mpu_inner_background_color_meta_box($post) {
+    $inner_background_color = get_post_meta($post->ID, 'mpu_inner_background_color', true);
+    ?>
+
+    <label for="mpu-inner-background-color">Inner Background Color:</label>
+    <input type="color" name="mpu_inner_background_color" id="mpu-inner-background-color" value="<?php echo esc_attr($inner_background_color); ?>">
+
+    <?php
+}
+
+// Inner background image
+function render_mpu_inner_background_image_meta_box($post) {
+    $inner_background_image = get_post_meta($post->ID, 'mpu_inner_background_image', true);
+    ?>
+
+    <label for="mpu-inner-background-image">Inner Background Image:</label>
+    <input type="file" name="mpu_inner_background_image" id="mpu-inner-background-image">
+
+    <?php if ($inner_background_image) : ?>
+        <p>Current Image:</p>
+        <img src="<?php echo esc_attr($inner_background_image); ?>" alt="Current Image">
+    <?php endif; ?>
+
+    <?php
+}
+
+// Inner background image style 
+function render_mpu_inner_background_image_style_meta_box($post) {
+    $inner_background_image_style = get_post_meta($post->ID, 'mpu_inner_background_image_style', true);
+    ?>
+
+    <label for="mpu-inner-background-image-style">Inner Background Image Style:</label>
+    <br>
+    <input type="radio" name="mpu_inner_background_image_style" value="cover" <?php checked($inner_background_image_style, 'cover'); ?>>
+    <label for="mpu-inner-background-image-style">Cover</label>
+    <br>
+    <input type="radio" name="mpu_inner_background_image_style" value="contain" <?php checked($inner_background_image_style, 'contain'); ?>>
+    <label for="mpu-inner-background-image-style">Contain</label>
+    <br>
+    <input type="radio" name="mpu_inner_background_image_style" value="other" <?php checked($inner_background_image_style, 'other'); ?>>
+    <label for="mpu-inner-background-image-style">Other</label>
+
+    <?php
+}
+
+// Border style
+function render_mpu_border_style_meta_box($post) {
+    $border_style = get_post_meta($post->ID, 'mpu_border_style', true);
+    ?>
+
+    <label for="mpu-border-style">Border Style:</label>
+    <br>
+    <input type="radio" name="mpu_border_style" value="none" <?php checked($border_style, 'none'); ?>>
+    <label for="mpu-border-style">None</label>
+    <br>
+    <input type="radio" name="mpu_border_style" value="solid" <?php checked($border_style, 'solid'); ?>>
+    <label for="mpu-border-style">Solid</label>
+    <br>
+    <input type="radio" name="mpu_border_style" value="dashed" <?php checked($border_style, 'dashed'); ?>>
+    <label for="mpu-border-style">Dashed</label>
+    <br>
+    <input type="radio" name="mpu_border_style" value="none" <?php checked($border_style, 'dotted'); ?>>
+    <label for="mpu-border-style">Dotted</label>
+    <br>
+    <input type="radio" name="mpu_border_style" value="thick_double" <?php checked($border_style, 'thick_double'); ?>>
+    <label for="mpu-border-style">Thick double</label>
+    <br>
+    <input type="radio" name="mpu_border_style" value="ridge" <?php checked($border_style, 'ridge'); ?>>
+    <label for="mpu-border-style">Ridge</label>
+
+    <?php
+}
+
+// Border weight
+function render_mpu_border_weight_meta_box($post) {
+    $border_weight = get_post_meta($post->ID, 'mpu_border_weight', true);
+    ?>
+
+    <label for="mpu-border-weight">Border Weight:</label>
+    <br>
+    <input type="number" name="mpu_border_weight" id="mpu-border-weight" value="<?php echo esc_attr($border_weight); ?>">
+
+    <?php
+}
+
+// Border color
+function render_mpu_border_color_meta_box($post) {
+    $border_color = get_post_meta($post->ID, 'mpu_border_color', true);
+    ?>
+
+    <label for="mpu-border-color">Border Color:</label>
+    <br>
+    <input type="color" name="mpu_border_color" id="mpu-border-color" value="<?php echo esc_attr($border_color); ?>">
+
+    <?php
+}
+
+// Opening animation
+function render_mpu_animation_opening_meta_box($post) {
+    $animation_opening = get_post_meta($post->ID, 'mpu_animation_opening', true);
+    ?>
+
+    <label for="mpu-animation-opening">Animation Opening:</label>
+    <br>
+    <input type="radio" name="mpu_animation_opening" id="mpu-animation-opening" value="value1" <?php checked($animation_opening, 'value1'); ?>>
+    <label for="value1">Value 1</label>
+    <br>
+    <input type="radio" name="mpu_animation_opening" id="mpu-animation-opening" value="value2" <?php checked($animation_opening, 'value2'); ?>>
+    <label for="value2">Value 2</label>
+    <!-- Add more radio options as needed -->
+
+    <?php
 }

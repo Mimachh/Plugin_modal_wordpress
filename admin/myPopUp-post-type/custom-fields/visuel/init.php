@@ -170,6 +170,160 @@ function mpu_register_custom_field_visuel() {
         'single' => true,
         'show_in_rest' => true,
     ));
+
+    // Is desktop full screen
+    register_meta('mpu_shortcode', 'mpu_is_desktop_full_screen', array(
+        'type' => 'boolean',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Register meta for desktop min width
+    register_meta('mpu_shortcode', 'mpu_desktop_min_width', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Register meta for desktop max width
+    register_meta('mpu_shortcode', 'mpu_desktop_max_width', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Register meta for desktop min height
+    register_meta('mpu_shortcode', 'mpu_desktop_min_height', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Register meta for desktop max height
+    register_meta('mpu_shortcode', 'mpu_desktop_max_height', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Is mobile full screen
+    register_meta('mpu_shortcode', 'mpu_is_mobile_full_screen', array(
+        'type' => 'boolean',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Mobile max width
+    register_meta('mpu_shortcode', 'mpu_mobile_max_width', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Mobile max height
+    register_meta('mpu_shortcode', 'mpu_mobile_max_height', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Mobile min height
+    register_meta('mpu_shortcode', 'mpu_mobile_min_height', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Mobile min width
+    register_meta('mpu_shortcode', 'mpu_mobile_min_width', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Is shadow title
+    register_meta('mpu_shortcode', 'mpu_is_title_shadow', array(
+        'type' => 'boolean',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Shadow type
+    register_meta('mpu_shortcode', 'mpu_title_shadow_type', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Shadow size
+    register_meta('mpu_shortcode', 'mpu_title_shadow_size', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Shadow color
+    register_meta('mpu_shortcode', 'mpu_title_shadow_color', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Inner background
+    register_meta('mpu_shortcode', 'mpu_inner_background', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Inner background color
+    register_meta('mpu_shortcode', 'mpu_inner_background_color', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Inner background image
+    register_meta('mpu_shortcode', 'mpu_inner_background_image', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Inner background image style
+    register_meta('mpu_shortcode', 'mpu_inner_background_image_style', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Border style
+    register_meta('mpu_shortcode', 'mpu_border_style', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Border weight
+    register_meta('mpu_shortcode', 'mpu_border_weight', array(
+        'type' => 'number',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Border color
+    register_meta('mpu_shortcode', 'mpu_border_color', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
+
+    // Opening animation
+    register_meta('mpu_shortcode', 'mpu_animation_opening', array(
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
 }
 add_action('init', 'mpu_register_custom_field_visuel');
 
@@ -411,6 +565,226 @@ function mpu_add_custom_field_visuel_meta_box() {
         'mpu-button-align-meta-box',
         'Button Alignment',
         'render_mpu_button_align_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Is desktop full screen
+    add_meta_box(
+        'mpu-is-desktop-full-screen-meta-box',
+        'Desktop Full Screen',
+        'render_mpu_is_desktop_full_screen_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Desktop min width
+    add_meta_box(
+        'mpu-desktop-min-width-meta-box',
+        'Desktop Min Width',
+        'render_mpu_desktop_min_width_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Desktop max width
+    add_meta_box(
+        'mpu-desktop-max-width-meta-box',
+        'Desktop Max Width',
+        'render_mpu_desktop_max_width_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Meta box for desktop min height
+    add_meta_box(
+        'mpu-desktop-min-height-meta-box',
+        'Desktop Min Height',
+        'render_mpu_desktop_min_height_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Meta box for desktop max height
+    add_meta_box(
+        'mpu-desktop-max-height-meta-box',
+        'Desktop Max Height',
+        'render_mpu_desktop_max_height_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Is mobile full screen
+    add_meta_box(
+        'mpu-is-mobile-full-screen-meta-box',
+        'Mobile Full Screen',
+        'render_mpu_is_mobile_full_screen_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Mobile max width
+    add_meta_box(
+        'mpu-mobile-max-width-meta-box',
+        'Mobile Max Width',
+        'render_mpu_mobile_max_width_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Mobile max height
+    add_meta_box(
+        'mpu-mobile-max-height-meta-box',
+        'Mobile Max Height',
+        'render_mpu_mobile_max_height_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Mobile min height
+    add_meta_box(
+        'mpu-mobile-min-height-meta-box',
+        'Mobile Min Height',
+        'render_mpu_mobile_min_height_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Mobile min width
+    add_meta_box(
+        'mpu-mobile-min-width-meta-box',
+        'Mobile Min Width',
+        'render_mpu_mobile_min_width_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Is shadow title
+    add_meta_box(
+        'mpu-is-title-shadow-meta-box',
+        'Title Shadow',
+        'render_mpu_is_title_shadow_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Shadow type
+    add_meta_box(
+        'mpu-title-shadow-type-meta-box',
+        'Title Shadow Type',
+        'render_mpu_title_shadow_type_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Shadow size
+    add_meta_box(
+        'mpu-title-shadow-size-meta-box',
+        'Title Shadow Size',
+        'render_mpu_title_shadow_size_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Shadow color
+    add_meta_box(
+        'mpu-title-shadow-color-meta-box',
+        'Title Shadow Color',
+        'render_mpu_title_shadow_color_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Inner background
+    add_meta_box(
+        'mpu-inner-background-meta-box',
+        'Inner Background',
+        'render_mpu_inner_background_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Inner background color
+    add_meta_box(
+        'mpu-inner-background-color-meta-box',
+        'Inner Background Color',
+        'render_mpu_inner_background_color_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Inner background image
+    add_meta_box(
+        'mpu-inner-background-image-meta-box',
+        'Inner Background Image',
+        'render_mpu_inner_background_image_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Inner background image style
+    add_meta_box(
+        'mpu-inner-background-image-style-meta-box',
+        'Inner Background Image Style',
+        'render_mpu_inner_background_image_style_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Border style
+    add_meta_box(
+        'mpu-border-style-meta-box',
+        'Border Style',
+        'render_mpu_border_style_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Border weight
+    add_meta_box(
+        'mpu-border-weight-meta-box',
+        'Border Weight',
+        'render_mpu_border_weight_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Border color
+    add_meta_box(
+        'mpu-border-color-meta-box',
+        'Border Color',
+        'render_mpu_border_color_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
+    // Opening animation
+    add_meta_box(
+        'mpu-animation-opening-meta-box',
+        'Animation Opening',
+        'render_mpu_animation_opening_meta_box',
         'mpu_shortcode',
         'normal',
         'default'

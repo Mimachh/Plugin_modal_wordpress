@@ -155,23 +155,26 @@ Visuel = array(
         'name' => 'mpu_is_description_visible',
         'button_type' => 'switch',
     ),
-    ---------------------------------------------------------
-    PAS ENCORE FAIT
     array(
         'name' => 'mpu_is_desktop_full_screen',
         'button_type' => 'switch',
-        IF NON  ON DEMANDE MIN OU MAX
+        IF NON  ON DEMANDE MIN OU MAX en pourcentage
+        min et max pour les deux en pourcentage
         'new_button' => array(
             array(
-                'name' => 'mpu_desktop_width',
+                'name' => 'mpu_desktop_min_width',
                 'button_type' => 'number'
             ),
             array(
-                'name' => 'mpu_desktop_height',
+                'name' => 'mpu_desktop_max_width',
                 'button_type' => 'number'
             ),
             array(
                 'name' => 'mpu_desktop_min_height',
+                'button_type' => 'number'
+            ),
+            array(
+                'name' => 'mpu_desktop_max_height',
                 'button_type' => 'number'
             ),
         )
@@ -193,10 +196,12 @@ Visuel = array(
                 'name' => 'mpu_mobile_min_height',
                 'button_type' => 'number'
             ),
+            array(
+                'name' => 'mpu_mobile_min_width',
+                'button_type' => 'number'
+            ),
         )
     ),
-    PAS ENCORE FAIT
-    ---------------------------------------------------------
     array(
         'name' => 'mpu_text_style',
         'button_type' => 'select',
@@ -213,14 +218,25 @@ Visuel = array(
         'name' => 'mpu_font_size',
         'button_type' => 'number',
     ),
-    ---------------------------------------------------------
-    PAS ENCORE FAIT
     array(
-        'name' => 'mpu_text_shadow',
-        'button_type' => 'select ou radio',
+        'name' => 'mpu_is_title_shadow',
+        'button_type' => 'switch',
+        'new_button' => array(
+            array(
+                'name' => 'mpu_title_shadow_type' (inner ou outter),
+                'button_type' => 'radio'
+            ),
+            array(
+                'name' => 'mpu_title_shadow_size' (small, medium, large),
+                'button_type' => 'select'
+            ),
+            array(
+                'name' => 'mpu_title_shadow_color',
+                'button_type' => 'color'
+            ),
+        )
+
     ),
-    PAS ENCORE FAIT
-    ---------------------------------------------------------
     array(
         'name' => 'mpu_title_style',
         'button_type' => 'select',
@@ -249,9 +265,6 @@ Visuel = array(
         'name' => 'mpu_button_align',
         'button_type' => 'select',
     ),
-
-    PAS ENCORE FAIT
-    ---------------------------------------------------------
     array(
         'name' => 'mpu_inner_background',
         'button_type' => 'radio', (color / image / transparent)
@@ -274,7 +287,7 @@ Visuel = array(
             if none rien
             if solid
             array(
-                'name' => 'mpu_border_solid_weight',
+                'name' => 'mpu_border_weight',
                 'button_type' => 'number',
             ),
             array(
@@ -282,11 +295,11 @@ Visuel = array(
                 'button_type' => 'color'
             )
             if  thick double
-            'name'=> 'mpu_border_thick_double_color',
+            'name'=> 'mpu_border_color',
             'button_type' => 'color'
             if dashed
             array(
-                'name' => 'mpu_border_solid_weight',
+                'name' => 'mpu_border_weight',
                 'button_type' => 'number',
             ),
             array(
@@ -295,7 +308,7 @@ Visuel = array(
             )
             if ridge
             array(
-                'name' => 'mpu_border_solid_weight',
+                'name' => 'mpu_border_weight',
                 'button_type' => 'number', en mm
             ),
             array(
@@ -308,7 +321,6 @@ Visuel = array(
         'name' => 'mpu_animation_opening',
         'button_type' => 'radio',
     ),
-    button style a revoir template ?
 );
 
 
