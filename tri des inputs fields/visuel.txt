@@ -109,7 +109,6 @@ Visuel = array(
             )
         )
     ),
-    ---------------------------------------------------------
     array(
         'name' => 'mpu_header_title',
         'button_type' => 'text',
@@ -156,6 +155,8 @@ Visuel = array(
         'name' => 'mpu_is_description_visible',
         'button_type' => 'switch',
     ),
+    ---------------------------------------------------------
+    PAS ENCORE FAIT
     array(
         'name' => 'mpu_is_desktop_full_screen',
         'button_type' => 'switch',
@@ -194,6 +195,8 @@ Visuel = array(
             ),
         )
     ),
+    PAS ENCORE FAIT
+    ---------------------------------------------------------
     array(
         'name' => 'mpu_text_style',
         'button_type' => 'select',
@@ -210,10 +213,14 @@ Visuel = array(
         'name' => 'mpu_font_size',
         'button_type' => 'number',
     ),
+    ---------------------------------------------------------
+    PAS ENCORE FAIT
     array(
         'name' => 'mpu_text_shadow',
         'button_type' => 'select ou radio',
     ),
+    PAS ENCORE FAIT
+    ---------------------------------------------------------
     array(
         'name' => 'mpu_title_style',
         'button_type' => 'select',
@@ -242,6 +249,9 @@ Visuel = array(
         'name' => 'mpu_button_align',
         'button_type' => 'select',
     ),
+
+    PAS ENCORE FAIT
+    ---------------------------------------------------------
     array(
         'name' => 'mpu_inner_background',
         'button_type' => 'radio', (color / image / transparent)

@@ -2,7 +2,13 @@
 
 function save_custom_field_values($post_id) {
     // Enregistrez les valeurs pour 'mpu_activate' et 'mpu_is_all_pages'
-    $fields = array('mpu_activate', 'mpu_is_all_pages', 'mpu_is_all_articles','mpu_add_site_logo', 'mpu_add_user_default_logo');
+    $fields = array('mpu_activate', 'mpu_is_all_pages', 'mpu_is_all_articles','mpu_add_site_logo', 
+    'mpu_add_user_default_logo', 'mpu_header_title', 'mpu_body_content', 'mpu_description',
+    'mpu_overlay', 'mpu_overlay_color', 'mpu_overlay_blur_value', 'mpu_template_choice',
+    'mpu_text_style', 'mpu_text_color', 'mpu_font_family', 'mpu_font_size', 'mpu_title_style',
+    'mpu_title_weight', 'mpu_title_size', 'mpu_title_letter_spacing', 'mpu_title_align',
+    'mpu_content_align', 'mpu_button_align'
+    );
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
             $value = sanitize_text_field($_POST[$field]);
@@ -47,5 +53,28 @@ function save_custom_field_values($post_id) {
                 }
             }
         }
+
+    // Pour les number 
+    $number_fields = array('mpu_overlay_opacity_value');
+    foreach($number_fields as $number_field) {
+        if (isset($_POST[$number_field])) {
+            $value = sanitize_mpu_number($_POST[$number_field]);
+            update_post_meta($post_id, $number_field, $value);
+        }       else {
+            delete_post_meta($post_id, $number_field);
+        }
+    }
+
+    // Pour les switch
+    $switch_fields = array('mpu_is_author_visible', 'mpu_is_title_visible', 'mpu_is_description_visible');
+    foreach($switch_fields as $switch_field) {
+        if (isset($_POST[$switch_field])) {
+            $value = ($_POST[$switch_field] === 'on') ? true : false;
+            update_post_meta($post_id, $switch_field, $value);
+        }       else {
+            delete_post_meta($post_id, $switch_field);
+        }
+    }
+
 }
 add_action('save_post_mpu_shortcode', 'save_custom_field_values');

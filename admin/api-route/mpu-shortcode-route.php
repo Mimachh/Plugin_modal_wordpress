@@ -40,9 +40,9 @@ function createMpuShortcode($data) {
                 // en utilisant update_post_meta() ou toute autre méthode appropriée
 
                 // Assurez-vous de valider et de sécuriser le fichier téléchargé selon vos besoins
-            }
+            // }
 
-            
+
         $existing_post_id = post_exists($mpu_post_title);
 
         if (!$existing_post_id) {
