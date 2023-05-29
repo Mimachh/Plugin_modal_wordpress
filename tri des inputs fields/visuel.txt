@@ -29,6 +29,7 @@ L'auteur du popup : "mpu_is_author_visible" => switch
 
 Style template : "mpu_template_choice" => select
 
+
 Display content :
 show title : "mpu_is_title_visible" => switch
 show description: "mpu_is_description_visible" => switch
@@ -70,7 +71,7 @@ Alignement:
     "mpu_button_align" => select
 
 
-//
+// 
 Background : "mpu_inner_background" => radio
     - color: "mpu_inner_background_color" => color picker
     - image: "mpu_inner_background_image" => file
@@ -92,3 +93,214 @@ border: "mpu_border_style" => radio
 button style a revoir
 
 Transform: "mpu_animation_opening" => select ou radio avec liste des animations dispo
+
+
+Visuel = array(
+    array(
+        'name' => 'mpu_add_site_logo',
+        'button_type' => 'switch',
+        'new_button' => array(
+            'name' => 'site_logo',
+            'button_type' => 'switch'
+            si non
+            'new_button' => array(
+                'name' => 'mpu_custom_logo',
+                'button_type' => 'file'
+            )
+        )
+    ),
+    ---------------------------------------------------------
+    array(
+        'name' => 'mpu_header_title',
+        'button_type' => 'text',
+    ),
+    array(
+        'name' => 'mpu_body_content',
+        'button_type' => 'textarea',
+    ),
+    array(
+        'name' => 'mpu_description',
+        'button_type' => 'textarea',
+    ),
+    array(
+        'name' => 'mpu_overlay',
+        'button_type' => 'radio',
+        'new_button' => array(
+            array(
+                'name' => "mpu_overlay_opacity_value",
+                'button_type' => 'number'
+            ),
+            array(
+                'name' => "mpu_overlay_color",
+                'button_type' => 'color'
+            ),
+            array(
+                'name' => "mpu_overlay_blur_value",
+                'button_type' => 'number'
+            ),
+        )
+    ),
+    array(
+        'name' => 'mpu_is_author_visible',
+        'button_type' => 'switch',
+    ),
+    array(
+        'name' => 'mpu_template_choice',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_is_title_visible',
+        'button_type' => 'switch',
+    ),
+    array(
+        'name' => 'mpu_is_description_visible',
+        'button_type' => 'switch',
+    ),
+    array(
+        'name' => 'mpu_is_desktop_full_screen',
+        'button_type' => 'switch',
+        IF NON  ON DEMANDE MIN OU MAX
+        'new_button' => array(
+            array(
+                'name' => 'mpu_desktop_width',
+                'button_type' => 'number'
+            ),
+            array(
+                'name' => 'mpu_desktop_height',
+                'button_type' => 'number'
+            ),
+            array(
+                'name' => 'mpu_desktop_min_height',
+                'button_type' => 'number'
+            ),
+        )
+    ),
+    array(
+        'name' => 'mpu_is_mobile_full_screen',
+        'button_type' => 'switch',
+        IF NON  ON DEMANDE MIN OU MAX
+        'new_button' => array(
+            array(
+                'name' => 'mpu_mobile_max_width',
+                'button_type' => 'number'
+            ),
+            array(
+                'name' => 'mpu_mobile_max_height',
+                'button_type' => 'number'
+            ),
+            array(
+                'name' => 'mpu_mobile_min_height',
+                'button_type' => 'number'
+            ),
+        )
+    ),
+    array(
+        'name' => 'mpu_text_style',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_text_color',
+        'button_type' => 'color',
+    ),
+    array(
+        'name' => 'mpu_font_family',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_font_size',
+        'button_type' => 'number',
+    ),
+    array(
+        'name' => 'mpu_text_shadow',
+        'button_type' => 'select ou radio',
+    ),
+    array(
+        'name' => 'mpu_title_style',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_title_weight',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_title_size',
+        'button_type' => 'number',
+    ),
+    array(
+        'name' => 'mpu_title_letter_spacing',
+        'button_type' => 'number',
+    ),
+    array(
+        'name' => 'mpu_title_align',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_content_align',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_button_align',
+        'button_type' => 'select',
+    ),
+    array(
+        'name' => 'mpu_inner_background',
+        'button_type' => 'radio', (color / image / transparent)
+        'new_button' => array(
+            'name' => 'mpu_inner_background_color',
+            'button_type' => 'color,
+            OU
+            'name' => 'mpu_inner_background_image',
+            'button_type' => 'file,
+            'new_button' => array(
+                'name' => 'mpu_inner_background_image_syle',
+                'button_type' => 'radio, cover, contain ect
+            )
+        )
+    ),
+    array(
+        'name' => 'mpu_border_style',
+        'button_type' => 'radio',
+        'new_button' => array(
+            if none rien
+            if solid
+            array(
+                'name' => 'mpu_border_solid_weight',
+                'button_type' => 'number',
+            ),
+            array(
+                'name' => 'mpu_border_color',
+                'button_type' => 'color'
+            )
+            if  thick double
+            'name'=> 'mpu_border_thick_double_color',
+            'button_type' => 'color'
+            if dashed
+            array(
+                'name' => 'mpu_border_solid_weight',
+                'button_type' => 'number',
+            ),
+            array(
+                'name' => 'mpu_border_color',
+                'button_type' => 'color'
+            )
+            if ridge
+            array(
+                'name' => 'mpu_border_solid_weight',
+                'button_type' => 'number', en mm
+            ),
+            array(
+                'name' => 'mpu_border_color',
+                'button_type' => 'color'
+            )
+        )
+    ),
+    array(
+        'name' => 'mpu_animation_opening',
+        'button_type' => 'radio',
+    ),
+    button style a revoir template ?
+);
+
+
+
+

@@ -11,7 +11,7 @@ function createModalHTML($atts)
       'name' => ''
     ),
     $atts,
-    'first-modal'
+    'mpu_modal'
   );
 
   // Imaginons que l'attribut passé est un ID d'un shortcode crée par l'utilisateur, avec des champs de couleur, de texte etc.

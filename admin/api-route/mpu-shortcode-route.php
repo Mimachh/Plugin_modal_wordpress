@@ -24,16 +24,25 @@ function createMpuShortcode($data) {
         $mpu_is_all_articles = sanitize_text_field($data['mpu_is_all_articles']);
 
 
-        // $existQuery = new WP_Query(array(
-        //     'post_type' => 'mpu_shortcode',
-        //     'meta_query' => array(
-        //         array(
-        //             'key' => 'post_title',
-        //             'compare' => '=',
-        //             'value' => $mpu_post_title,
-        //         )
-        //     )
-        // ));
+            // Vérifier si un fichier a été téléchargé
+            // if (!empty($_FILES['mpu_file']['name'])) {
+            //     $file = $_FILES['mpu_file'];
+            //     $file_name = $file['name'];
+            //     $file_tmp = $file['tmp_name'];
+
+                // Déplacer le fichier temporaire vers l'emplacement souhaité
+                // $upload_dir = wp_upload_dir();  // Récupérer le répertoire d'upload de WordPress
+                // $target_dir = $upload_dir['path'];  // Utiliser le répertoire de base pour l'upload
+                // $target_file = $target_dir . '/' . $file_name;
+                // move_uploaded_file($file_tmp, $target_file);
+
+                // Vous pouvez enregistrer le chemin du fichier dans votre base de données
+                // en utilisant update_post_meta() ou toute autre méthode appropriée
+
+                // Assurez-vous de valider et de sécuriser le fichier téléchargé selon vos besoins
+            }
+
+            
         $existing_post_id = post_exists($mpu_post_title);
 
         if (!$existing_post_id) {

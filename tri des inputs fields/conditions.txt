@@ -52,18 +52,20 @@ Programmer le popup (date de départ, date de fin)
         + "mpu_automatic_programed_end" => date
 
 
+
+
 Conditions = array(
     array(
         'name' => 'mpu_is_triggered',
         'button_type' => 'radio',
         'options' => array(
-            'value' => 'onload',
-            'value' => 'onclick',
-            'value' => 'onhover',
-            'value' => 'after visiting x pages',
-            'value' => 'inactivity',
-            'value' => 'scrolling to element',
-            'value' => 'open by scrolling down',
+            'value' => 'onload', délai
+            'value' => 'onclick', ça par défaut ça crée un bouton avec la modale
+            'value' => 'onhover', la il faut demander l'ID ou la classe de l'élément qui trigger, mais quid du mec qui y connait rien?
+            'value' => 'after visiting x pages', demander le nombre de pages
+            'value' => 'inactivity', demander le délais
+            'value' => 'scrolling to element', quel élement?
+            'value' => 'open by scrolling down', là je ne sais pas
         )
     ),
     array(
@@ -72,28 +74,27 @@ Conditions = array(
         'options' => array(
             'value' => 'by pressing esc',
             'value' => 'outofthebox',
+            'value' => 'buttonclose',
+            'value' => 'afterdelai', demander le temps
         )
     ),
     array(
         'name' => 'mpu_is_close_button_hide',
-        'button_type' => 'switch'
+        'button_type' => 'switch' est ce que c'est utile dans le sens où on lui propose juste avant
     ),
-    array(
-        'name' => 'mpu_is_custom_close_button',
-        'button_type' => 'switch'
-    ),
-    array(
-        'name' => 'mpu_is_custom_close_button',
-        'button_type' => 'switch',
-        'new button' => array(
-            'name' => 'mpu_custom_close_img',
-            'button_type' => 'file'
-        )
-    ),
-    array(
-        'name' => 'mpu_close_button_position',
-        'button_type' => 'select'
-    ),
+        SI OUI JUSTE AU DESSUS
+        array(
+            'name' => 'mpu_is_custom_close_button',
+            'button_type' => 'switch',
+            'new button' => array(
+                'name' => 'mpu_custom_close_img',
+                'button_type' => 'file'
+            )
+        ),
+        array(
+            'name' => 'mpu_close_button_position',
+            'button_type' => 'select'
+        ),
     array(
         'name' => 'mpu_is_automatic_programed',
         'button_type' => 'switch',

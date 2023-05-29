@@ -52,28 +52,3 @@ function render_mpu_is_include_meta_box($post) {
     <?php
 }
 
-function save_custom_field_values($post_id) {
-    // Enregistrez les valeurs pour 'mpu_activate' et 'mpu_is_all_pages'
-    $fields = array('mpu_activate', 'mpu_is_all_pages', 'mpu_is_all_articles');
-    foreach ($fields as $field) {
-        if (isset($_POST[$field])) {
-            $value = sanitize_text_field($_POST[$field]);
-            update_post_meta($post_id, $field, $value);
-        } 
-        // else {
-        //     delete_post_meta($post_id, $field);
-        // }
-    }
-    // Enregistrez les valeurs pour 'mpu_is_except' et 'mpu_is_include'
-    $checkbox_fields = array('mpu_is_except', 'mpu_is_include');
-    foreach ($checkbox_fields as $field) {
-        if (isset($_POST[$field]) && is_array($_POST[$field])) {
-            $values = array_map('sanitize_text_field', $_POST[$field]);
-            update_post_meta($post_id, $field, $values);
-        } 
-        // else {
-        //     delete_post_meta($post_id, $field);
-        // }
-    }
-}
-add_action('save_post_mpu_shortcode', 'save_custom_field_values');

@@ -107,8 +107,14 @@ require_once plugin_dir_path(__FILE__) . 'public/create-modal.php';
 //include le custom post type
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/init.php';
 
+// save les custom fields
+require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields/mpu-save-custom-fields.php';
+
 //include les custom field activation
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields/activation/init.php';
+
+//include les custom field visuel
+require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields/visuel/init.php';
 
 // Display Shortcode list on main page
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/display_list_on_main_page.php';

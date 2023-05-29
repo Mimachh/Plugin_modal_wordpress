@@ -39,3 +39,9 @@ WARNING : POUR POUVOIR UTILISER BULMA SUR LES MODALES IL FAUDRAIT QUE TU REGARDE
 28/05/2023
 J'ai fait une partie du formulaire dans des nouveaux dossier dans la partie admin puis post type.
 Ajout d'un message d'erreur si le titre existe déjà, et un message d'erreur si le titre est vide.
+
+A mon avis s'il clique sur afficher sur toutes les pages ça ouvre le menu exclure. Sil désactive ça ouvre inclure.
+Pareil pour les articles ?
+
+29/05/2023
+Ajout des custom field pour le logo. Il n'est pas encore actif dans le formulaire perso mais visible et quasi fonctionnel dans le formulaire admin.
