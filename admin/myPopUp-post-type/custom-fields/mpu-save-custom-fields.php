@@ -18,9 +18,9 @@ function save_custom_field_values($post_id) {
             $value = sanitize_text_field($_POST[$field]);
             update_post_meta($post_id, $field, $value);
         } 
-        else {
-            delete_post_meta($post_id, $field);
-        }
+        // else {
+        //     delete_post_meta($post_id, $field);
+        // }
     }
     // Enregistrez les valeurs pour 'mpu_is_except' et 'mpu_is_include'
     $checkbox_fields = array('mpu_is_except', 'mpu_is_include');
@@ -29,9 +29,9 @@ function save_custom_field_values($post_id) {
             $values = array_map('sanitize_text_field', $_POST[$field]);
             update_post_meta($post_id, $field, $values);
         } 
-        else {
-            delete_post_meta($post_id, $field);
-        }
+        // else {
+        //     delete_post_meta($post_id, $field);
+        // }
     }
 
     // Gérez les fichiers téléchargés
@@ -65,9 +65,9 @@ function save_custom_field_values($post_id) {
             $value = sanitize_mpu_number($_POST[$number_field]);
             update_post_meta($post_id, $number_field, $value);
         }       
-        else {
-            delete_post_meta($post_id, $number_field);
-        }
+        // else {
+        //     delete_post_meta($post_id, $number_field);
+        // }
     }
 
     // Pour les switch
@@ -79,9 +79,9 @@ function save_custom_field_values($post_id) {
             $value = ($_POST[$switch_field] === 'on') ? true : false;
             update_post_meta($post_id, $switch_field, $value);
         }       
-        else {
-            delete_post_meta($post_id, $switch_field);
-        }
+        // else {
+        //     delete_post_meta($post_id, $switch_field);
+        // }
     }
 
     // Pour les couleurs
@@ -90,9 +90,10 @@ function save_custom_field_values($post_id) {
         if (isset($_POST[$color_field])) {
             $value = sanitize_hex_color($_POST[$color_field]);
             update_post_meta($post_id, $color_field, $value);
-        } else {
-            delete_post_meta($post_id, $color_field);
-        }
+        } 
+        // else {
+        //     delete_post_meta($post_id, $color_field);
+        // }
     }
 
     // Images

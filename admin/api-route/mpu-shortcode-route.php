@@ -24,6 +24,28 @@ function createMpuShortcode($data) {
         $mpu_is_all_articles = sanitize_text_field($data['mpu_is_all_articles']);
 
 
+        // Visuel
+        $mpu_add_site_logo = sanitize_text_field($data['mpu_add_site_logo']);
+        // Pas encore bon
+        $mpu_custom_logo = sanitize_text_field($data['mpu_custom_logo']);
+        //
+
+        $mpu_is_title_visible = sanitize_text_field($data['mpu_is_title_visible']);
+        $mpu_header_title = sanitize_text_field($data['mpu_header_title']);
+        $mpu_is_body_content_visible = sanitize_text_field($data['mpu_is_body_content_visible']);
+        $mpu_body_content = sanitize_text_field($data['mpu_body_content']);
+        $mpu_is_description_visible = sanitize_text_field($data['mpu_is_description_visible']);
+        $mpu_description = sanitize_text_field($data['mpu_description']);
+        $mpu_overlay = sanitize_text_field($data['mpu_overlay']);
+        $mpu_overlay_opacity_value = sanitize_text_field($data['mpu_overlay_opacity_value']);
+        $mpu_overlay_color = sanitize_text_field($data['mpu_overlay_color']);
+        $mpu_overlay_blur_value = sanitize_text_field($data['mpu_overlay_blur_value']);
+        $mpu_is_author_visible = sanitize_text_field($data['mpu_is_author_visible']);
+        $mpu_template_choice = sanitize_text_field($data['mpu_template_choice']);
+
+
+
+
             // Vérifier si un fichier a été téléchargé
             // if (!empty($_FILES['mpu_file']['name'])) {
             //     $file = $_FILES['mpu_file'];
@@ -55,7 +77,23 @@ function createMpuShortcode($data) {
                    'mpu_is_all_pages' => $mpu_is_all_pages,
                    'mpu_is_except' => $mpu_is_except,
                    'mpu_is_include' => $mpu_is_include,
-                   'mpu_is_all_articles' => $mpu_is_all_articles
+                   'mpu_is_all_articles' => $mpu_is_all_articles,
+
+                   // Visuel
+                   'mpu_add_site_logo' => $mpu_add_site_logo,
+                   'mpu_is_title_visible' => $mpu_is_title_visible,
+                   'mpu_header_title' => $mpu_header_title,
+                   'mpu_is_body_content_visible' => $mpu_is_body_content_visible,
+                   'mpu_body_content' => $mpu_body_content,
+                   'mpu_is_description_visible' => $mpu_is_description_visible,
+                   'mpu_description' => $mpu_description,
+                   'mpu_overlay' => $mpu_overlay,
+                   'mpu_overlay_opacity_value' => $mpu_overlay_opacity_value,
+                   'mpu_overlay_color' => $mpu_overlay_color,
+                   'mpu_overlay_blur_value' => $mpu_overlay_blur_value,
+                   'mpu_is_author_visible' => $mpu_is_author_visible,
+                   'mpu_template_choice' => $mpu_template_choice
+
                 ),
             ));
         } else {

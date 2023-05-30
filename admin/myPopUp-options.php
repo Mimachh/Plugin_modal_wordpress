@@ -97,7 +97,7 @@ function myPopUp_options_page_html()
             <div class="mpu-input-field my-4">
                 <label for="mpu_is_all_articles">Afficher sur tous les articles ?</label>
                 <label class="mpu_switch">
-                    <input name="mpu_is_all_articles" class="mpu_is_all_articles" type="checkbox" value="1">
+                    <input name="mpu_is_all_articles" class="mpu_is_all_articles" type="checkbox">
                     <span class="mpu_slider mpu_round"></span>
                 </label>
             </div>
@@ -180,11 +180,11 @@ function myPopUp_options_page_html()
                 <div class="mpu-input-field my-4 column is-1">
                     <label for="mpu_overlay">Overlay</label>
                     <div class="control">
-                        <div class="select is-primary mpu_overlay">
-                            <select>
-                                <option>Overlay 1</option>
-                                <option>Overlay 2</option>
-                                <option>Overlay 3</option>
+                        <div class="select is-primary">
+                            <select class="mpu_overlay">
+                                <option value="1">Overlay 1</option>
+                                <option value="2">Overlay 2</option>
+                                <option value="3">Overlay 3</option>
                             </select>
                         </div>
                     </div>
@@ -223,11 +223,11 @@ function myPopUp_options_page_html()
             <div class="mpu-input-field my-4 column is-3">
                 <label for="mpu_template_choice">Template</label>
                 <div class="control">
-                    <div class="select is-primary mpu_template_choice">
-                        <select>
-                            <option>Template 1</option>
-                            <option>Template 2</option>
-                            <option>Template 3</option>
+                    <div class="select is-primary ">
+                        <select class="mpu_template_choice">
+                            <option value="1">Template 1</option>
+                            <option value="2">Template 2</option>
+                            <option value="3">Template 3</option>
                         </select>
                     </div>
                 </div>

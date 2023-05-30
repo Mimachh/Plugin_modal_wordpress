@@ -59,8 +59,42 @@ document.addEventListener('DOMContentLoaded', function(event) {
             }
         });
 
+
+        // ----------------------------- VISUEL ----------------------------- //
+
+        const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
+        // Pas encore fait
+        const mpuCustomLogo = document.querySelector('.mpu_custom_logo');
+        //
+
+        const mpuIsTitleVisible = document.querySelector('.mpu_is_title_visible');
+        const mpuHeaderTitle = document.querySelector('.mpu_header_title');
+        const mpuIsBodyContentVisible = document.querySelector('.mpu_is_body_content_visible');
+        const mpuBodyContent = document.querySelector('.mpu_body_content');
+        const mpuIsDescriptionVisible = document.querySelector('.mpu_is_description_visible');
+        const mpuDescription = document.querySelector('.mpu_description');
+        const mpuOverlay = document.querySelector('.mpu_overlay');
+        const mpuOverlayOpacityValue = document.querySelector('.mpu_overlay_opacity_value');
+        const mpuOverlayColor = document.querySelector('.mpu_overlay_color');
+        const mpuOverlayBlurValue = document.querySelector('.mpu_overlay_blur_value');
+        const mpuIsAuthorVisible = document.querySelector('.mpu_is_author_visible');
+        const mpuTemplateChoice = document.querySelector('.mpu_template_choice');
+
+        const mpuIsDesktopFullScreen = document.querySelector('.mpu_is_desktop_full_screen');
+        const mpuDesktopMinWidth = document.querySelector('.mpu_desktop_min_width');
+        const mpuDesktopMaxWidth = document.querySelector('.mpu_desktop_max_width');
+        const mpuDesktopMinHeight = document.querySelector('.mpu_desktop_min_height');
+        const mpuDesktopMaxHeight = document.querySelector('.mpu_desktop_max_height');
+
+        const mpuIsMobileFullScreen = document.querySelector('.mpu_is_mobile_full_screen');
+        const mpuMobileMinWidth = document.querySelector('.mpu_mobile_min_width');
+        const mpuMobileMaxWidth = document.querySelector('.mpu_mobile_max_width');
+        const mpuMobileMinHeight = document.querySelector('.mpu_mobile_min_height');
+        const mpuMobileMaxHeight = document.querySelector('.mpu_mobile_max_height');
+
+
         const submitButton = document.querySelector('.mpu_submit');
-        
+       
         submitButton.addEventListener('click', function () {
             const data = {
                 status: 'publish',
@@ -69,9 +103,37 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 'mpu_is_all_pages': mpuIsAllPages.checked ? '1' : '0',
                 'mpu_is_except': Array.from(mpuIsExcept).filter(input => input.checked).map(input => input.value),
                 'mpu_is_include': Array.from(mpuIsInclude).filter(input => input.checked).map(input => input.value),
-                'mpu_is_all_articles': mpuIsAllArticles.value
+                'mpu_is_all_articles': mpuIsAllArticles.checked ? '1' : '0',
+                
+                // Visuel
+                'mpu_add_site_logo' : mpuAddSiteLogo.checked ? true : '0',
+                'mpu_is_title_visible' : mpuIsTitleVisible.checked ? true : '0',
+                'mpu_header_title': mpuHeaderTitle.value,
+                'mpu_is_body_content_visible' : mpuIsBodyContentVisible.checked ? true : '0',
+                'mpu_body_content': mpuBodyContent.value,
+                'mpu_is_description_visible' : mpuIsDescriptionVisible.checked ? true : '0',
+                'mpu_description': mpuDescription.value,
+                'mpu_overlay': mpuOverlay.value,
+                'mpu_overlay_opacity_value': mpuOverlayOpacityValue.value,
+                'mpu_overlay_color': mpuOverlayColor.value,
+                'mpu_overlay_blur_value': mpuOverlayBlurValue.value,
+                'mpu_is_author_visible' : mpuIsAuthorVisible.checked ? true : '0',
+                'mpu_template_choice': mpuTemplateChoice.value,
+                
+                'mpu_is_desktop_full_screen' : mpuIsDesktopFullScreen.checked ? true : '0',
+                'mpu_desktop_min_width': mpuDesktopMinWidth.value,
+                'mpu_desktop_max_width': mpuDesktopMaxWidth.value,
+                'mpu_desktop_min_height': mpuDesktopMinHeight.value,
+                'mpu_desktop_max_height': mpuDesktopMaxHeight.value,
+
+                'mpu_is_mobile_full_screen' : mpuIsMobileFullScreen.checked ? true : '0',
+                'mpu_mobile_min_width': mpuMobileMinWidth.value,
+                'mpu_mobile_max_width': mpuMobileMaxWidth.value,
+                'mpu_mobile_min_height': mpuMobileMinHeight.value,
+                'mpu_mobile_max_height': mpuMobileMaxHeight.value,
             };
 
+            
             // Vérification du titre
             if (mpuTitle.value.trim() === '') {
                 errorMessage.textContent = 'Le titre est obligatoire';
