@@ -129,6 +129,14 @@ function myPopUp_options_page_html()
                     </span>
                 </label>
             </div>
+            <!-- SHOW TITLE -->
+            <div class="mpu-input-field my-4">
+                <label for="mpu_is_title_visible">Afficher le titre</label>
+                <label class="mpu_switch">
+                    <input name="mpu_is_title_visible" class="mpu_is_title_visible" type="checkbox" value="1">
+                    <span class="mpu_slider mpu_round"></span>
+                </label>
+            </div>
             <!-- TITRE POPUP -->
             <div class="mpu-input-field my-4">
                 <label for="mpu_header_title">Titre du Pop-Up</label>
@@ -136,12 +144,28 @@ function myPopUp_options_page_html()
                     <input class="input is-primary mpu_header_title" type="text" placeholder="Titre">
                 </div>
             </div>
+            <!-- SHOW DESCRIPTION -->
+            <div class="mpu-input-field my-4">
+                <label for="mpu_is_body_content_visible">Afficher le contenu custom</label>
+                <label class="mpu_switch">
+                    <input name="mpu_is_body_content_visible" class="mpu_is_body_content_visible" type="checkbox" value="1">
+                    <span class="mpu_slider mpu_round"></span>
+                </label>
+            </div>
             <!-- CUSTOM CONTENT -->
             <div class="mpu-input-field my-4">
                 <label for="mpu_body_content">Custom content</label>
                 <div class="control">
                     <textarea class="textarea is-primary mpu_body_content" type="text" placeholder="Titre"></textarea>
                 </div>
+            </div>
+            <!-- SHOW DESCRIPTION -->
+            <div class="mpu-input-field my-4">
+                <label for="mpu_is_description_visible">Afficher la description</label>
+                <label class="mpu_switch">
+                    <input name="mpu_is_description_visible" class="mpu_is_description_visible" type="checkbox" value="1">
+                    <span class="mpu_slider mpu_round"></span>
+                </label>
             </div>
             <!-- DESCRIPTION -->
             <div class="mpu-input-field my-4">
@@ -178,7 +202,7 @@ function myPopUp_options_page_html()
                         <input class="input is-primary mpu_overlay_color" type="color" placeholder="Valeur">
                     </div>
                 </div>
-                <!-- BACKDROP COLORPICKER -->
+                <!-- BLUR VALUE -->
                 <div class="mpu-input-field my-4 column is-2">
                     <label for="mpu_overlay_blur_value">Flou</label>
                     <div class="control">
@@ -186,6 +210,28 @@ function myPopUp_options_page_html()
                     </div>
                 </div>
             </div>
+            <!-- Auteur visible -->
+            <div class="mpu-input-field my-4">
+                <label for="mpu_is_author_visible">Afficher l'auteur</label>
+                <label class="mpu_switch">
+                    <input name="mpu_is_author_visible" class="mpu_is_author_visible" type="checkbox" value="1">
+                    <span class="mpu_slider mpu_round"></span>
+                </label>
+            </div>
+            <!-- Template choice -->
+            <div class="mpu-input-field my-4 column is-3">
+                <label for="mpu_template_choice">Template</label>
+                <div class="control">
+                    <div class="select is-primary mpu_template_choice">
+                        <select>
+                            <option>Template 1</option>
+                            <option>Template 2</option>
+                            <option>Template 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
