@@ -1,8 +1,11 @@
 <?php
 function myPopUp_options_page_html()
 {
+    require_once dirname(dirname(__FILE__)) . '/admin/partials/my-popup-navbar.php';
+
 ?>
     <div class="wrap">
+        <?php myPopUp_navbar(); ?>
         <h1 class="mb-5"><?php echo esc_html(get_admin_page_title()); ?></h1>
 
         <div class="tabs is-centered is-box is-medium mt-6">
