@@ -248,21 +248,21 @@ function myPopUp_options_page_html()
                 <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                     <label for="mpu_desktop_width">Largeur</label>
                     <div class="control">
-                        <input class="input is-primary mpu_desktop_width" type="number" placeholder="Valeur" unit="pixel">
+                        <input class="input is-primary mpu_desktop_width" type="number" placeholder="Valeur en pixel">
                     </div>
                 </div>
                 <!-- IF NO, HEIGHT -->
                 <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                     <label for="mpu_desktop_height">Hauteur</label>
                     <div class="control">
-                        <input class="input is-primary mpu_desktop_height" type="number" placeholder="Valeur" unit="pixel">
+                        <input class="input is-primary mpu_desktop_height" type="number" placeholder="Valeur en pixel">
                     </div>
                 </div>
                 <!-- IF NO, MIN-HEIGHT -->
                 <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                     <label for="mpu_desktop_min_height">Hauteur minimum</label>
                     <div class="control">
-                        <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur" unit="pixel">
+                        <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur en pixel">
                     </div>
                 </div>
                 <!-- END COLUMNS -->
