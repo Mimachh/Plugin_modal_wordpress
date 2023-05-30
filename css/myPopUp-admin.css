@@ -20,8 +20,8 @@ select.is-hovered {
   z-index: 5;
 }
 
-select::after {
-  display: none;
+#wpfooter {
+  position: relative;
 }
 
 /*  Switch Button */

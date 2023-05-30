@@ -17,6 +17,7 @@ function myPopUp_options_page_html()
             </ul>
         </div>
 
+        <!-- container -->
         <div class="container is-fluid">
 
             <?php
@@ -114,7 +115,7 @@ function myPopUp_options_page_html()
                 </label>
             </div>
             <!-- UPLOAD FICHIER -->
-            <div class="file is-boxed">
+            <div class="file is-boxed is-primary">
                 <label class="file-label">
                     <input class="file-input" type="file" name="resume">
                     <span class="file-cta">
@@ -232,10 +233,37 @@ function myPopUp_options_page_html()
                 </div>
             </div>
 
+
+            <!-- Is full screen -->
+            <div class="mpu-input-field my-4 column is-3">
+                <label for="mpu_is_desktop_full_screen">Afficher le pop-up en plein écran</label>
+                <label class="mpu_switch">
+                    <input name="mpu_is_desktop_full_screen" class="mpu_is_desktop_full_screen" type="checkbox" value="1">
+                    <span class="mpu_slider mpu_round"></span>
+                </label>
+            </div>
+            <!-- COLUMNS START -->
+            <div class="columns">
+                <!-- IF NO, WIDTH -->
+                <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                    <label for="mpu_desktop_width">Largeur</label>
+                    <div class="control">
+                        <input class="input is-primary mpu_desktop_width" type="number" placeholder="Valeur" unit="pixel">
+                    </div>
+                </div>
+                <!-- IF NO, HEIGHT -->
+                <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                    <label for="mpu_desktop_height">Hauteur</label>
+                    <div class="control">
+                        <input class="input is-primary mpu_desktop_height" type="number" placeholder="Valeur" unit="pixel">
+                    </div>
+                </div>
+                <!-- END COLUMNS -->
+            </div>
+
         </div>
 
     </div>
-
 
     </div>
 
