@@ -114,6 +114,10 @@ Visuel = array(
         'button_type' => 'text',
     ),
     array(
+        'name' => 'mpu_is_body_content_visible',
+        'button_type' => 'switch'
+    ),
+    array(
         'name' => 'mpu_body_content',
         'button_type' => 'textarea',
     ),

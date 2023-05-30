@@ -55,6 +55,16 @@ function render_mpu_body_content_meta_box($post) {
     <?php
 }
 
+function mpu_render_is_body_content_visible_meta_box($post) {
+    $mpu_is_body_content_visible = get_post_meta($post->ID, 'mpu_is_body_content_visible', true);
+    ?>
+    <label for="mpu_is_body_content_visible">
+        <input type="checkbox" name="mpu_is_body_content_visible" id="mpu_is_body_content_visible" <?php checked($mpu_is_body_content_visible, true); ?>>
+        Afficher le body content
+    </label>
+    <?php
+}
+
 // Description PopUp
 function render_mpu_description_meta_box($post) {
     // Récupération de la valeur actuelle du champ

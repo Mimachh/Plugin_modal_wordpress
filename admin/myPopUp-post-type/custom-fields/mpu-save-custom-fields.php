@@ -72,7 +72,7 @@ function save_custom_field_values($post_id) {
 
     // Pour les switch
     $switch_fields = array('mpu_is_author_visible', 'mpu_is_title_visible', 'mpu_is_description_visible', 
-    'mpu_is_desktop_full_screen', 'mpu_is_mobile_full_screen', 'mpu_is_title_shadow'
+    'mpu_is_desktop_full_screen', 'mpu_is_mobile_full_screen', 'mpu_is_title_shadow', 'mpu_is_body_content_visible'
     );
     foreach($switch_fields as $switch_field) {
         if (isset($_POST[$switch_field])) {

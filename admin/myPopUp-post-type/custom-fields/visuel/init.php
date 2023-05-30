@@ -33,6 +33,11 @@ function mpu_register_custom_field_visuel() {
         'single' => true,
         'show_in_rest' => true,
     ));
+    register_meta('mpu_shortcode', 'mpu_is_body_content_visible', array(
+        'type' => 'boolean',
+        'single' => true,
+        'show_in_rest' => true,
+    ));
 
     // Description Popup
     register_meta('mpu_shortcode', 'mpu_description', array(
@@ -375,6 +380,15 @@ function mpu_add_custom_field_visuel_meta_box() {
         'normal',
         'default'
     );
+    add_meta_box(
+        'mpu-is-body-content-visible-meta-box',
+        'Visibilité du contenu du corps',
+        'mpu_render_is_body_content_visible_meta_box',
+        'mpu_shortcode',
+        'normal',
+        'default'
+    );
+
 
     // Description Popup
     add_meta_box(
