@@ -258,6 +258,13 @@ function myPopUp_options_page_html()
                         <input class="input is-primary mpu_desktop_height" type="number" placeholder="Valeur" unit="pixel">
                     </div>
                 </div>
+                <!-- IF NO, MIN-HEIGHT -->
+                <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                    <label for="mpu_desktop_min_height">Hauteur minimum</label>
+                    <div class="control">
+                        <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur" unit="pixel">
+                    </div>
+                </div>
                 <!-- END COLUMNS -->
             </div>
 
