@@ -1,10 +1,17 @@
 
-
-
 document.addEventListener('DOMContentLoaded', function(event) {
 
         // Titre du shortcode
         const mpuTitle = document.querySelector('.mpu_post_title');
+
+        function mpuValidateTitle(mpuTitle) { 
+            if (mpuTitle.value.trim() === '') {
+              errorMessage.textContent = 'Le titre est obligatoire';
+              errorMessage.style.display = 'block';
+              return false; // La validation a échoué
+            } 
+            return true;
+        }
 
         // Message d'erreur
         const errorMessage = document.querySelector('.mpu_title-error-message');
@@ -14,11 +21,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
         const mpuIsAllArticles = document.querySelector('.mpu_is_all_articles');
         const mpuIsAllPages = document.querySelector('.mpu_is_all_pages');
         const mpuIsExcept = document.querySelectorAll('.mpu_is_except');
-        // const mpuIsInclude = document.querySelectorAll('.mpu_is_include');
+
         
         // Les div qui apparaissent et disparaissent
         const mpuIsExceptDiv = document.querySelector('.mpu_exclure_div');
-        // const mpuIsIncludeDiv = document.querySelector('.mpu_inclure_div');
+  
 
         // Par défaut sur toutes les pages est décoché
         if(mpuIsAllPages) {
@@ -29,10 +36,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if(mpuIsExceptDiv) {
             hideElementGroup(mpuIsExceptDiv);
         } 
-        // Afficher le groupe de div "Inclure" par défaut
-        // if(mpuIsIncludeDiv) {
-        //     showElementGroup(mpuIsIncludeDiv);
-        // }
+
         
         // Fonction pour cacher un groupe de div
         function hideElementGroup(element) {
@@ -56,14 +60,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (mpuIsAllPages) {
             mpuIsAllPages.addEventListener('change', function() {
               if (mpuIsAllPages.checked) {
-                // Si l'option est cochée, cacher le groupe de div "Inclure" et vider ses valeurs
-                // hideElementGroup(mpuIsIncludeDiv);
                 showElementGroup(mpuIsExceptDiv);
               } else {
                 // Si l'option n'est pas cochée, cacher le groupe de div "Except" et vider ses valeurs
                 hideElementGroup(mpuIsExceptDiv);
-                // Afficher le groupe de div "Inclure"
-                // showElementGroup(mpuIsIncludeDiv);
               }
             });
           }
@@ -144,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     'mpu_activate': mpuActivate.checked ? '1' : '0',
                     'mpu_is_all_pages': mpuIsAllPages.checked ? '1' : '0',
                     'mpu_is_except': Array.from(mpuIsExcept).filter(input => input.checked).map(input => input.value),
-                    // 'mpu_is_include': Array.from(mpuIsInclude).filter(input => input.checked).map(input => input.value),
                     'mpu_is_all_articles': mpuIsAllArticles.checked ? '1' : '0',
                     
                     // Visuel
@@ -208,10 +207,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
                 
                 // Vérification du titre
-                if (mpuTitle.value.trim() === '') {
-                    errorMessage.textContent = 'Le titre est obligatoire';
-                    errorMessage.style.display = 'block';
-                    return; 
+                if(mpuValidateTitle(mpuTitle) == false) {
+                    return;
                 }
             
                 const xhr = new XMLHttpRequest();
@@ -244,7 +241,56 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 xhr.send(JSON.stringify(data));
             });
         }
+        
+ 
+        const saveEditButton = document.querySelector('.mpu_save_edit_button');
+        const mpuShortcodeId = document.querySelector('.mpu_shortcode_id');
    
+      
+        if (saveEditButton) {
+          saveEditButton.addEventListener('click', function() {
+            const data = {
+              status: 'publish',
+              'mpu_post_title': mpuTitle.value,
+            };
+      
+            const xhr = new XMLHttpRequest();
+            xhr.open(
+              'PUT',
+              siteData.root_url + '/wp-json/mpu-shortcodes/v1/manageShortcodes/' + mpuShortcodeId.value
+            );
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('X-WP-Nonce', siteData.nonce);
+      
+            xhr.onload = function() {
+              if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                console.log('Bien ouej');
+                console.log(response);
+
+                // Réinitialisation des champs
+                mpuTitle.value = '';
+
+                if (response.data == 'Un problème est survenu !') {
+                    errorMessage.style.display = 'block';
+                    errorMessage.textContent = 'Un problème est survenu !';
+                }
+              } else {
+                const response = JSON.parse(xhr.responseText);
+                console.log('Dommage');
+                console.log(response.message);
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Un problème est survenu !';
+              }
+            };
+      
+            xhr.send(JSON.stringify(data));
+          });
+        }
 });
 
 // Autre bouton pour le edit des formulaires
+
+
+
+

@@ -28,10 +28,11 @@ function myPopUp_options_page_html()
                 // Récupérer les données du custom post type
                 $post = get_post($post_id);
                 $post_title = $post->post_title;
+                echo 'id:' . $post_id;
                 echo 'le titre récupéré est : ' . $post_title;
             ?>
-
-                <button>Nouveau bouton edit</button>
+                <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
+                <button type="submit" class="mpu_save_edit_button">Nouveau bouton edit</button>
             <?php }
             ?>
             <div class="mpu_title-error-message" style="color: red; display: none;"></div>
@@ -41,7 +42,7 @@ function myPopUp_options_page_html()
                 <!-- formulaire de création de la première modale -->
                 <label for="mpu_shortcode_title">Titre du shortcode :</label>
                 <div class="control">
-                    <input type="text" name="post_title" class="input is-primary mpu_post_title" id="mpu_shortcode_title" value="" placeholder="" required>
+                    <input type="text" name="post_title" class="input is-primary mpu_post_title" id="mpu_shortcode_title" value="<?php if(isset($post_title)) echo $post_title; ?>" placeholder="" required>
                 </div>
             </div>
 
@@ -61,22 +62,7 @@ function myPopUp_options_page_html()
                 </label>
             </div>
 
-            <!-- <div class="mpu_inclure_div">
-                <label for="mpu-is-include">Inclure :</label>
-                <?php
-                $mpu_pages = get_pages();
-
-                foreach ($mpu_pages as $page) {
-                    $page_id = $page->ID;
-                    $page_title = $page->post_title;
-                ?>
-                    <div>
-                        <input type="checkbox" name="mpu_is_include[]" class="mpu_is_include" value="<?php echo $page_id; ?>"> <?php echo $page_title; ?>
-                    </div>
-
-                <?php }
-                ?>
-            </div> -->
+        
 
             <div class="mpu_exclure_div">
                 <label for="mpu-is-except">Except:</label>
