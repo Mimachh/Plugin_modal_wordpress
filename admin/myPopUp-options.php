@@ -4,7 +4,7 @@ function myPopUp_options_page_html()
     require_once dirname(dirname(__FILE__)) . '/admin/partials/my-popup-navbar.php';
 
 ?>
-    <div class="mpu-wrapper has-background-primary">
+    <div class="mpu-wrapper has-background-info">
     <div class="wrap">
         <?php myPopUp_navbar(); ?>
         <h1 class="mb-5"><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -61,7 +61,7 @@ function myPopUp_options_page_html()
                 </label>
             </div>
 
-            <div class="mpu_inclure_div">
+            <!-- <div class="mpu_inclure_div">
                 <label for="mpu-is-include">Inclure :</label>
                 <?php
                 $mpu_pages = get_pages();
@@ -76,7 +76,7 @@ function myPopUp_options_page_html()
 
                 <?php }
                 ?>
-            </div>
+            </div> -->
 
             <div class="mpu_exclure_div">
                 <label for="mpu-is-except">Except:</label>

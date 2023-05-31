@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
         const mpuIsAllArticles = document.querySelector('.mpu_is_all_articles');
         const mpuIsAllPages = document.querySelector('.mpu_is_all_pages');
         const mpuIsExcept = document.querySelectorAll('.mpu_is_except');
-        const mpuIsInclude = document.querySelectorAll('.mpu_is_include');
+        // const mpuIsInclude = document.querySelectorAll('.mpu_is_include');
         
         // Les div qui apparaissent et disparaissent
         const mpuIsExceptDiv = document.querySelector('.mpu_exclure_div');
-        const mpuIsIncludeDiv = document.querySelector('.mpu_inclure_div');
+        // const mpuIsIncludeDiv = document.querySelector('.mpu_inclure_div');
 
         // Par défaut sur toutes les pages est décoché
         if(mpuIsAllPages) {
@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
             hideElementGroup(mpuIsExceptDiv);
         } 
         // Afficher le groupe de div "Inclure" par défaut
-        if(mpuIsIncludeDiv) {
-            showElementGroup(mpuIsIncludeDiv);
-        }
+        // if(mpuIsIncludeDiv) {
+        //     showElementGroup(mpuIsIncludeDiv);
+        // }
         
         // Fonction pour cacher un groupe de div
         function hideElementGroup(element) {
@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
             mpuIsAllPages.addEventListener('change', function() {
               if (mpuIsAllPages.checked) {
                 // Si l'option est cochée, cacher le groupe de div "Inclure" et vider ses valeurs
-                hideElementGroup(mpuIsIncludeDiv);
+                // hideElementGroup(mpuIsIncludeDiv);
                 showElementGroup(mpuIsExceptDiv);
               } else {
                 // Si l'option n'est pas cochée, cacher le groupe de div "Except" et vider ses valeurs
                 hideElementGroup(mpuIsExceptDiv);
                 // Afficher le groupe de div "Inclure"
-                showElementGroup(mpuIsIncludeDiv);
+                // showElementGroup(mpuIsIncludeDiv);
               }
             });
           }
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     'mpu_activate': mpuActivate.checked ? '1' : '0',
                     'mpu_is_all_pages': mpuIsAllPages.checked ? '1' : '0',
                     'mpu_is_except': Array.from(mpuIsExcept).filter(input => input.checked).map(input => input.value),
-                    'mpu_is_include': Array.from(mpuIsInclude).filter(input => input.checked).map(input => input.value),
+                    // 'mpu_is_include': Array.from(mpuIsInclude).filter(input => input.checked).map(input => input.value),
                     'mpu_is_all_articles': mpuIsAllArticles.checked ? '1' : '0',
                     
                     // Visuel
