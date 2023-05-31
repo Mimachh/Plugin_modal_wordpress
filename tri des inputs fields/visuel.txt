@@ -96,17 +96,19 @@ Transform: "mpu_animation_opening" => select ou radio avec liste des animations 
 
 
 Visuel = array(
+    MESSAGE POUR FRANCK : REVOIT ICI, IL Y A 3 BOUTONS POUR LE LOGO
     array(
         'name' => 'mpu_add_site_logo',
         'button_type' => 'switch',
         'new_button' => array(
-            'name' => 'site_logo',
+            si oui
+            'name' => 'mpu_site_logo',
             'button_type' => 'switch'
-            si non
-            'new_button' => array(
-                'name' => 'mpu_custom_logo',
-                'button_type' => 'file'
-            )
+                si 'site_logo' oui
+                'new_button' => array(
+                    'name' => 'mpu_custom_logo',
+                    'button_type' => 'file'
+                )
         )
     ),
     array(
@@ -159,6 +161,7 @@ Visuel = array(
         'name' => 'mpu_is_description_visible',
         'button_type' => 'switch',
     ),
+    // A REVOIR AUSSI FRANCK, LA PARTIE WIDTH ET HEIGHT QUI AVAIT CHANGE PAR RAPPORT AU TRUC D'EN HAUT
     array(
         'name' => 'mpu_is_desktop_full_screen',
         'button_type' => 'switch',
@@ -206,6 +209,7 @@ Visuel = array(
             ),
         )
     ),
+    // FIN DE LA PARTIE A REVOIR
     array(
         'name' => 'mpu_text_style',
         'button_type' => 'select',
@@ -279,7 +283,7 @@ Visuel = array(
             'name' => 'mpu_inner_background_image',
             'button_type' => 'file,
             'new_button' => array(
-                'name' => 'mpu_inner_background_image_syle',
+                'name' => 'mpu_inner_background_image_style',
                 'button_type' => 'radio, cover, contain ect
             )
         )

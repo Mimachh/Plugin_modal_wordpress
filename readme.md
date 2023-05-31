@@ -45,3 +45,6 @@ Pareil pour les articles ?
 
 29/05/2023
 Ajout des custom field pour le logo. Il n'est pas encore actif dans le formulaire perso mais visible et quasi fonctionnel dans le formulaire admin.
+
+
+31/05 il manque un bouton pour les fichiers dans visuel et les min height ne sont pas les bons

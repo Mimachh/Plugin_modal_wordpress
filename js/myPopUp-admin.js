@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         // ----------------------------- VISUEL ----------------------------- //
 
         const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
+        const mpuSiteLogo = document.querySelector('.mpuSiteLogo');
         // Pas encore fait
         const mpuCustomLogo = document.querySelector('.mpu_custom_logo');
         //
@@ -93,6 +94,37 @@ document.addEventListener('DOMContentLoaded', function(event) {
         const mpuMobileMaxHeight = document.querySelector('.mpu_mobile_max_height');
 
 
+            // Text style
+        const mpuTextStyle = document.querySelector('.mpu_text_style');
+        const mpuTextColor = document.querySelector('.mpu_text_color');
+        const mpuFontFamily = document.querySelector('.mpu_font_family');
+        const mpuFontSize = document.querySelector('.mpu_font_size');
+        const mpuIsTitleShadow = document.querySelector('.mpu_is_title_shadow');
+        const mpuTitleShadowType = document.querySelector('.mpu_title_shadow_type');
+        const mpuTitleShadowSize = document.querySelector('.mpu_title_shadow_size');
+        const mpuTitleShadowColor = document.querySelector('.mpu_title_shadow_color');
+        const mpuTitleStyle = document.querySelector('.mpu_title_style');
+        const mpuTitleWeight = document.querySelector('.mpu_title_weight');
+        const mpuTitleSize = document.querySelector('.mpu_title_size');
+        const mpuTitleLetterSpacing = document.querySelector('.mpu_title_letter_spacing');
+        const mpuTitleAlign = document.querySelector('.mpu_title_align');
+        const mpuContentAlign = document.querySelector('.mpu_content_align');
+        const mpuButtonAlign = document.querySelector('.mpu_button_align');
+
+            // Background PopUp
+        const mpuInnerBackground = document.querySelector('.mpu_inner_background');
+        const mpuInnerBackgroundColor = document.querySelector('.mpu_inner_background_color');
+        const mpuInnerBackgroundImage = document.querySelector('.mpu_inner_background_image');
+        const mpuInnerBackgroundImageStyle = document.querySelector('.mpu_inner_background_image_style');
+
+            // Border
+        const mpuBorderStyle = document.querySelector('.mpu_border_style');
+        const mpuBorderWeight = document.querySelector('.mpu_border_weight');
+        const mpuBorderColor = document.querySelector('.mpu_border_color');
+        
+            // Animation opening
+        const mpuAnimationOpening = document.querySelector('.mpu_animation_opening');
+
         const submitButton = document.querySelector('.mpu_submit');
        
         submitButton.addEventListener('click', function () {
@@ -120,17 +152,48 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 'mpu_is_author_visible' : mpuIsAuthorVisible.checked ? true : '0',
                 'mpu_template_choice': mpuTemplateChoice.value,
                 
-                'mpu_is_desktop_full_screen' : mpuIsDesktopFullScreen.checked ? true : '0',
-                'mpu_desktop_min_width': mpuDesktopMinWidth.value,
-                'mpu_desktop_max_width': mpuDesktopMaxWidth.value,
-                'mpu_desktop_min_height': mpuDesktopMinHeight.value,
-                'mpu_desktop_max_height': mpuDesktopMaxHeight.value,
+                // 'mpu_is_desktop_full_screen' : mpuIsDesktopFullScreen.checked ? true : '0',
+                // 'mpu_desktop_min_width': mpuDesktopMinWidth.value,
+                // 'mpu_desktop_max_width': mpuDesktopMaxWidth.value,
+                // 'mpu_desktop_min_height': mpuDesktopMinHeight.value,
+                // 'mpu_desktop_max_height': mpuDesktopMaxHeight.value,
 
-                'mpu_is_mobile_full_screen' : mpuIsMobileFullScreen.checked ? true : '0',
-                'mpu_mobile_min_width': mpuMobileMinWidth.value,
-                'mpu_mobile_max_width': mpuMobileMaxWidth.value,
-                'mpu_mobile_min_height': mpuMobileMinHeight.value,
-                'mpu_mobile_max_height': mpuMobileMaxHeight.value,
+                // 'mpu_is_mobile_full_screen' : mpuIsMobileFullScreen.checked ? true : '0',
+                // 'mpu_mobile_min_width': mpuMobileMinWidth.value,
+                // 'mpu_mobile_max_width': mpuMobileMaxWidth.value,
+                // 'mpu_mobile_min_height': mpuMobileMinHeight.value,
+                // 'mpu_mobile_max_height': mpuMobileMaxHeight.value,
+
+                // Text style
+                // 'mpu_text_style': mpuTextStyle.value,
+                // 'mpu_text_color': mpuTextColor.value,
+                // 'mpu_font_family': mpuFontFamily.value,
+                // 'mpu_font_size': mpuFontSize.value,
+                // 'mpu_is_title_shadow' : mpuIsTitleShadow.checked ? true : '0',
+                // 'mpu_title_shadow_type': mpuTitleShadowType.value,
+                // 'mpu_title_shadow_size': mpuTitleShadowSize.value,
+                // 'mpu_title_shadow_color': mpuTitleShadowColor.value,
+                // 'mpu_title_style': mpuTitleStyle.value,
+                // 'mpu_title_weight': mpuTitleWeight.value,
+                // 'mpu_title_size': mpuTitleSize.value,
+                // 'mpu_title_letter_spacing': mpuTitleLetterSpacing.value,
+                // 'mpu_title_align': mpuTitleAlign.value,
+                // 'mpu_content_align': mpuContentAlign.value,
+                // 'mpu_button_align': mpuButtonAlign.value,
+
+                    // Background Popup
+                // 'mpu_inner_background': mpuInnerBackground.value,
+                // 'mpu_inner_background_color': mpuInnerBackgroundColor.value,
+                // 'mpu_inner_background_image': mpuInnerBackgroundImage.value,
+                // 'mpu_inner_background_image_style': mpuInnerBackgroundImageStyle.value,
+
+                    // Border
+                // 'mpu_border_style': mpuBorderStyle.value,
+                // 'mpu_border_weight': mpuBorderWeight.value,
+                // 'mpu_border_color': mpuBorderColor.value,
+          
+                    // Animation opening
+                // 'mpu_animation_opening': mpuAnimationOpening.value,
             };
 
             
