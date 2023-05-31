@@ -70,6 +70,8 @@ Options supp = array(
         'name' => 'mpu_is_custom_css',
         'button_type' => 'switch'
     ),
+    Lister les réseaux sociaux :
+    Facebook, Twitter, Insta, Linkedin, 
     array(
         'name' => 'mpu_is_social_media_link',
         'button_type' => 'switch',

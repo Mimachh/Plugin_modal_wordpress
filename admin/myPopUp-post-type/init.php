@@ -20,3 +20,4 @@ function mpu_Custom_Post_Shortcode() {
         "map_meta_cap" => true,
     ));
 }
+

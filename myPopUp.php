@@ -77,9 +77,17 @@ run_myPopUp();
 //backend style
 function enqueue_admin_styles()
 {
+        // Form
+        
+        wp_enqueue_script('myPopUp-admin-form-addtional-functions-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions.js', array(), '1.0', true);
+        wp_enqueue_script('myPopUp-admin-form-create-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/create-form.js', array(), '1.0', true);
+
     wp_enqueue_style('myPopUp-admin-css', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
     wp_enqueue_script('myPopUp-admin-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin.js');
     wp_enqueue_script('myPopUp-admin-options-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-options.js');
+
+
+
     wp_localize_script('myPopUp-admin-js', 'siteData', array(
         'root_url' => get_site_url(),
         'nonce' => wp_create_nonce('wp_rest'),
@@ -106,6 +114,9 @@ require_once plugin_dir_path(__FILE__) . 'public/create-modal.php';
 
 //include le custom post type
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/init.php';
+
+// delete custom post
+require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/delete-custom-post.php';
 
 // save les custom fields
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields/mpu-save-custom-fields.php';

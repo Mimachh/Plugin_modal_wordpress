@@ -9,7 +9,6 @@ function display_mpu_shortcode_posts() {
     $query = new WP_Query($args);
 
     if ($query->have_posts()) { ?>
-        <a href="" class="button is-info mb-4">Créer une modale</a>
 
         <table class="table table is-striped is-hoverable is-fullwidth ">
             <thead>
@@ -45,15 +44,23 @@ function display_mpu_shortcode_posts() {
                         <td><?php echo $post_title; ?></td>
                         <td>[mpu_modal name="<?php echo $post_title; ?>"]</td>
                         <td><a href="<?php echo admin_url('admin.php?page=myPopUp-options&id=' . get_the_ID()); ?>" class="button is-warning">Editer</a></td>
-                        <td><button class="delete-post button is-danger" data-post-id="' . get_the_ID() . '">Delete</button></td>
+                        <td>
+                            <?php 
+                            $post_id = get_the_ID();
+
+                            // Générer le bouton de suppression
+                            $delete_button = generate_delete_post_button($post_id);
+                            echo $delete_button;
+                            ?>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
 
-<?php } else {
-        echo 'No posts found.';
-    }
+<?php } else { ?>
+    <p>Aucun Shortcode trouvé, vous pouvez commencer à en crée un <a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>">ici</a></p>
+    <?php }
 
     wp_reset_postdata();
 }

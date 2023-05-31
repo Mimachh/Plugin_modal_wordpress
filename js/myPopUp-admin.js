@@ -1,18 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', function(event) {
-
+   
         // Titre du shortcode
         const mpuTitle = document.querySelector('.mpu_post_title');
-
-        function mpuValidateTitle(mpuTitle) { 
-            if (mpuTitle.value.trim() === '') {
-              errorMessage.textContent = 'Le titre est obligatoire';
-              errorMessage.style.display = 'block';
-              return false; // La validation a échoué
-            } 
-            return true;
-        }
-
+        
         // Message d'erreur
         const errorMessage = document.querySelector('.mpu_title-error-message');
         
@@ -38,23 +29,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         } 
 
         
-        // Fonction pour cacher un groupe de div
-        function hideElementGroup(element) {
-            element.style.display = 'none';
-            clearInputs(element);
-        }
-        
-        // Fonction pour afficher un groupe de div
-        function showElementGroup(element) {
-            element.style.display = 'block';
-        }
 
-        function clearInputs(element) {
-            const checkboxes = element.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = false;
-            });
-        }
 
         // Gestionnaire d'événements pour l'option "Afficher sur toutes les pages"
         if (mpuIsAllPages) {
@@ -136,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
         const submitButton = document.querySelector('.mpu_submit');
        
+   
         if(submitButton) {
             submitButton.addEventListener('click', function () {
                 const data = {
@@ -289,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         }
 });
 
-// Autre bouton pour le edit des formulaires
+
 
 
 
