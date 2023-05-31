@@ -4,6 +4,7 @@ function myPopUp_options_page_html()
     require_once dirname(dirname(__FILE__)) . '/admin/partials/my-popup-navbar.php';
 
 ?>
+    <div class="mpu-wrapper has-background-primary">
     <div class="wrap">
         <?php myPopUp_navbar(); ?>
         <h1 class="mb-5"><?php echo esc_html(get_admin_page_title()); ?></h1>

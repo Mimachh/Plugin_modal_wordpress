@@ -14,6 +14,13 @@ h1 {
   line-height: 1.125;
   margin-bottom: 1.5rem;
 }
+.mpu-wrapper {
+  padding: 15px;
+  width: calc(100% + 25px);
+  margin-left: -20px;
+  min-height: 600vh;
+  color: var(--single-post-paginate-headline-color);
+}
 
 select.is-hovered {
   background-color: white;
