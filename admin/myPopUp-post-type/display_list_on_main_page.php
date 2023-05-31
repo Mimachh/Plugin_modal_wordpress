@@ -4,6 +4,7 @@ function display_mpu_shortcode_posts() {
     $args = array(
         'post_type' => 'mpu_shortcode',
         'posts_per_page' => -1,
+        'order' => 'ASC'
     );
 
     $query = new WP_Query($args);
