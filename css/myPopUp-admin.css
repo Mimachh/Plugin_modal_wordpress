@@ -20,6 +20,7 @@ h1 {
   margin-left: -20px;
   min-height: 600vh;
   color: var(--single-post-paginate-headline-color);
+  background-color: #31493c;
 }
 
 select.is-hovered {
@@ -93,10 +94,9 @@ select.is-hovered {
   border-radius: 50%;
 }
 
-
 /* Custom Logo Preview */
 
 .mpu_custom_logo_preview {
-  width: 150px; 
-  height: auto; 
+  width: 150px;
+  height: auto;
 }
