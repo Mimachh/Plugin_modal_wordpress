@@ -11,11 +11,14 @@ function createMpuShortcode($data) {
 
 
         // Visuel
+        $mpu_add_site_logo = isset($data['mpu_add_site_logo']) && $data['mpu_add_site_logo'] === 'on' ? true : false;
         $mpu_add_site_logo = sanitize_text_field($data['mpu_add_site_logo']);
-        // Pas encore bon
+
+        
+        $mpu_base_site_logo = isset($data['mpu_base_site_logo']) && $data['mpu_base_site_logo'] === 'on' ? true : false;
+        $mpu_base_site_logo = sanitize_text_field($data['mpu_base_site_logo']);
+        
         $mpu_custom_logo = sanitize_text_field($data['mpu_custom_logo']);
-
-
 
         $mpu_is_title_visible = isset($data['mpu_is_title_visible']) && $data['mpu_is_title_visible'] === 'on' ? true : false;
         $mpu_is_title_visible = sanitize_text_field($data['mpu_is_title_visible']);
@@ -113,6 +116,7 @@ function createMpuShortcode($data) {
 
                    // Visuel
                    'mpu_add_site_logo' => $mpu_add_site_logo,
+                   'mpu_base_site_logo' => $mpu_base_site_logo,
                    'mpu_custom_logo' => $mpu_custom_logo,
                    'mpu_is_title_visible' => $mpu_is_title_visible,
                    'mpu_header_title' => $mpu_header_title,
