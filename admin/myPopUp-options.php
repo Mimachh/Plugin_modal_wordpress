@@ -95,16 +95,24 @@ function myPopUp_options_page_html()
             <!--FORM VISUEL-->
             <!-- ADD LOGO -->
             <div class="mpu-input-field my-4">
-                <label for="mpu_add_site_logo">Ajouter le logo</label>
+                <label for="mpu_add_site_logo">Ajouter un logo à votre site</label>
                 <label class="mpu_switch">
                     <input name="mpu_add_site_logo" class="mpu_add_site_logo" type="checkbox" value="1">
                     <span class="mpu_slider mpu_round"></span>
                 </label>
             </div>
+            <div class="mpu-input-field my-4 mpu_base_site_logo_div_hide_by_default">
+                <label for="mpu_base_site_logo">Utiliser le Logo de base de votre site  </label>
+                <label class="mpu_switch">
+                    <input name="mpu_base_site_logo" class="mpu_base_site_logo" type="checkbox" value="1">
+                    <span class="mpu_slider mpu_round"></span>
+                </label>
+                <label for="mpu_base_site_logo">Utiliser un logo personnalisé </label>
+            </div>
          
             <!-- Bouton pour ouvrir la mediatheque  -->
-            <div class="mpu-input-field my-4">
-                <img class="mpu_custom_logo_preview" id="image_preview" src="" alt="Aperçu de l'image" />
+            <div class="mpu-input-field my-4 mpu_custom_logo_div_hide_by_default">
+                <img class="mpu_custom_logo_preview " id="image_preview" src="" alt="Aperçu de l'image" />
                 <button class="mpu_custom_logo_media_open" class="button">Sélectionner une image</button>
             </div>
             

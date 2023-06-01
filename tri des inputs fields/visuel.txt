@@ -102,7 +102,7 @@ Visuel = array(
         'button_type' => 'switch',
         'new_button' => array(
             si oui
-            'name' => 'mpu_site_logo',
+            'name' => 'mpu_base_site_logo',
             'button_type' => 'switch'
                 si 'site_logo' oui
                 'new_button' => array(

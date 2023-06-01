@@ -46,46 +46,88 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
         // ----------------------------- VISUEL ----------------------------- //
 
-        const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
         const mpuCustomLogoMediaOpen = document.querySelector('.mpu_custom_logo_media_open');
         const mpuCustomLogoPreview = document.querySelector('.mpu_custom_logo_preview');
+        
+        const mpuCustomLogoDivHideByDefault = document.querySelector('.mpu_custom_logo_div_hide_by_default');
+        
+        if (mpuCustomLogoDivHideByDefault) {
+          hideImageButtonAndFieldGroup(mpuCustomLogoDivHideByDefault);
+        }
+        const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
+        if(mpuAddSiteLogo) {
+            mpuAddSiteLogo.checked = false;
+        }
+        
+
+        const mpuBaseSiteLogoDivHideByDefault = document.querySelector('.mpu_base_site_logo_div_hide_by_default');
+        if (mpuBaseSiteLogoDivHideByDefault) {
+            hideImageButtonAndFieldGroup(mpuBaseSiteLogoDivHideByDefault);
+        }
+    
+        // Ouvrir si le bouton d'ajout de logo actif
+        if (mpuAddSiteLogo) {
+          mpuAddSiteLogo.addEventListener('change', function() {
+            if (mpuAddSiteLogo.checked) {
+              showElementGroup(mpuBaseSiteLogoDivHideByDefault);
+            } else {
+              // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
+              hideElementGroup(mpuBaseSiteLogoDivHideByDefault);
+              hideImageButtonAndFieldGroup(mpuCustomLogoDivHideByDefault, '.mpu_custom_logo_preview');
+            }
+          });
+        }
+
+        const mpuDefaultSiteLogo = document.querySelector('.mpu_base_site_logo');
+        if(mpuDefaultSiteLogo) {
+            mpuDefaultSiteLogo.checked = false;
+        }
+        // Ouvrir le bouton du logo custom si actif
+        if (mpuDefaultSiteLogo) {
+            mpuDefaultSiteLogo.addEventListener('change', function() {
+                if (mpuDefaultSiteLogo.checked) {
+                showElementGroup(mpuCustomLogoDivHideByDefault);
+                } else {
+                // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
+                hideImageButtonAndFieldGroup(mpuCustomLogoDivHideByDefault, '.mpu_custom_logo_preview');
+                }
+            });
+        }
+        
         let mpuCustomLogoRelativePath = ''; 
-        // Lorsque le bouton est cliqué
+        
         mpuCustomLogoMediaOpen.addEventListener('click', function (event) {
-            event.preventDefault();
+          event.preventDefault();
         
-            // Ouvrir la médiathèque WordPress
-            const mediaUploader = wp.media({
-                title: 'Sélectionnez une image',
-                button: {
-                    text: 'Insérer',
-                },
-                multiple: false // Changer à true pour permettre la sélection de plusieurs fichiers
-            });
+          // Ouvrir la médiathèque WordPress
+          const mediaUploader = wp.media({
+            title: 'Sélectionnez une image',
+            button: {
+              text: 'Insérer',
+            },
+            multiple: false // Changer à true pour permettre la sélection de plusieurs fichiers
+          });
         
-            // Lorsqu'un ou plusieurs fichiers sont sélectionnés
-            mediaUploader.on('select', function () {
-                const attachment = mediaUploader.state().get('selection').first().toJSON();
+          // Lorsqu'un ou plusieurs fichiers sont sélectionnés
+          mediaUploader.on('select', function () {
+            const attachment = mediaUploader.state().get('selection').first().toJSON();
         
-                // Récupérer l'URL de l'image sélectionnée
-                const imageUrl = attachment.url;
-
-                // Récupérer le chemin relatif de l'image
-                mpuCustomLogoRelativePath = imageUrl.replace(siteData.root_url, '');
+            // Récupérer l'URL de l'image sélectionnée
+            const imageUrl = attachment.url;
         
-                // Mettre à jour l'attribut src de l'élément <img> avec l'URL de l'image sélectionnée
-                mpuCustomLogoPreview.src = mpuCustomLogoRelativePath;
-
-                mpuCustomLogoPreview.addEventListener('error', function () {
-                    mpuCustomLogoPreview.src = '';
-                    mpuCustomLogoPreview.alt = 'Erreur de chargement de l\'image'
-                })
-            });
+            // Récupérer le chemin relatif de l'image
+            mpuCustomLogoRelativePath = imageUrl.replace(siteData.root_url, '');
         
-            // Ouvrir la fenêtre modale de la médiathèque
-            mediaUploader.open();
+            // Mettre à jour l'attribut src de l'élément <img> avec l'URL de l'image sélectionnée en chemin relatif
+            mpuCustomLogoPreview.src = mpuCustomLogoRelativePath;
+          });
+        
+          // Ouvrir la fenêtre modale de la médiathèque
+          mediaUploader.open();
         });
         
+        // Listener pour supprimer le message d'erreur en cas de clear après activation/désactivation du bouton. La fonction est dans additional-functions.js
+        mpuCustomLogoPreview.addEventListener('error', errorHandler); 
 
         const mpuIsTitleVisible = document.querySelector('.mpu_is_title_visible');
         const mpuHeaderTitle = document.querySelector('.mpu_header_title');
@@ -164,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     
                 //     // Visuel
                     'mpu_add_site_logo' : mpuAddSiteLogo.checked ? true : '0',
+                    'mpu_base_site_logo' : mpuAddSiteLogo.checked ? true : '0',
                     'mpu_custom_logo': mpuCustomLogoRelativePath,
                     'mpu_is_title_visible' : mpuIsTitleVisible.checked ? true : '0',
                     'mpu_header_title': mpuHeaderTitle.value,

@@ -92,3 +92,11 @@ select.is-hovered {
 .mpu-input-field .mpu_slider.mpu_round:before {
   border-radius: 50%;
 }
+
+
+/* Custom Logo Preview */
+
+.mpu_custom_logo_preview {
+  width: 150px; 
+  height: auto; 
+}
