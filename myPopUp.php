@@ -77,6 +77,8 @@ run_myPopUp();
 //backend style
 function enqueue_admin_styles()
 {
+        // Pour ouvrir la mediatheque
+        wp_enqueue_media(); // Utilisez la fonction wp_enqueue_media() pour charger les scripts nécessaires
         // Form
         
         wp_enqueue_script('myPopUp-admin-form-addtional-functions-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions.js', array(), '1.0', true);
@@ -85,6 +87,7 @@ function enqueue_admin_styles()
     wp_enqueue_style('myPopUp-admin-css', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
     wp_enqueue_script('myPopUp-admin-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin.js');
     wp_enqueue_script('myPopUp-admin-options-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-options.js');
+
 
 
 
@@ -128,3 +131,4 @@ require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/custom-fields/
 require_once plugin_dir_path(__FILE__) . 'admin/myPopUp-post-type/display_list_on_main_page.php';
 // Api rest route
 require_once plugin_dir_path(__FILE__) . 'admin/api-route/mpu-shortcode-route.php';
+require_once(ABSPATH . 'wp-config.php');

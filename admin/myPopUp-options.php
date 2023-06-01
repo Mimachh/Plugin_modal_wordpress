@@ -101,10 +101,17 @@ function myPopUp_options_page_html()
                     <span class="mpu_slider mpu_round"></span>
                 </label>
             </div>
+         
+            <!-- Bouton pour ouvrir la mediatheque  -->
+            <div class="mpu-input-field my-4">
+                <img class="mpu_custom_logo_preview" id="image_preview" src="" alt="Aperçu de l'image" />
+                <button class="mpu_custom_logo_media_open" class="button">Sélectionner une image</button>
+            </div>
+            
             <!-- UPLOAD FICHIER -->
             <div class="file is-boxed is-primary">
                 <label class="file-label">
-                    <input class="file-input" type="file" name="resume">
+                    <input class="file-input mpu_custom_logo" type="file" name="resume mpu_custom_logo">
                     <span class="file-cta">
                         <span class="file-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
