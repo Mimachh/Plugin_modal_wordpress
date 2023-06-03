@@ -95,14 +95,14 @@ function myPopUp_options_page_html()
                 <!--FORM VISUEL-->
                 <!-- ADD LOGO -->
                 <div class="mpu-input-field my-4">
-                    <label for="mpu_add_site_logo">Ajouter un logo à votre site</label>
+                    <label for="mpu_add_site_logo">Ajouter un logo à votre popup</label>
                     <label class="mpu_switch">
                         <input name="mpu_add_site_logo" class="mpu_add_site_logo" type="checkbox" value="1">
                         <span class="mpu_slider mpu_round"></span>
                     </label>
                 </div>
                 <div class="mpu-input-field my-4 mpu_base_site_logo_div_hide_by_default">
-                    <label for="mpu_base_site_logo">Utiliser le Logo de base de votre site </label>
+                    <label for="mpu_base_site_logo">Utiliser le Logo de votre site </label>
                     <label class="mpu_switch">
                         <input name="mpu_base_site_logo" class="mpu_base_site_logo" type="checkbox" value="1">
                         <span class="mpu_slider mpu_round"></span>
@@ -113,28 +113,12 @@ function myPopUp_options_page_html()
                 <!-- Bouton pour ouvrir la mediatheque  -->
                 <div class="mpu-input-field my-4 mpu_custom_logo_div_hide_by_default">
                     <img class="mpu_custom_logo_preview " id="image_preview" src="" alt="Aperçu de l'image" />
-                    <button class="mpu_custom_logo_media_open" class="button">Sélectionner une image</button>
+                    <button class="button is-primary mpu_custom_logo_media_open" class="button">Sélectionner une image</button>
                 </div>
 
-                <!-- UPLOAD FICHIER -->
-                <div class="file is-boxed is-primary">
-                    <label class="file-label">
-                        <input class="file-input mpu_custom_logo" type="file" name="resume mpu_custom_logo">
-                        <span class="file-cta">
-                            <span class="file-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
-                                    <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z" />
-                                </svg>
-                            </span>
-                            <span class="file-label">
-                                Choisissez-votre fichier…
-                            </span>
-                        </span>
-                    </label>
-                </div>
                 <!-- SHOW TITLE -->
                 <div class="mpu-input-field my-4">
-                    <label for="mpu_is_title_visible">Afficher le titre</label>
+                    <label for="mpu_is_title_visible">Ajouter un titre</label>
                     <label class="mpu_switch">
                         <input name="mpu_is_title_visible" class="mpu_is_title_visible" type="checkbox" value="1">
                         <span class="mpu_slider mpu_round"></span>
@@ -149,7 +133,7 @@ function myPopUp_options_page_html()
                 </div>
                 <!-- SHOW DESCRIPTION -->
                 <div class="mpu-input-field my-4">
-                    <label for="mpu_is_body_content_visible">Afficher le contenu custom</label>
+                    <label for="mpu_is_body_content_visible">Ajouter un contenu custom</label>
                     <label class="mpu_switch">
                         <input name="mpu_is_body_content_visible" class="mpu_is_body_content_visible" type="checkbox" value="1">
                         <span class="mpu_slider mpu_round"></span>
@@ -164,7 +148,7 @@ function myPopUp_options_page_html()
                 </div>
                 <!-- SHOW DESCRIPTION -->
                 <div class="mpu-input-field my-4">
-                    <label for="mpu_is_description_visible">Afficher la description</label>
+                    <label for="mpu_is_description_visible">Ajouter une description</label>
                     <label class="mpu_switch">
                         <input name="mpu_is_description_visible" class="mpu_is_description_visible" type="checkbox" value="1">
                         <span class="mpu_slider mpu_round"></span>

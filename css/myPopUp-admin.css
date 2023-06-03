@@ -5,7 +5,7 @@
   --single-post-paginate-secondary-color: #ff8906;
   --single-post-paginate-tertiary-color: #f25f4c;
   --single-post-paginate-disabled-color: #a7a9be;
-  --single-post-paginate-headline-color: #fffffe;
+  --single-post-paginate-headline-color: #0f0e17;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
   margin-left: -20px;
   min-height: 600vh;
   color: var(--single-post-paginate-headline-color);
-  background-color: #1d2327;
+  background-color: #f5f5f5;
 }
 
 select.is-hovered {
