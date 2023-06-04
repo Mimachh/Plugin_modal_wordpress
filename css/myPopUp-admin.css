@@ -25,22 +25,41 @@ h1 {
   margin: 1rem 0;
 }
 
-.mpu-wrapper {
+#wpcontent {
+  padding-left: 0.5px;
+}
+/* UNCOMMENT IF THERE IS A PROBLEM WITH THE BOTTOM LINE */
+/* .mpu-wrapper {
   padding: 15px;
   width: calc(100% + 25px);
   margin-left: -20px;
   min-height: 600vh;
   color: var(--single-post-paginate-headline-color);
   background-color: #f5f5f5;
-}
+} */
+
+/* #wpfooter {
+  position: relative;
+} */
 
 select.is-hovered {
   background-color: white;
   z-index: 5;
 }
 
-#wpfooter {
-  position: relative;
+.notification-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.notification-container > .notification {
+  width: 90%;
+}
+
+.message-body {
+  width: 90%;
+  margin: auto;
 }
 
 /*  Switch Button */
