@@ -25,9 +25,9 @@ h1 {
   margin: 1rem 0;
 }
 
-#wpcontent {
+/* #wpcontent > .mpu-wrapper {
   padding-left: 0.5px;
-}
+} */
 /* UNCOMMENT IF THERE IS A PROBLEM WITH THE BOTTOM LINE */
 /* .mpu-wrapper {
   padding: 15px;
