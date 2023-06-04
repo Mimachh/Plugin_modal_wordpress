@@ -25,8 +25,6 @@ function myPopUp_main_page_html()
 
 
         </div>
-
-        <a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>" class="button is-info mb-4">Créer une modale</a>
     </div>
     <?php display_mpu_shortcode_posts(); ?>
 <?php

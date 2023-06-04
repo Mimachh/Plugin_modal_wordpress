@@ -1,14 +1,30 @@
 'use strict';
 
-
-document.addEventListener('DOMContentLoaded', function(event) {
-    const mpuActivation = document.querySelector('.mpu-activation');
+document.addEventListener('DOMContentLoaded', function (event) {
+  const mpuActivation = document.querySelector('.mpu-activation');
   const mpuVisuel = document.querySelector('.mpu-visuel');
   const mpuConditions = document.querySelector('.mpu-conditions');
   const mpuOptionsSupp = document.querySelector('.mpu-options-supp');
+  const mpuActivationSection = document.querySelector(
+    '.mpu-activation-section'
+  );
+  const mpuVisuelSection = document.querySelector('.mpu-visuel-section');
+  const mpuConditionsSection = document.querySelector(
+    '.mpu-conditions-section'
+  );
+  const mpuOptionsSuppSection = document.querySelector(
+    '.mpu-options-supp-section'
+  );
+
+  //hide all divs except the first one
+  function initAdminOptions() {
+    mpuVisuelSection.style.display = 'none';
+    mpuConditionsSection.style.display = 'none';
+    mpuOptionsSuppSection.style.display = 'none';
+  }
+  initAdminOptions();
 
   // Add Event Listener to the menu in order to display the right div
-
   function menuDisplay() {
     mpuActivation.addEventListener('click', function () {
       displayDiv('activation');
@@ -40,26 +56,43 @@ document.addEventListener('DOMContentLoaded', function(event) {
     switch (menuItem) {
       case 'activation':
         console.log('activation');
-        // document.querySelector('.mpu-activation').style.display = 'block';
+        mpuActivationSection.style.display = 'block';
+        mpuVisuelSection.style.display = 'none';
+        mpuConditionsSection.style.display = 'none';
+        mpuOptionsSuppSection.style.display = 'none';
         break;
       case 'visuel':
         console.log('visuel');
-        // document.querySelector('.mpu-visuel').style.display = 'block';
+        mpuActivationSection.style.display = 'none';
+        mpuVisuelSection.style.display = 'block';
+        mpuConditionsSection.style.display = 'none';
+        mpuOptionsSuppSection.style.display = 'none';
         break;
       case 'conditions':
         console.log('conditions');
-        // document.querySelector('.mpu-conditions').style.display = 'block';
+        mpuActivationSection.style.display = 'none';
+        mpuVisuelSection.style.display = 'none';
+        mpuConditionsSection.style.display = 'block';
+        mpuOptionsSuppSection.style.display = 'none';
         break;
       case 'options supp':
         console.log('options supp');
-        // document.querySelector('.mpu-options-supp').style.display = 'block';
+        mpuActivationSection.style.display = 'none';
+        mpuVisuelSection.style.display = 'none';
+        mpuConditionsSection.style.display = 'none';
+        mpuOptionsSuppSection.style.display = 'block';
         break;
       default:
+        console.log('default');
+        mpuActivationSection.style.display = 'block';
+        mpuVisuelSection.style.display = 'none';
+        mpuConditionsSection.style.display = 'none';
+        mpuOptionsSuppSection.style.display = 'none';
         break;
     }
   }
 
-  // Remove 'is-active' class from the specified button
+  // Remove 'is-active' class from the specified button and add is-active class
   function removeActiveClass(button) {
     const menuButtons = document.querySelectorAll('.tabs ul li');
     menuButtons.forEach((btn) => {
