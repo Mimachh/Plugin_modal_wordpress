@@ -5,7 +5,7 @@ function myPopUp_main_page_html()
     require_once dirname(dirname(__FILE__)) . '/admin/partials/my-popup-navbar.php';
 ?>
 
-    <div class="mpu-wrapper">
+    <div class="mpu-wrapper" style="height: 100%">
         <?php myPopUp_navbar(); ?>
         <div class="wrap">
 
@@ -29,7 +29,8 @@ function myPopUp_main_page_html()
 
             </div>
         </div>
+        <?php display_mpu_shortcode_posts(); ?>
     </div>
-    <?php display_mpu_shortcode_posts(); ?>
+
 <?php
 }
