@@ -5,8 +5,9 @@ function myPopUp_options_page_html()
 
 ?>
     <div class="mpu-wrapper">
+        <?php myPopUp_navbar(); ?>
         <div class="wrap">
-            <?php myPopUp_navbar(); ?>
+
             <h1 class="mb-5"><?php echo esc_html(get_admin_page_title()); ?></h1>
 
             <div class="tabs is-centered is-box is-medium mt-6">
