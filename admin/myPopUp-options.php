@@ -256,6 +256,62 @@ function myPopUp_options_page_html()
                         </div>
                         <!-- END COLUMNS -->
                     </div>
+
+                    <!-- PLEIN ECRAN SUR MOBILE -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_mobile_full_screen">Afficher en plein écran sur mobile</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_mobile_full_screen" class="mpu_is_mobile_full_screen" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+                    <!-- COLUMNS START -->
+                    <div class="columns">
+                        <!-- IF NO, MAX WIDTH -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_mobile_max_width">Largeur maximale sur mobile</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_mobile_max_width" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                        <!-- IF NO, HEIGHT -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_mobile_max_height">Hauteur maximale sur mobile</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_mobile_max_height" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                        <!-- IF NO, MIN-HEIGHT -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_mobile_min_height">Hauteur minimum sur mobile</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_mobile_min_height" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                        <!-- END COLUMNS -->
+                    </div>
+
+                    <!-- COLUMNS START -->
+                    <div class="columns">
+                        <!-- IF NO, MAX WIDTH -->
+                        <!--//////////////////////////////////////////////// mpu_inner_padding_y TO CREATE PLEASE!!!!!!! -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_inner_padding_y">Padding vertical</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_inner_padding_y" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                        <!-- IF NO, HEIGHT -->
+                        <!--//////////////////////////////////////////////// mpu_inner_padding_x TO CREATE PLEASE!!!!!!! -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_inner_padding_x">Padding Horizontal</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_inner_padding_x" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                        <!-- END COLUMNS -->
+                    </div>
+
                 </div>
                 <!-- MENU CONDITIONS -->
                 <div class="mpu-conditions-section">

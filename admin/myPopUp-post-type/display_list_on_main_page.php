@@ -80,7 +80,7 @@ function display_mpu_shortcode_posts()
     <?php } else { ?>
         <article class="message is-dark">
             <div class="message-body is-flex is-align-items-center">
-                Aucun PopUp/Shortcode à afficher, vous pouvez commencer à créer votre premier PopUp<a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>" class="button is-info mx-5">en cliquant ici</a>
+                Aucun PopUp/Shortcode à afficher, vous pouvez commencer à créer votre premier PopUp<a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>" class="button is-primary mx-5">en cliquant ici</a>
             </div>
         </article>
 <?php }
