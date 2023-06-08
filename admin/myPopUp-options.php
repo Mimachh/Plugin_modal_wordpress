@@ -128,7 +128,7 @@ function myPopUp_options_page_html()
                         </label>
                     </div>
                     <!-- TITRE POPUP -->
-                    <div class="mpu-input-field my-4" id="header_title" style="display: none;">
+                    <div class="mpu-input-field my-4" id="header_title">
                         <label for="mpu_header_title">Titre du Pop-Up</label>
                         <div class="control">
                             <input class="input is-primary mpu_header_title" type="text" placeholder="Titre">
@@ -143,7 +143,7 @@ function myPopUp_options_page_html()
                         </label>
                     </div>
                     <!-- CUSTOM CONTENT -->
-                    <div class="mpu-input-field my-4">
+                    <div class="mpu-input-field my-4" id="custom_content_div">
                         <label for="mpu_body_content">Custom content</label>
                         <div class="control">
                             <textarea class="textarea is-primary mpu_body_content" type="text" placeholder="Titre"></textarea>
@@ -158,7 +158,7 @@ function myPopUp_options_page_html()
                         </label>
                     </div>
                     <!-- DESCRIPTION -->
-                    <div class="mpu-input-field my-4">
+                    <div class="mpu-input-field my-4" id="custom_description_div">
                         <label for="mpu_description">Custom Description</label>
                         <div class="control">
                             <textarea class="textarea is-primary mpu_description" type="text" placeholder="Titre"></textarea>

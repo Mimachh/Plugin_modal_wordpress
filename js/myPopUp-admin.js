@@ -12,30 +12,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const mpuIsAllPages = document.querySelector('.mpu_is_all_pages');
   const mpuIsExcept = document.querySelectorAll('.mpu_is_except');
 
-  // Les div qui apparaissent et disparaissent
-  const mpuIsExceptDiv = document.querySelector('.mpu_exclure_div');
-
-  // Par défaut sur toutes les pages est décoché
-  if (mpuIsAllPages) {
-    mpuIsAllPages.checked = false;
-  }
-
-  // Cacher le groupe de div "Except" par défaut
-  if (mpuIsExceptDiv) {
-    hideElementGroup(mpuIsExceptDiv);
-  }
-
-  // Gestionnaire d'événements pour l'option "Afficher sur toutes les pages"
-  if (mpuIsAllPages) {
-    mpuIsAllPages.addEventListener('change', function () {
-      if (mpuIsAllPages.checked) {
-        showElementGroup(mpuIsExceptDiv);
-      } else {
-        // Si l'option n'est pas cochée, cacher le groupe de div "Except" et vider ses valeurs
-        hideElementGroup(mpuIsExceptDiv);
-      }
-    });
-  }
+ 
 
   // ----------------------------- VISUEL ----------------------------- //
 
@@ -45,60 +22,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const mpuCustomLogoPreview = document.querySelector(
     '.mpu_custom_logo_preview'
   );
-
-  const mpuCustomLogoDivHideByDefault = document.querySelector(
-    '.mpu_custom_logo_div_hide_by_default'
-  );
-
-  if (mpuCustomLogoDivHideByDefault) {
-    hideImageButtonAndFieldGroup(mpuCustomLogoDivHideByDefault);
-  }
   const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
-  if (mpuAddSiteLogo) {
-    mpuAddSiteLogo.checked = false;
-  }
 
-  const mpuBaseSiteLogoDivHideByDefault = document.querySelector(
-    '.mpu_base_site_logo_div_hide_by_default'
-  );
-  if (mpuBaseSiteLogoDivHideByDefault) {
-    hideImageButtonAndFieldGroup(mpuBaseSiteLogoDivHideByDefault);
-  }
-
-  // Ouvrir si le bouton d'ajout de logo actif
-  if (mpuAddSiteLogo) {
-    mpuAddSiteLogo.addEventListener('change', function () {
-      if (mpuAddSiteLogo.checked) {
-        showElementGroup(mpuBaseSiteLogoDivHideByDefault);
-      } else {
-        // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
-        hideElementGroup(mpuBaseSiteLogoDivHideByDefault);
-        hideImageButtonAndFieldGroup(
-          mpuCustomLogoDivHideByDefault,
-          '.mpu_custom_logo_preview'
-        );
-      }
-    });
-  }
-
-  const mpuDefaultSiteLogo = document.querySelector('.mpu_base_site_logo');
-  if (mpuDefaultSiteLogo) {
-    mpuDefaultSiteLogo.checked = false;
-  }
-  // Ouvrir le bouton du logo custom si actif
-  if (mpuDefaultSiteLogo) {
-    mpuDefaultSiteLogo.addEventListener('change', function () {
-      if (mpuDefaultSiteLogo.checked) {
-        showElementGroup(mpuCustomLogoDivHideByDefault);
-      } else {
-        // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
-        hideImageButtonAndFieldGroup(
-          mpuCustomLogoDivHideByDefault,
-          '.mpu_custom_logo_preview'
-        );
-      }
-    });
-  }
 
   let mpuCustomLogoRelativePath = '';
 
@@ -139,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // Listener pour supprimer le message d'erreur en cas de clear après activation/désactivation du bouton. La fonction est dans additional-functions.js
   mpuCustomLogoPreview.addEventListener('error', errorHandler);
 
+ 
   const mpuIsTitleVisible = document.querySelector('.mpu_is_title_visible');
   const mpuHeaderTitle = document.querySelector('.mpu_header_title');
   const mpuIsBodyContentVisible = document.querySelector(

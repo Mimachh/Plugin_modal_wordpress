@@ -79,11 +79,13 @@ function enqueue_admin_styles()
 {
         // Pour ouvrir la mediatheque
         wp_enqueue_media(); // Utilisez la fonction wp_enqueue_media() pour charger les scripts nécessaires
-        // Form
-        
-        wp_enqueue_script('myPopUp-admin-form-addtional-functions-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions.js', array(), '1.0', true);
-        wp_enqueue_script('myPopUp-admin-form-create-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/create-form.js', array(), '1.0', true);
-
+ 
+    // Scripts relié au formulaire de shortcode 
+    wp_enqueue_script('myPopUp-admin-form-validate-fields', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/handle-form-fields-display.js', array(), '1.0', true);
+    wp_enqueue_script('myPopUp-admin-form-hide-and-display', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/hide-display-fields.js', array(), '1.0', true);
+    wp_enqueue_script('myPopUp-admin-form-validate-fields', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/validate-fields.js', array(), '1.0', true);
+    
+    
     wp_enqueue_style('myPopUp-admin-css', plugin_dir_url(__FILE__) . 'css/myPopUp-admin.css');
     wp_enqueue_script('myPopUp-admin-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin.js');
     wp_enqueue_script('myPopUp-admin-options-js', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-options.js');
