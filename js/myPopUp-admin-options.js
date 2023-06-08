@@ -1,10 +1,13 @@
 'use strict';
 
+//event listener on the DOM to make sure the page is loaded before running the script
 document.addEventListener('DOMContentLoaded', function (event) {
+  // Variables of the menu buttons
   const mpuActivation = document.querySelector('.mpu-activation');
   const mpuVisuel = document.querySelector('.mpu-visuel');
   const mpuConditions = document.querySelector('.mpu-conditions');
   const mpuOptionsSupp = document.querySelector('.mpu-options-supp');
+  // Variables of the sectons to display
   const mpuActivationSection = document.querySelector(
     '.mpu-activation-section'
   );
@@ -16,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     '.mpu-options-supp-section'
   );
 
-  //hide all divs except the first one
+  //hide all divs except the first one to initialize the page
   function initAdminOptions() {
     mpuVisuelSection.style.display = 'none';
     mpuConditionsSection.style.display = 'none';
@@ -92,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
 
-  // Remove 'is-active' class from the specified button and add is-active class
+  // Remove 'is-active' class from the specified button on the option-menu and add is-active class
   function removeActiveClass(button) {
     const menuButtons = document.querySelectorAll('.tabs ul li');
     menuButtons.forEach((btn) => {

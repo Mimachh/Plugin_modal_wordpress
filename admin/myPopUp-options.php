@@ -128,7 +128,7 @@ function myPopUp_options_page_html()
                         </label>
                     </div>
                     <!-- TITRE POPUP -->
-                    <div class="mpu-input-field my-4">
+                    <div class="mpu-input-field my-4" id="header_title" style="display: none;">
                         <label for="mpu_header_title">Titre du Pop-Up</label>
                         <div class="control">
                             <input class="input is-primary mpu_header_title" type="text" placeholder="Titre">
@@ -309,6 +309,54 @@ function myPopUp_options_page_html()
                                 <input class="input is-primary mpu_inner_padding_x" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
+                        <!-- END COLUMNS -->
+                    </div>
+
+                    <!-- COLUMNS START -->
+                    <div class="columns">
+
+                        <!-- Text style -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <div class="select is-primary mpu_text_style">
+                                <label for="mpu_text_style">Style de texte</label>
+                                <div class="control">
+                                    <select class="mpu_text_style">
+                                        <option>Style de Texte 1</option>
+                                        <option>Style de Texte 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TEXT COLOR PICKER -->
+
+                        <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                            <label for="mpu_text_color">Couleur du texte</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_text_color" type="color" placeholder="Valeur">
+                            </div>
+                        </div>
+
+                        <!-- Font Family -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <div class="select is-primary mpu_text_style">
+                                <label for="mpu_font_family">Style de texte</label>
+                                <div class="control">
+                                    <select class="mpu_font_family">
+                                        <option>Font Family 1</option>
+                                        <option>Font Family 2</option>
+                                        <option>Font Family 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_font_size">Taille de police</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_font_size" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                        <!-- ///////////////////////////////////////////////////////////////////////////TO DO NEXT /////////////////////////////////////////////////////////////////-->
                         <!-- END COLUMNS -->
                     </div>
 
