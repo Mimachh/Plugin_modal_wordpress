@@ -112,6 +112,10 @@ Visuel = array(
         )
     ),
     array(
+        'name' => 'mpu_is_title_visible',
+        'button_type' => 'switch'
+    ),
+    array(
         'name' => 'mpu_header_title',
         'button_type' => 'text',
     ),
@@ -122,6 +126,10 @@ Visuel = array(
     array(
         'name' => 'mpu_body_content',
         'button_type' => 'textarea',
+    ),
+    array(
+        'name' => 'mpu_is_description_visible',
+        'button_type' => 'switch'
     ),
     array(
         'name' => 'mpu_description',
@@ -153,14 +161,7 @@ Visuel = array(
         'name' => 'mpu_template_choice',
         'button_type' => 'select',
     ),
-    array(
-        'name' => 'mpu_is_title_visible',
-        'button_type' => 'switch',
-    ),
-    array(
-        'name' => 'mpu_is_description_visible',
-        'button_type' => 'switch',
-    ),
+
     // A REVOIR AUSSI FRANCK, LA PARTIE WIDTH ET HEIGHT QUI AVAIT CHANGE PAR RAPPORT AU TRUC D'EN HAUT
     array(
         'name' => 'mpu_is_desktop_full_screen',
