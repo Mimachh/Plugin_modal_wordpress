@@ -131,7 +131,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="header_title">
                         <label for="mpu_header_title">Titre du Pop-Up</label>
                         <div class="control">
-                            <input class="input is-primary mpu_header_title" type="text" placeholder="Titre">
+                            <input class="input is-primary mpu_header_title" type="text" placeholder="Titre du Pop-Up">
                         </div>
                     </div>
                     <!-- SHOW DESCRIPTION -->
@@ -146,7 +146,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="custom_content_div">
                         <label for="mpu_body_content">Custom content</label>
                         <div class="control">
-                            <textarea class="textarea is-primary mpu_body_content" type="text" placeholder="Titre"></textarea>
+                            <textarea class="textarea is-primary mpu_body_content" type="text" placeholder="Custom Content"></textarea>
                         </div>
                     </div>
                     <!-- SHOW DESCRIPTION -->
@@ -161,7 +161,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="custom_description_div">
                         <label for="mpu_description">Custom Description</label>
                         <div class="control">
-                            <textarea class="textarea is-primary mpu_description" type="text" placeholder="Titre"></textarea>
+                            <textarea class="textarea is-primary mpu_description" type="text" placeholder="Description"></textarea>
                         </div>
                     </div>
                     <!-- OVERLAY -->
@@ -360,10 +360,223 @@ function myPopUp_options_page_html()
                         <!-- END COLUMNS -->
                     </div>
 
+                    <!-- OMBRE SUR TITRE -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_title_shadow">Ajouter une ombre</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_title_shadow" class="mpu_is_title_shadow" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- COLUMNS START -->
+                    <div class="columns">
+
+                        <!-- OMBRE style -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <div class="select is-primary mpu_title_shadow_type">
+                                <label for="mpu_title_shadow_type">Style de l'ombre</label>
+                                <div class="control">
+                                    <select class="mpu_title_shadow_type">
+                                        <option>Intérieur</option>
+                                        <option>Extérieur</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SHADOW COLOR PICKER -->
+
+                        <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                            <label for="mpu_title_shadow_color">Couleur de l'ombre</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_title_shadow_color" type="color" placeholder="Valeur en pixels">
+                            </div>
+                        </div>
+
+                        <!-- SHADOW SIZE -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <div class="select is-primary mpu_title_shadow_size">
+                                <label for="mpu_title_shadow_size">Taille de l'ombre</label>
+                                <div class="control">
+                                    <select class="mpu_font_family">
+                                        <option>Petite</option>
+                                        <option>Medium</option>
+                                        <option>Large</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- A PARTIR DE LA JE NE COMPRENDS PLUS LE FICHIER VISUEL.TXT QUI REPRENDS SUR LE TITRE... ON FAIT QUOI? ON AJOUTE DES CONDITIONS AU TITRE OU ON CONTINUE ICI PAS SÛR QUE CE SOIT LISIBLE -->
+                        <!-- END COLUMNS -->
+                    </div>
+
                 </div>
                 <!-- MENU CONDITIONS -->
                 <div class="mpu-conditions-section">
-                    <h2>Hello From Conditions Section</h2>
+
+
+                    <!-- PROGRAMMER LE POP-UP? -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_automatic_programed">Programmer le Pop-Up?</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_automatic_programed" class="mpu_is_automatic_programed" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- COLUMNS START -->
+                    <div class="columns">
+
+                        <!-- DATE DEBUT -->
+                        <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                            <label for="mpu_automatic_programed_start">Date de début</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_automatic_programed_start" type="date" placeholder="Date de début">
+                            </div>
+                        </div>
+                        <!-- DATE FIN -->
+
+                        <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                            <label for="mpu_automatic_programed_end">Date de fin</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_automatic_programed_end" type="date" placeholder="Date de fin">
+                            </div>
+                        </div>
+
+                        <!-- COLUMN END -->
+                    </div>
+
+                    <!-- CONDITIONS TO BE TRIGGERED -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered">Choisir les modes de déclenchement du Pop-Up</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered" class="mpu_is_triggered" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- ONLOAD -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_onload">Au chargement de la page</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_onload" class="mpu_is_triggered_onload" type="checkbox" value="onload">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- DELAY -->
+
+                    <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                        <label for="mpu_is_triggered_onload_delay">Durée avant déclenchement</label>
+                        <div class="control">
+                            <input class="input is-primary mpu_is_triggered_onload" type="number" placeholder="En secondes">
+                        </div>
+                    </div>
+
+                    <!-- ONCLICK -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_onclick">Au clic</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_onclick" class="mpu_is_triggered_onclick" type="checkbox" value="onclick">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+
+                    <!-- ONHOVER -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_onhover">au passage de la souris</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_onhover" class="mpu_is_triggered_onhover" type="checkbox" value="onhover">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- ID FOR HOVER -->
+
+                    <div class="mpu-input-field my-4 column is-4 is-flex-direction-row">
+                        <label for="mpu_is_triggered_onhover_id">Choisissez l'id qui déclenchera le Pop-Up au passage de la souris</label>
+                        <div class="control">
+                            <input class="input is-primary mpu_is_triggered_onhover_id" type="text" placeholder="ID qui déclenchera le Pop-Up">
+                        </div>
+                    </div>
+
+                    <!-- AFTER VISITING X PAGES -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_after_visiting_x_pages">Après un nombre de pages visitées</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_after_visiting_x_pages" class="mpu_is_triggered_after_visiting_x_pages" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- NUMBER OF PAGES -->
+
+                    <div class="mpu-input-field my-4 column is-4 is-flex-direction-row">
+                        <label for="mpu_is_triggered_after_visiting_x_pages_number">Nombre de pages visitées avant le déclenchement du Pop-Up</label>
+                        <div class="control">
+                            <input class="input is-primary mpu_is_triggered_after_visiting_x_pages_number" type="number" placeholder="Nombre de pages avant le déclenchement">
+                        </div>
+                    </div>
+
+
+                    <!-- AFTER INACTIVITY -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_after_inactivity">Après un moment d'inactivité</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_after_inactivity" class="mpu_is_triggered_after_inactivity" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- TIME OF INACTIVITY -->
+
+                    <div class="mpu-input-field my-4 column is-4 is-flex-direction-row">
+                        <label for="mpu_is_triggered_after_inactivity_delay">Durée d'inactivité avant déclenchement en secondes</label>
+                        <div class="control">
+                            <input class="input is-primary mpu_is_triggered_after_inactivity_delay" type="number" placeholder="inactivité avant déclenchement en secondes">
+                        </div>
+                    </div>
+
+
+                    <!-- SCROLLING TO ELEMENT -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_after_scrolling_to_element">Après un scroll vers un élément</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_after_scrolling_to_element" class="mpu_is_triggered_after_scrolling_to_element" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- WHICH ELEMENT -->
+
+                    <div class="mpu-input-field my-4 column is-4 is-flex-direction-row">
+                        <label for="mpu_is_triggered_after_scrolling_to_element_id">Elément concerné par le déclenchement on-scroll</label>
+                        <div class="control">
+                            <input class="input is-primary mpu_is_triggered_after_scrolling_to_element_id" type="text" placeholder="ID de l'élément déclencheur">
+                        </div>
+                    </div>
+
+                    <!-- SCROLLING DOWN -->
+                    <div class="mpu-input-field my-4">
+                        <label for="mpu_is_triggered_after_scrolling_down">Après un scroll sur la page</label>
+                        <label class="mpu_switch">
+                            <input name="mpu_is_triggered_after_scrolling_down" class="mpu_is_triggered_after_scrolling_down" type="checkbox" value="1">
+                            <span class="mpu_slider mpu_round"></span>
+                        </label>
+                    </div>
+
+                    <!-- PERCENTAGE FROM THE END OF THE PAGE -->
+
+                    <div class="mpu-input-field my-4 column is-4 is-flex-direction-row">
+                        <label for="mpu_is_triggered_after_scrolling_down_percentage">Pourcentage avant le bas de la page qui déclenche le Pop-Up</label>
+                        <div class="control">
+                            <input class="input is-primary mpu_is_triggered_after_scrolling_down_percentage" type="number" placeholder="Pourcentage avant la fin de la page">
+                        </div>
+                    </div>
+
+
+
                 </div>
                 <!-- MENU OPTION SUPPLEMENTAIRES -->
                 <div class="mpu-options-supp-section">
