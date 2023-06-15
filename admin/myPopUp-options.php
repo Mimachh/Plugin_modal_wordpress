@@ -575,6 +575,36 @@ function myPopUp_options_page_html()
                         </div>
                     </div>
 
+                    <!-- CLOSING MODE -->
+                    <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                        <h3 class="my-4">Déclenchement de fermeture du Pop Up</h3>
+                        <div class="mpu_closing_way">
+                            <label class="checkbox mb-2">
+                                <input type="checkbox" class="mpu_closing_way_esc">
+                                En appuyant sur échap
+                            </label>
+
+                            <label class="checkbox mb-2">
+                                <input type="checkbox" class="mpu_closing_way_outofthebox">
+                                En cliquant hors du Pop-Up
+                            </label>
+
+                            <label class="checkbox mb-2">
+                                <input type="checkbox" class="mpu_closing_way_buttonclose">
+                                En cliquant sur le bouton fermer du Pop-Up
+                            </label>
+
+                            <label class="checkbox mb-2">
+                                <input type="checkbox" class="mpu_closing_way_afterdelay">
+                                Après un délai
+                            </label>
+                            <label class="delay mt-3">
+                                <h2>Combien de temps?</h2>
+                                <input class="input is-primary" type="number" placeholder="Délai en secondes" class="mpu_closing_way_afterdelay_set">
+                            </label>
+                        </div>
+                    </div>
+
 
 
                 </div>
