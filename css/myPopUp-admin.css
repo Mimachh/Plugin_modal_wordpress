@@ -126,7 +126,7 @@ select.is-hovered {
 
 /* Custom Logo Preview */
 
-.mpu_custom_logo_preview {
+.mpu_custom_logo_preview, .mpu_inner_background_image_preview {
   width: 150px;
   height: auto;
 }

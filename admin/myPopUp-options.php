@@ -225,7 +225,7 @@ function myPopUp_options_page_html()
 
                     <!-- Is full screen -->
                     <div class="mpu-input-field my-4 column is-3">
-                        <label for="mpu_is_desktop_full_screen">Afficher le pop-up en plein écran</label>
+                        <label for="mpu_is_desktop_full_screen">Afficher le pop-up en plein écran sur ordinateur ?</label>
                         <label class="mpu_switch">
                             <input name="mpu_is_desktop_full_screen" class="mpu_is_desktop_full_screen" type="checkbox" value="1">
                             <span class="mpu_slider mpu_round"></span>
@@ -235,23 +235,30 @@ function myPopUp_options_page_html()
                     <div class="columns">
                         <!-- IF NO, WIDTH -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <label for="mpu_desktop_width">Largeur</label>
+                            <label for="mpu_desktop_min_width">Largeur minimale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_width" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_desktop_min_width" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_desktop_max_width">Largeur maximale : </label>
+                            <div class="control">
+                                <input class="input is-primary mpu_desktop_max_width" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+
                         <!-- IF NO, HEIGHT -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <label for="mpu_desktop_height">Hauteur</label>
+                            <label for="mpu_desktop_min_height">Hauteur minimale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_height" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
                         <!-- IF NO, MIN-HEIGHT -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <label for="mpu_desktop_min_height">Hauteur minimum</label>
+                            <label for="mpu_desktop_max_height">Hauteur maximale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_desktop_max_height" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
                         <!-- END COLUMNS -->
@@ -259,7 +266,7 @@ function myPopUp_options_page_html()
 
                     <!-- PLEIN ECRAN SUR MOBILE -->
                     <div class="mpu-input-field my-4">
-                        <label for="mpu_is_mobile_full_screen">Afficher en plein écran sur mobile</label>
+                        <label for="mpu_is_mobile_full_screen">Afficher en plein écran sur mobile ?</label>
                         <label class="mpu_switch">
                             <input name="mpu_is_mobile_full_screen" class="mpu_is_mobile_full_screen" type="checkbox" value="1">
                             <span class="mpu_slider mpu_round"></span>
@@ -267,18 +274,18 @@ function myPopUp_options_page_html()
                     </div>
                     <!-- COLUMNS START -->
                     <div class="columns">
-                        <!-- IF NO, MAX WIDTH -->
+                        <!-- Min width -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <label for="mpu_mobile_max_width">Largeur maximale sur mobile</label>
+                            <label for="mpu_mobile_min_width">Largeur minimale sur mobile : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_mobile_max_width" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_mobile_min_width" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
-                        <!-- IF NO, HEIGHT -->
+                        <!-- IF NO, MAX WIDTH -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <label for="mpu_mobile_max_height">Hauteur maximale sur mobile</label>
+                            <label for="mpu_mobile_max_width">Largeur maximale sur mobile : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_mobile_max_height" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_mobile_max_width" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
                         <!-- IF NO, MIN-HEIGHT -->
@@ -288,41 +295,49 @@ function myPopUp_options_page_html()
                                 <input class="input is-primary mpu_mobile_min_height" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div>
+                        <!-- IF NO, HEIGHT -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_mobile_max_height">Hauteur maximale sur mobile</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_mobile_max_height" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+
                         <!-- END COLUMNS -->
                     </div>
 
                     <!-- COLUMNS START -->
-                    <div class="columns">
+                    <!-- <div class="columns"> -->
                         <!-- IF NO, MAX WIDTH -->
                         <!--//////////////////////////////////////////////// mpu_inner_padding_y TO CREATE PLEASE!!!!!!! -->
-                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                        <!-- <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_inner_padding_y">Padding vertical</label>
                             <div class="control">
                                 <input class="input is-primary mpu_inner_padding_y" type="number" placeholder="Valeur en pixel">
                             </div>
-                        </div>
+                        </div> -->
                         <!-- IF NO, HEIGHT -->
                         <!--//////////////////////////////////////////////// mpu_inner_padding_x TO CREATE PLEASE!!!!!!! -->
-                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                        <!-- <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_inner_padding_x">Padding Horizontal</label>
                             <div class="control">
                                 <input class="input is-primary mpu_inner_padding_x" type="number" placeholder="Valeur en pixel">
                             </div>
-                        </div>
+                        </div> -->
                         <!-- END COLUMNS -->
-                    </div>
+                    <!-- </div> -->
 
                     <!-- COLUMNS START -->
                     <div class="columns">
 
                         <!-- Text style -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <div class="select is-primary mpu_text_style">
+                            <div class="select is-primary">
                                 <label for="mpu_text_style">Style de texte</label>
                                 <div class="control">
                                     <select class="mpu_text_style">
-                                        <option>Style de Texte 1</option>
-                                        <option>Style de Texte 2</option>
+                                        <option value="option1">Style de Texte 1</option>
+                                        <option value="option2">Style de Texte 2</option>
                                     </select>
                                 </div>
                             </div>
@@ -338,13 +353,13 @@ function myPopUp_options_page_html()
 
                         <!-- Font Family -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <div class="select is-primary mpu_text_style">
+                            <div class="select is-primary">
                                 <label for="mpu_font_family">Style de texte</label>
                                 <div class="control">
                                     <select class="mpu_font_family">
-                                        <option>Font Family 1</option>
-                                        <option>Font Family 2</option>
-                                        <option>Font Family 3</option>
+                                        <option value="fm1">Font Family 1</option>
+                                        <option value="fm2">Font Family 2</option>
+                                        <option value="fm3">Font Family 3</option>
                                     </select>
                                 </div>
                             </div>
@@ -361,8 +376,9 @@ function myPopUp_options_page_html()
                     </div>
 
                     <!-- OMBRE SUR TITRE -->
+                    TOUS CES CHAMPS SONT POUR LE TITRE
                     <div class="mpu-input-field my-4">
-                        <label for="mpu_is_title_shadow">Ajouter une ombre</label>
+                        <label for="mpu_is_title_shadow">Ajouter une ombre au titre </label>
                         <label class="mpu_switch">
                             <input name="mpu_is_title_shadow" class="mpu_is_title_shadow" type="checkbox" value="1">
                             <span class="mpu_slider mpu_round"></span>
@@ -374,12 +390,12 @@ function myPopUp_options_page_html()
 
                         <!-- OMBRE style -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <div class="select is-primary mpu_title_shadow_type">
+                            <div class="select is-primary">
                                 <label for="mpu_title_shadow_type">Style de l'ombre</label>
                                 <div class="control">
                                     <select class="mpu_title_shadow_type">
-                                        <option>Intérieur</option>
-                                        <option>Extérieur</option>
+                                        <option value="shadow1">Intérieur</option>
+                                        <option value="shadow2">Extérieur</option>
                                     </select>
                                 </div>
                             </div>
@@ -395,19 +411,229 @@ function myPopUp_options_page_html()
 
                         <!-- SHADOW SIZE -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <div class="select is-primary mpu_title_shadow_size">
+                            <div class="select is-primary">
                                 <label for="mpu_title_shadow_size">Taille de l'ombre</label>
                                 <div class="control">
-                                    <select class="mpu_font_family">
-                                        <option>Petite</option>
-                                        <option>Medium</option>
-                                        <option>Large</option>
+                                    <select class="mpu_title_shadow_size">
+                                        <option value="size1">Petite</option>
+                                        <option value="size2">Medium</option>
+                                        <option class="size3">Large</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <!-- A PARTIR DE LA JE NE COMPRENDS PLUS LE FICHIER VISUEL.TXT QUI REPRENDS SUR LE TITRE... ON FAIT QUOI? ON AJOUTE DES CONDITIONS AU TITRE OU ON CONTINUE ICI PAS SÛR QUE CE SOIT LISIBLE -->
                         <!-- END COLUMNS -->
+                    </div>
+
+                    <!--  ICI  JE TE METS LES INPUT QU'IL MANQUE POUR LE VISUEL -->
+                    <div class="columns">
+                        <!-- Style de texte pour le titre  -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <div class="select is-primary">
+                                <label for="mpu_title_style">Style de texte pour le titre : </label>
+                                <div class="control">
+                                    <select class="mpu_title_style">
+                                        <option value="titre1">Italic</option>
+                                        <option value="titre2">Souligné</option>
+                                        <option value="titre3">Normal</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weight pour le titre  -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <div class="select is-primary">
+                                <label for="mpu_title_weight">Epaisseur du titre : </label>
+                                <div class="control">
+                                    <select class="mpu_title_weight">
+                                        <option value="ep1">Tight</option>
+                                        <option value="ep2">Normal</option>
+                                        <option value="ep3">Bold</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Title size -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <label for="mpu_title_size">Taille du titre</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_title_size" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+
+                        <!-- Title letter spacing -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <label for="mpu_title_letter_spacing">Espacement des lettres du titre : </label>
+                            <div class="control">
+                                <input class="input is-primary mpu_title_letter_spacing" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+
+                        <!-- Alignement pour le titre  -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <div class="select is-primary">
+                                <label for="mpu_title_align">Alignement du titre : </label>
+                                <div class="control">
+                                    <select class="mpu_title_align">
+                                        <option value="gauche">Gauche</option>
+                                        <option value="centre">Centre</option>
+                                        <option value="droite">Droite</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="columns">
+                            <p>Styles supplémentaires</p>
+                        <!-- ON SORT DU TITRE ON EST SUR LE CONTENU -->
+                        <!-- Alignement du contenu  -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <div class="select is-primary">
+                                <label for="mpu_content_align">Alignement du contenu : </label>
+                                <div class="control">
+                                    <select class="mpu_content_align">
+                                        <option value="gauche">Gauche</option>
+                                        <option value="centre">Centre</option>
+                                        <option value="droite">Droite</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- POUR LE BOUTON -->
+                        <!-- Alignement du bouton  -->
+                        <div class="mpu-input-field my-4 column is-2">
+                            <div class="select is-primary">
+                                <label for="mpu_button_align">Alignement du bouton : </label>
+                                <div class="control">
+                                    <select class="mpu_button_align">
+                                        <option value="gauche">Gauche</option>
+                                        <option value="centre">Centre</option>
+                                        <option value="droite">Droite</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Arrière plan -->
+                    <div class="columns">
+                        
+                        <div class="mpu-input-field my-4 column is-2">
+                            <label for="mpu_inner_background">Arrière plan de la pop-up</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="mpu_inner_background" checked class="mpu_inner_background" value="couleur">
+                                    Couleur
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="mpu_inner_background" class="mpu_inner_background" value="image">
+                                    Image
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="mpu_inner_background" class="mpu_inner_background" value="transparent">
+                                    Transparent
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Si choix de la couleur -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                            <label for="mpu_inner_background_color">Couleur de l'arrière plan</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_inner_background_color" type="color" placeholder="Valeur en pixels">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Si choix de l'image -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <img class="mpu_inner_background_image_preview " id="image_preview" src="" alt="Aperçu de l'image" />
+                            <button class="button is-primary mpu_inner_background_image_media_open" class="button">Sélectionner une image</button>
+                        </div>
+                        <!-- Style de recouvrement d'image -->
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <div class="select is-primary">
+                                <label for="mpu_inner_background_image_style">Style de l'image : </label>
+                                <div class="control">
+                                    <select class="mpu_inner_background_image_style">
+                                        <option value="cover">Cover</option>
+                                        <option value="contain">Contain</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Choix de la bordure -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4 column is-2">
+                            <label for="mpu_border_style">Style de la bordure</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="mpu_border_style" checked class="mpu_border_style" value="none">
+                                    Aucune
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="solid">
+                                    Solide
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="thick double">
+                                    Doublée
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="dashed">
+                                    Hachurée
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="rigde">
+                                    Ridge
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Si !none Choix de la couleur -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
+                            <label for="mpu_border_color">Couleur de la bordure</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_border_color" type="color">
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <!-- Si !none choix du weight -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                            <label for="mpu_border_weight">Epaisseur de la bordure</label>
+                            <div class="control">
+                                <input class="input is-primary mpu_border_weight" type="number" placeholder="Valeur en pixel">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Choix de l'animation d'ouverture/fermeture -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4 column is-2">
+                            <div class="select is-primary">
+                                <label for="mpu_animation_opening">Animation à l'ouverture/fermeture : </label>
+                                <div class="control">
+                                    <select class="mpu_animation_opening">
+                                        <option value="ouv1">Choix 1</option>
+                                        <option value="ouv2">Choix 2</option>
+                                        <option value="ouv3">Choix 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

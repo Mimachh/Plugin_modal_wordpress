@@ -108,10 +108,11 @@ function save_custom_field_values($post_id) {
         } else {
             // Gérer l'erreur de téléchargement du fichier
         }
-    } else {
-        // Aucun fichier n'a été téléchargé
-        delete_post_meta($post_id, 'mpu_inner_background_image');
-    }
+    } 
+    // else {
+    //     // Aucun fichier n'a été téléchargé
+    //     delete_post_meta($post_id, 'mpu_inner_background_image');
+    // }
 
 }
 add_action('save_post_mpu_shortcode', 'save_custom_field_values');
