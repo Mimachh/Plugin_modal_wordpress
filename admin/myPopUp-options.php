@@ -31,6 +31,8 @@ function myPopUp_options_page_html()
                     $post_title = $post->post_title;
                     echo 'id:' . $post_id;
                     echo 'le titre récupéré est : ' . $post_title;
+                    $mpu_activate = get_post_meta($post_id, 'mpu_activate', true);
+                    echo 'Valeur de "mpu_activate" : ' . $mpu_activate;
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
                     <button type="submit" class="mpu_save_edit_button">Nouveau bouton edit</button>
@@ -51,7 +53,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_activate">Activer le Shortcode</label>
                         <label class="mpu_switch">
-                            <input name="mpu_activate" class="mpu_activate" type="checkbox" value="1">
+                            <input name="mpu_activate" class="mpu_activate" type="checkbox" value="1" <?php checked($mpu_activate, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
