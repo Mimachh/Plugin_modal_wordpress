@@ -9,27 +9,31 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // Les div qui apparaissent et disparaissent
   const mpuIsExceptDiv = document.querySelector('.mpu_exclure_div');
 
-  // Par défaut sur toutes les pages est décoché
-  if (mpuIsAllPages) {
-    mpuIsAllPages.checked = false;
-  }
 
-  // Cacher le groupe de div "Except" par défaut
-  if (mpuIsExceptDiv) {
-    hideElementCheckboxGroup(mpuIsExceptDiv);
-  }
+
 
   // Gestionnaire d'événements pour l'option "Afficher sur toutes les pages"
   if (mpuIsAllPages) {
-    mpuIsAllPages.addEventListener('change', function () {
-      if (mpuIsAllPages.checked) {
-        showElementGroup(mpuIsExceptDiv);
-      } else {
-        // Si l'option n'est pas cochée, cacher le groupe de div "Except" et vider ses valeurs
-        hideElementCheckboxGroup(mpuIsExceptDiv);
-      }
-    });
+      // Cacher le groupe de div "Except" par défaut
+    if (mpuIsExceptDiv && !mpuIsAllPages.checked) {
+      hideElementCheckboxGroup(mpuIsExceptDiv);
+    } else {
+      showElementGroup(mpuIsExceptDiv);
+    }
+
+      mpuIsAllPages.addEventListener('change', function () {
+        if (mpuIsAllPages.checked) {
+          showElementGroup(mpuIsExceptDiv);
+        } else {
+          // Si l'option n'est pas cochée, cacher le groupe de div "Except" et vider ses valeurs
+          hideElementCheckboxGroup(mpuIsExceptDiv);
+        }
+      });
+
+
   }
+
+  
 
 // ----------------------------- VISUEL ----------------------------- //
 // CUSTOM LOGO
