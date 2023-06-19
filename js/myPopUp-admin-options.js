@@ -21,37 +21,53 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   //hide all divs except the first one to initialize the page
   function initAdminOptions() {
-    mpuVisuelSection.style.display = 'none';
-    mpuConditionsSection.style.display = 'none';
-    mpuOptionsSuppSection.style.display = 'none';
+    if(mpuVisuelSection) {
+      mpuVisuelSection.style.display = 'none';
+    }
+    if(mpuConditionsSection) {
+      mpuConditionsSection.style.display = 'none';
+    }
+    if(mpuOptionsSuppSection) {
+      mpuOptionsSuppSection.style.display = 'none';
+    }
+    
   }
   initAdminOptions();
 
   // Add Event Listener to the menu in order to display the right div
   function menuDisplay() {
-    mpuActivation.addEventListener('click', function () {
-      displayDiv('activation');
-      removeActiveClass(mpuActivation);
-      mpuActivation.classList.add('is-active');
-    });
+    if(mpuActivation) {
+      mpuActivation.addEventListener('click', function () {
+        displayDiv('activation');
+        removeActiveClass(mpuActivation);
+        mpuActivation.classList.add('is-active');
+      });
+    }
 
-    mpuVisuel.addEventListener('click', function () {
-      displayDiv('visuel');
-      removeActiveClass(mpuVisuel);
-      mpuVisuel.classList.add('is-active');
-    });
+    if(mpuVisuel) {
+      mpuVisuel.addEventListener('click', function () {
+        displayDiv('visuel');
+        removeActiveClass(mpuVisuel);
+        mpuVisuel.classList.add('is-active');
+      });
+    }
 
-    mpuConditions.addEventListener('click', function () {
-      displayDiv('conditions');
-      removeActiveClass(mpuConditions);
-      mpuConditions.classList.add('is-active');
-    });
+    if(mpuConditions) {
+      mpuConditions.addEventListener('click', function () {
+        displayDiv('conditions');
+        removeActiveClass(mpuConditions);
+        mpuConditions.classList.add('is-active');
+      });
+    }
 
-    mpuOptionsSupp.addEventListener('click', function () {
-      displayDiv('options supp');
-      removeActiveClass(mpuOptionsSupp);
-      mpuOptionsSupp.classList.add('is-active');
-    });
+    if(mpuOptionsSupp) {
+      mpuOptionsSupp.addEventListener('click', function () {
+        displayDiv('options supp');
+        removeActiveClass(mpuOptionsSupp);
+        mpuOptionsSupp.classList.add('is-active');
+      });
+    }
+
   }
 
   // Switch case to display the right div if the user clicks on the menu

@@ -851,8 +851,48 @@ function myPopUp_options_page_html()
                 </div>
                 <!-- MENU OPTION SUPPLEMENTAIRES -->
                 <div class="mpu-options-supp-section">
-                    <h2>Hello From Options Supp Section</h2>
+                    <!-- J'attaque les options supp -->
 
+                    <!-- Sound openning -->
+                    <h2>Hello From Options Supp Section</h2>
+                    <div class="columns">
+                        <div class="mpu-input-field my-4">
+                            <label for="mpu_is_sound_on_open">Activer le son à l'ouverture ?</label>
+                            <label class="mpu_switch">
+                                <input name="mpu_is_sound_on_open" class="mpu_is_sound_on_open" type="checkbox" value="1">
+                                <span class="mpu_slider mpu_round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="">
+                            <button class="button is-primary mpu_sound_opening_media_open">Sélectionner un fichier audio</button>
+                            <div class="my-4">
+                                <audio class="sound_opening_preview" controls></audio>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!--  Sound closing -->
+                    <div class="columns">
+                        <div class="mpu-input-field my-4">
+                            <label for="mpu_is_sound_on_closing">Activer le son à la fermeture ?</label>
+                            <label class="mpu_switch">
+                                <input name="mpu_is_sound_on_closing" class="mpu_is_sound_on_closing" type="checkbox" value="1">
+                                <span class="mpu_slider mpu_round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="">
+                            <button class="button is-primary mpu_sound_closing_media_open">Sélectionner un fichier audio</button>
+                            <div class="my-4">
+                                <audio class="sound_closing_preview" controls></audio>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
 
             </div>

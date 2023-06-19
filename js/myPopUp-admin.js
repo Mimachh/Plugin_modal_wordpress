@@ -26,44 +26,45 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
   let mpuCustomLogoRelativePath = '';
+  if(mpuCustomLogoMediaOpen) {
+    mpuCustomLogoMediaOpen.addEventListener('click', function (event) {
+      event.preventDefault();
 
-  mpuCustomLogoMediaOpen.addEventListener('click', function (event) {
-    event.preventDefault();
+      // Ouvrir la médiathèque WordPress
+      const mediaUploader = wp.media({
+        title: 'Sélectionnez une image',
+        button: {
+          text: 'Insérer',
+        },
+        multiple: false, // Changer à true pour permettre la sélection de plusieurs fichiers
+      });
 
-    // Ouvrir la médiathèque WordPress
-    const mediaUploader = wp.media({
-      title: 'Sélectionnez une image',
-      button: {
-        text: 'Insérer',
-      },
-      multiple: false, // Changer à true pour permettre la sélection de plusieurs fichiers
+      // Lorsqu'un ou plusieurs fichiers sont sélectionnés
+      mediaUploader.on('select', function () {
+        const attachment = mediaUploader
+          .state()
+          .get('selection')
+          .first()
+          .toJSON();
+
+        // Récupérer l'URL de l'image sélectionnée
+        const imageUrl = attachment.url;
+
+        // Récupérer le chemin relatif de l'image
+        mpuCustomLogoRelativePath = imageUrl.replace(siteData.root_url, '');
+
+        // Mettre à jour l'attribut src de l'élément <img> avec l'URL de l'image sélectionnée en chemin relatif
+        mpuCustomLogoPreview.src = mpuCustomLogoRelativePath;
+      });
+
+      // Ouvrir la fenêtre modale de la médiathèque
+      mediaUploader.open();
     });
-
-    // Lorsqu'un ou plusieurs fichiers sont sélectionnés
-    mediaUploader.on('select', function () {
-      const attachment = mediaUploader
-        .state()
-        .get('selection')
-        .first()
-        .toJSON();
-
-      // Récupérer l'URL de l'image sélectionnée
-      const imageUrl = attachment.url;
-
-      // Récupérer le chemin relatif de l'image
-      mpuCustomLogoRelativePath = imageUrl.replace(siteData.root_url, '');
-
-      // Mettre à jour l'attribut src de l'élément <img> avec l'URL de l'image sélectionnée en chemin relatif
-      mpuCustomLogoPreview.src = mpuCustomLogoRelativePath;
-    });
-
-    // Ouvrir la fenêtre modale de la médiathèque
-    mediaUploader.open();
-  });
-
-  // Listener pour supprimer le message d'erreur en cas de clear après activation/désactivation du bouton. La fonction est dans additional-functions.js
-  mpuCustomLogoPreview.addEventListener('error', errorHandler);
-
+  }
+  if(mpuCustomLogoPreview) {
+    // Listener pour supprimer le message d'erreur en cas de clear après activation/désactivation du bouton. La fonction est dans additional-functions.js
+    mpuCustomLogoPreview.addEventListener('error', errorHandler);
+  }
  
   // Modale Title
   const mpuIsTitleVisible = document.querySelector('.mpu_is_title_visible');
@@ -177,9 +178,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
       mediaUploader.open();
     });
   }
-  // Listener pour supprimer le message d'erreur en cas de clear après activation/désactivation du bouton. La fonction est dans additional-functions.js
-  mpuInnerBackgroundImagePreview.addEventListener('error', errorHandler);
-
+  if(mpuInnerBackgroundImagePreview) {
+    // Listener pour supprimer le message d'erreur en cas de clear après activation/désactivation du bouton. La fonction est dans additional-functions.js
+    mpuInnerBackgroundImagePreview.addEventListener('error', errorHandler);
+  }
 
 
 // Fin du media open
@@ -195,6 +197,126 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   // Animation opening
   const mpuAnimationOpening = document.querySelector('.mpu_animation_opening');
+
+
+  // ------------------------------------ Options supp -------------------------- //
+  // Is sound opening
+  const mpuIsSoundOnOpen = document.querySelector('.mpu_is_sound_on_open');
+  // Sound opening
+  const mpuSoundOpeningMediaOpen = document.querySelector('.mpu_sound_opening_media_open');
+  // Récupérer l'élément <audio> pour afficher le lecteur audio
+  const audioOpenElement = document.querySelector('.sound_opening_preview');
+  // Le path
+  let mpuSoundOpenRelativePath = "";
+
+  if (audioOpenElement && audioOpenElement.src != "") {
+    audioOpenElement.style.display = 'block'; // ou autre style pour l'afficher
+  } else if (audioOpenElement && audioOpenElement.src === "") {
+    audioOpenElement.style.display = 'none'; // pour la masquer
+  }
+  if(mpuSoundOpeningMediaOpen) {
+    mpuSoundOpeningMediaOpen.addEventListener('click', function(event) {
+      event.preventDefault();
+    
+      // Ouvrir la médiathèque WordPress
+      const mediaUploader = wp.media({
+        title: 'Sélectionnez un fichier audio',
+        button: {
+          text: 'Insérer',
+        },
+        multiple: false,
+        library: {
+          type: 'audio', // Filtrer uniquement les fichiers audio
+        },
+      });
+    
+      // Lorsqu'un fichier audio est sélectionné
+      mediaUploader.on('select', function() {
+        const attachment = mediaUploader.state().get('selection').first().toJSON();
+    
+        // Récupérer l'URL du fichier audio sélectionné
+        mpuSoundOpenRelativePath = attachment.url;
+
+    
+        // Mettre à jour l'attribut src de l'élément <audio> avec l'URL du fichier audio sélectionné
+        audioOpenElement.src = mpuSoundOpenRelativePath;
+        // audioOpenElement.style.display = 'block';
+        if (audioOpenElement.src != "") {
+          audioOpenElement.style.display = 'block'; // ou autre style pour l'afficher
+        } else {
+          audioOpenElement.style.display = 'none'; // pour la masquer
+        }
+      });
+    
+      // Ouvrir la fenêtre modale de la médiathèque
+      mediaUploader.open();
+    });
+  }
+  if(audioOpenElement) {
+    // au moment du nettoyage eviter les erreurs
+    audioOpenElement.addEventListener('error', errorHandler);
+  }
+
+
+  // Is sound closing
+  const mpuIsSoundOnClosing = document.querySelector('.mpu_is_sound_on_closing');
+  // Sound opening
+  const mpuSoundClosingMediaOpen = document.querySelector('.mpu_sound_closing_media_open');
+  // Récupérer l'élément <audio> pour afficher le lecteur audio
+  const audioCloseElement = document.querySelector('.sound_closing_preview');
+  // Le path
+  let mpuSoundClosingRelativePath = "";
+
+  if (audioCloseElement && audioCloseElement.src != "") {
+    audioCloseElement.style.display = 'block'; // ou autre style pour l'afficher
+  } else if (audioCloseElement && audioCloseElement.src === "") {
+    audioCloseElement.style.display = 'none'; // pour la masquer
+  }
+  if(mpuSoundClosingMediaOpen) {
+    mpuSoundClosingMediaOpen.addEventListener('click', function(event) {
+      event.preventDefault();
+    
+      // Ouvrir la médiathèque WordPress
+      const mediaUploader = wp.media({
+        title: 'Sélectionnez un fichier audio',
+        button: {
+          text: 'Insérer',
+        },
+        multiple: false,
+        library: {
+          type: 'audio', // Filtrer uniquement les fichiers audio
+        },
+      });
+    
+      // Lorsqu'un fichier audio est sélectionné
+      mediaUploader.on('select', function() {
+        const attachment = mediaUploader.state().get('selection').first().toJSON();
+    
+        // Récupérer l'URL du fichier audio sélectionné
+        mpuSoundClosingRelativePath = attachment.url;
+
+    
+        // Mettre à jour l'attribut src de l'élément <audio> avec l'URL du fichier audio sélectionné
+        audioCloseElement.src = mpuSoundClosingRelativePath;
+        // audioCloseElement.style.display = 'block';
+        if (audioCloseElement.src != "") {
+          audioCloseElement.style.display = 'block'; // ou autre style pour l'afficher
+        } else {
+          audioCloseElement.style.display = 'none'; // pour la masquer
+        }
+      });
+    
+      // Ouvrir la fenêtre modale de la médiathèque
+      mediaUploader.open();
+    });
+  }
+  if(audioCloseElement) {
+    // au moment du nettoyage eviter les erreurs
+    audioCloseElement.addEventListener('error', errorHandler);
+  }
+ 
+
+
 
   const submitButton = document.querySelector('.mpu_submit');
 
@@ -278,6 +400,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         // Animation opening
         'mpu_animation_opening': mpuAnimationOpening.value,
+
+
+        // Options Supp
+          //open sound
+        'mpu_is_sound_on_open' : mpuIsSoundOnOpen.checked ? true : '0',
+        'mpu_sound_open' : mpuSoundOpenRelativePath,
+          //close sound
+        'mpu_is_sound_on_closing' : mpuIsSoundOnClosing.checked ? true : '0',
+        'mpu_sound_closing' : mpuSoundClosingRelativePath,
       };
 
       // Vérification du titre

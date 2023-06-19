@@ -50,6 +50,9 @@ Options supp = array(
             'button_type' => 'file audio'
         )
     ),
+
+/////// JUSQUE LA C'EST FAIT
+
     array(
         'name' => 'mpu_onscroll_number_appears',
         'button_type' => 'number'
