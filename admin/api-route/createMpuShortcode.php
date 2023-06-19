@@ -112,9 +112,6 @@ function createMpuShortcode($data) {
         // File sound close
         $mpu_sound_closing = sanitize_text_field($data['mpu_sound_closing']);
 
-
-
-   
             return wp_insert_post(array(
                 'post_type' => 'mpu_shortcode',
                 'post_status' => 'publish',
