@@ -462,6 +462,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
           .filter((input) => input.checked)
           .map((input) => input.value),
         mpu_is_all_articles: mpuIsAllArticles.checked ? '1' : '0',
+        
+        // Visuel
+        mpu_add_site_logo: mpuAddSiteLogo.checked ? true : '0',
+        mpu_base_site_logo: mpuAddSiteLogo.checked ? true : '0',
+        mpu_custom_logo: mpuCustomLogoRelativePath,
       };
 
       const xhr = new XMLHttpRequest();

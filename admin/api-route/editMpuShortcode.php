@@ -14,7 +14,16 @@ function editMpuShortcode($data) {
             $mpu_is_all_pages = sanitize_text_field($data['mpu_is_all_pages']);
             $mpu_is_except = array_map('sanitize_text_field', $data['mpu_is_except']);
             $mpu_is_all_articles = sanitize_text_field($data['mpu_is_all_articles']);
+            
+            // Visuel
+            $mpu_add_site_logo = isset($data['mpu_add_site_logo']) && $data['mpu_add_site_logo'] === 'on' ? true : false;
+            $mpu_add_site_logo = sanitize_text_field($data['mpu_add_site_logo']);
 
+            
+            $mpu_base_site_logo = isset($data['mpu_base_site_logo']) && $data['mpu_base_site_logo'] === 'on' ? true : false;
+            $mpu_base_site_logo = sanitize_text_field($data['mpu_base_site_logo']);
+            
+            $mpu_custom_logo = sanitize_text_field($data['mpu_custom_logo']);
 
             return wp_update_post(array(
                 'ID' => $shortcode_id,
@@ -24,6 +33,11 @@ function editMpuShortcode($data) {
                     'mpu_is_all_pages' => $mpu_is_all_pages,
                     'mpu_is_except' => $mpu_is_except,
                     'mpu_is_all_articles' => $mpu_is_all_articles,
+
+                    // Visuel
+                   'mpu_add_site_logo' => $mpu_add_site_logo,
+                   'mpu_base_site_logo' => $mpu_base_site_logo,
+                   'mpu_custom_logo' => $mpu_custom_logo,
                 ),
             ));
         } else {
