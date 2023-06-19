@@ -43,18 +43,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
     '.mpu_custom_logo_div_hide_by_default'
   );
 
-  if (mpuCustomLogoDivHideByDefault) {
-    hideImageButtonAndFieldGroup(mpuCustomLogoDivHideByDefault);
-  }
+
   const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
-  if (mpuAddSiteLogo) {
-    mpuAddSiteLogo.checked = false;
-  }
+  // if (mpuAddSiteLogo) {
+  //   mpuAddSiteLogo.checked = false;
+  // }
 
   const mpuBaseSiteLogoDivHideByDefault = document.querySelector(
     '.mpu_base_site_logo_div_hide_by_default'
   );
-  if (mpuBaseSiteLogoDivHideByDefault) {
+
+  if (mpuBaseSiteLogoDivHideByDefault && !mpuAddSiteLogo.checked) {
     hideImageButtonAndFieldGroup(mpuBaseSiteLogoDivHideByDefault);
   }
 
@@ -76,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
   const mpuDefaultSiteLogo = document.querySelector('.mpu_base_site_logo');
-  if (mpuDefaultSiteLogo) {
-    mpuDefaultSiteLogo.checked = false;
-  }
+  // if (mpuDefaultSiteLogo) {
+  //   mpuDefaultSiteLogo.checked = false;
+  // }
   // Ouvrir le bouton du logo custom si actif
   if (mpuDefaultSiteLogo) {
     mpuDefaultSiteLogo.addEventListener('change', function () {
@@ -93,7 +92,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
     });
   }
-
+  if (mpuCustomLogoDivHideByDefault && !mpuAddSiteLogo.checked && !mpuDefaultSiteLogo.checked) {
+    hideImageButtonAndFieldGroup(mpuCustomLogoDivHideByDefault);
+  }
 
     // Titre dans la modale
     const mpuTitleDivHideByDefault = document.querySelector('#header_title');

@@ -35,7 +35,12 @@ function myPopUp_options_page_html()
                     $mpu_activate = get_post_meta($post_id, 'mpu_activate', true);
                     $mpu_is_all_pages = get_post_meta($post_id, 'mpu_is_all_pages', true);
                     $mpu_is_except = get_post_meta($post_id, 'mpu_is_except', true);
-
+                    $mpu_is_all_articles = get_post_meta($post_id, 'mpu_is_all_articles', true);
+                    $mpu_add_site_logo = get_post_meta($post_id, 'mpu_add_site_logo', true);
+                    $mpu_base_site_logo = get_post_meta($post_id, 'mpu_base_site_logo', true);
+                    $customLogoPath = get_post_meta($post_id, 'mpu_custom_logo', true);
+                    
+                    
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
                     <button type="submit" class="mpu_save_edit_button">Nouveau bouton edit</button>
@@ -101,7 +106,9 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_all_articles">Afficher sur tous les articles ?</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_all_articles" class="mpu_is_all_articles" type="checkbox">
+                            <input name="mpu_is_all_articles" class="mpu_is_all_articles" type="checkbox"
+                            <?php if (isset($mpu_is_all_articles)) checked($mpu_is_all_articles, '1'); ?>
+                            >
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -115,14 +122,18 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_add_site_logo">Ajouter un logo à votre popup</label>
                         <label class="mpu_switch">
-                            <input name="mpu_add_site_logo" class="mpu_add_site_logo" type="checkbox" value="1">
+                            <input name="mpu_add_site_logo" class="mpu_add_site_logo" type="checkbox" value="1"
+                            <?php if (isset($mpu_add_site_logo)) checked($mpu_add_site_logo, '1'); ?>
+                            >
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
                     <div class="mpu-input-field my-4 mpu_base_site_logo_div_hide_by_default">
                         <label for="mpu_base_site_logo">Utiliser le Logo de votre site </label>
                         <label class="mpu_switch">
-                            <input name="mpu_base_site_logo" class="mpu_base_site_logo" type="checkbox" value="1">
+                            <input name="mpu_base_site_logo" class="mpu_base_site_logo" type="checkbox" value="1"
+                            <?php if (isset($mpu_base_site_logo)) checked($mpu_base_site_logo, '1'); ?>
+                            >
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                         <label for="mpu_base_site_logo">Utiliser un logo personnalisé </label>
@@ -130,7 +141,7 @@ function myPopUp_options_page_html()
 
                     <!-- Bouton pour ouvrir la mediatheque  -->
                     <div class="mpu-input-field my-4 mpu_custom_logo_div_hide_by_default">
-                        <img class="mpu_custom_logo_preview " id="image_preview" src="" alt="Aperçu de l'image" />
+                        <img class="mpu_custom_logo_preview" id="image_preview" src="<?php if (isset($customLogoPath)) echo $customLogoPath; ?>" alt="Aperçu de l'image" />
                         <button class="button is-primary mpu_custom_logo_media_open" class="button">Sélectionner une image</button>
                     </div>
 
