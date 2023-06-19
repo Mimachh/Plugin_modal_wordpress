@@ -114,9 +114,7 @@ function createMpuShortcode($data) {
 
 
 
-        $existing_post_id = post_exists($mpu_post_title);
-
-        if (!$existing_post_id) {
+   
             return wp_insert_post(array(
                 'post_type' => 'mpu_shortcode',
                 'post_status' => 'publish',
@@ -197,9 +195,4 @@ function createMpuShortcode($data) {
                     'mpu_sound_closing' => $mpu_sound_closing,
                 ),
             ));
-        } else {
-            wp_send_json_error('Existe déjà');
-           
-        }
- 
 }
