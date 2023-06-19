@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     const mpuTitleDivHideByDefault = document.querySelector('#header_title');
     const mpuIsTitleVisible = document.querySelector('.mpu_is_title_visible');
     // Div cachée par défaut sauf si checked
-    if (mpuTitleDivHideByDefault) {
+    if (mpuTitleDivHideByDefault && !mpuIsTitleVisible.checked) {
       hideTextFieldElementGroup(mpuTitleDivHideByDefault, '.mpu_header_title',);
     }
     if (mpuIsTitleVisible) {

@@ -39,7 +39,8 @@ function myPopUp_options_page_html()
                     $mpu_add_site_logo = get_post_meta($post_id, 'mpu_add_site_logo', true);
                     $mpu_base_site_logo = get_post_meta($post_id, 'mpu_base_site_logo', true);
                     $customLogoPath = get_post_meta($post_id, 'mpu_custom_logo', true);
-                    
+                    $mpu_is_title_visible = get_post_meta($post_id, 'mpu_is_title_visible', true);
+                    $mpu_header_title = get_post_meta($post_id, 'mpu_header_title', true);
                     
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
@@ -149,7 +150,9 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_title_visible">Ajouter un titre</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_title_visible" class="mpu_is_title_visible" type="checkbox" value="1">
+                            <input name="mpu_is_title_visible" class="mpu_is_title_visible" type="checkbox" value="1"
+                            <?php if (isset($mpu_is_title_visible)) checked($mpu_is_title_visible, '1'); ?>
+                            >
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -157,7 +160,9 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="header_title">
                         <label for="mpu_header_title">Titre du Pop-Up</label>
                         <div class="control">
-                            <input class="input is-primary mpu_header_title" type="text" placeholder="Titre du Pop-Up">
+                            <input class="input is-primary mpu_header_title" type="text" placeholder="Titre du Pop-Up"
+                            value="<?php if (isset($mpu_header_title)) echo $mpu_header_title; ?>"
+                            >
                         </div>
                     </div>
                     <!-- SHOW DESCRIPTION -->
