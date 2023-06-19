@@ -451,12 +451,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   const saveEditButton = document.querySelector('.mpu_save_edit_button');
   const mpuShortcodeId = document.querySelector('.mpu_shortcode_id');
-
   if (saveEditButton) {
     saveEditButton.addEventListener('click', function () {
       const data = {
         status: 'publish',
         mpu_post_title: mpuTitle.value,
+        mpu_activate: mpuActivate.checked ? '1' : '0',
+        mpu_is_all_pages: mpuIsAllPages.checked ? '1' : '0',
+        mpu_is_except: Array.from(mpuIsExcept)
+          .filter((input) => input.checked)
+          .map((input) => input.value),
+        mpu_is_all_articles: mpuIsAllArticles.checked ? '1' : '0',
       };
 
       const xhr = new XMLHttpRequest();
