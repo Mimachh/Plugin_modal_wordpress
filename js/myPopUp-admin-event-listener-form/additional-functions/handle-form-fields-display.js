@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 // ----------------------------- ACTIVATION ----------------------------- //
 
-// Champs afficher sur toutes les pages ou pas
+  // Champs afficher sur toutes les pages ou pas
 
   const mpuIsAllPages = document.querySelector('.mpu_is_all_pages');
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   
 
 // ----------------------------- VISUEL ----------------------------- //
-// CUSTOM LOGO
+  // CUSTOM LOGO
 
 
   const mpuCustomLogoDivHideByDefault = document.querySelector(
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     );
     const mpuBodyContentDivHideByDefault = document.querySelector('#custom_content_div');
     // Div cachée par défaut sauf si checked
-    if (mpuBodyContentDivHideByDefault) {
+    if (mpuBodyContentDivHideByDefault && !mpuIsBodyContentVisible.checked) {
         hideTextFieldElementGroup(mpuBodyContentDivHideByDefault, '.mpu_body_content',);
     }
     if (mpuIsBodyContentVisible) {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     );
     const mpuDescriptionDivHideByDefault = document.querySelector('#custom_description_div');
     // Div cachée par défaut sauf si checked
-    if (mpuDescriptionDivHideByDefault) {
+    if (mpuDescriptionDivHideByDefault && ! mpuIsDescriptionVisible.checked) {
         hideTextFieldElementGroup(mpuDescriptionDivHideByDefault, '.mpu_description',);
     }
     if (mpuIsDescriptionVisible) {
@@ -159,4 +159,88 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         });
     }
+
+
+
+    // Desktop Full screen
+    const mpuIsDesktopFullScreen = document.querySelector(
+      '.mpu_is_desktop_full_screen'
+    );
+    const mpuDesktopFullScreenDivHideByDefault = document.querySelector('#mpuDesktopFullScreenDivHideByDefault')
+    if(mpuDesktopFullScreenDivHideByDefault && !mpuIsDesktopFullScreen.checked) {
+      hideTextFieldElementGroup(mpuDesktopFullScreenDivHideByDefault, 
+        '.mpu_desktop_min_width',
+        '.mpu_desktop_max_width',
+        '.mpu_desktop_min_height',
+        '.mpu_desktop_max_height'
+      );
+    }
+    if(mpuIsDesktopFullScreen) {
+      mpuIsDesktopFullScreen.addEventListener('change', function () {
+        if (mpuIsDesktopFullScreen.checked) {
+          showElementGroupWithFlex(mpuDesktopFullScreenDivHideByDefault);
+        } else {
+            // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
+            hideTextFieldElementGroup(mpuDesktopFullScreenDivHideByDefault, 
+              '.mpu_desktop_min_width',
+              '.mpu_desktop_max_width',
+              '.mpu_desktop_min_height',
+              '.mpu_desktop_max_height'
+            );
+        }
+      });
+    }
+
+
+    //  Full screen
+    const mpuIsMobileFullScreen = document.querySelector(
+      '.mpu_is_mobile_full_screen'
+    );
+    const mpuMobileFullScreenDivHideByDefault = document.querySelector('#mpuMobileFullScreenDivHideByDefault')
+    if(mpuMobileFullScreenDivHideByDefault && !mpuIsMobileFullScreen.checked) {
+      hideTextFieldElementGroup(mpuMobileFullScreenDivHideByDefault, 
+        '.mpu_mobile_min_width',
+        '.mpu_mobile_max_width',
+        '.mpu_mobile_min_height',
+        '.mpu_mobile_max_height'
+      );
+    }
+    if(mpuIsMobileFullScreen) {
+      mpuIsMobileFullScreen.addEventListener('change', function () {
+        if (mpuIsMobileFullScreen.checked) {
+          showElementGroupWithFlex(mpuMobileFullScreenDivHideByDefault);
+        } else {
+            // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
+            hideTextFieldElementGroup(mpuMobileFullScreenDivHideByDefault, 
+              '.mpu_mobile_min_width',
+              '.mpu_mobile_max_width',
+              '.mpu_mobile_min_height',
+              '.mpu_mobile_max_height'
+            );
+        }
+      });
+    }
+
+
+    // Title Shadow
+    const mpuIsTitleShadow = document.querySelector('.mpu_is_title_shadow');
+    const mpuShadowTitleDivHideByDefault = document.querySelector('#mpuShadowTitleDivHideByDefault')
+    if(mpuShadowTitleDivHideByDefault && !mpuIsTitleShadow.checked) {
+      hideTextFieldElementGroup(mpuShadowTitleDivHideByDefault, 
+        '.mpu_title_shadow_color',
+      );
+    }
+    if(mpuIsTitleShadow) {
+      mpuIsTitleShadow.addEventListener('change', function () {
+        if (mpuIsTitleShadow.checked) {
+          showElementGroupWithFlex(mpuShadowTitleDivHideByDefault);
+        } else {
+            // Si l'option n'est pas cochée, cacher le groupe de div  et vider ses valeurs
+            hideTextFieldElementGroup(mpuShadowTitleDivHideByDefault, 
+              '.mpu_title_shadow_color',
+            );
+        }
+      });
+    }
+
 })

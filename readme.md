@@ -48,3 +48,16 @@ Ajout des custom field pour le logo. Il n'est pas encore actif dans le formulair
 
 
 31/05 il manque un bouton pour les fichiers dans visuel et les min height ne sont pas les bons
+
+
+
+<!-- 19/06 -->
+
+Il faut que je cache les boutons sur la fin du form visuel avant de faire le edit :
+    - Ecran full screen petit écran
+    - Ecran full screen grand ecran
+    - Ombre sur titre
+    - Arrière plan de la popup =3 solutions
+    - Style de la bordure = 4 solutions
+
+Penser à mettre les bonnes valeurs pour les champs type select car la vérification pour l'instant ne sera pas bonne

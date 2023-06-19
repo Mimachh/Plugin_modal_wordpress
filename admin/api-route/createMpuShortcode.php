@@ -160,6 +160,7 @@ function createMpuShortcode($data) {
                     'mpu_text_style' => $mpu_text_style,
                     'mpu_text_color' => $mpu_text_color,
                     'mpu_font_size' => $mpu_font_size,
+                    'mpu_font_family' => $mpu_font_family,
                     'mpu_is_title_shadow' => $mpu_is_title_shadow,
                     'mpu_title_shadow_type' => $mpu_title_shadow_type,
                     'mpu_title_shadow_size' => $mpu_title_shadow_size,

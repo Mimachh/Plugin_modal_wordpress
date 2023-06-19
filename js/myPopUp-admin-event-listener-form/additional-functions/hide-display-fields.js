@@ -44,19 +44,40 @@ function hideImageButtonAndFieldGroup(element, imgPreview) {
 // ----------------------------- TEXT FIELD ------------------------------ //
 
   // Fonctions pour gérer un groupe a cacher avec un texte field dedans
-  function hideTextFieldElementGroup(element, toDelete) {
+  function hideTextFieldElementGroup(element, ...toDeleteSelectors) {
     element.style.display = 'none';
-    clearInputText(toDelete);
-  }
-  function clearInputText(toDelete) {
-    const textField = document.querySelector(toDelete);
-    textField.value = '';
+    clearInputText(...toDeleteSelectors);
   }
   
+  function clearInputText(...toDeleteSelectors) {
+    toDeleteSelectors.forEach(selector => {
+      const textField = document.querySelector(selector);
+      if (textField) {
+        textField.value = '';
+      }
+    });
+  }
+  // Pour select
+  function clearInputSelect(...toDeleteSelectors) {
+    toDeleteSelectors.forEach(selector => {
+      const inputElement = document.querySelector(selector);
+      if (inputElement) {
+        if (inputElement.tagName === 'SELECT') {
+          inputElement.selectedIndex = 0; // Réinitialiser la sélection à l'option par défaut
+        } else {
+          inputElement.value = ''; // Réinitialiser la valeur du champ de saisie
+        }
+      }
+    });
+  }
   
   // Fonction pour afficher un groupe de div -> marche pour tout
   function showElementGroup(element) {
     element.style.display = 'block';
+  }
+
+  function showElementGroupWithFlex(element) {
+    element.style.display = 'flex';
   }
   
 

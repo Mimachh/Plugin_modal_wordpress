@@ -19,13 +19,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
   const mpuCustomLogoMediaOpen = document.querySelector(
     '.mpu_custom_logo_media_open'
   );
-  const mpuCustomLogoPreview = document.querySelector(
+ let mpuCustomLogoPreview = document.querySelector(
     '.mpu_custom_logo_preview'
   );
   const mpuAddSiteLogo = document.querySelector('.mpu_add_site_logo');
 
 
   let mpuCustomLogoRelativePath = '';
+
+ 
   if(mpuCustomLogoMediaOpen) {
     mpuCustomLogoMediaOpen.addEventListener('click', function (event) {
       event.preventDefault();
@@ -55,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         // Mettre à jour l'attribut src de l'élément <img> avec l'URL de l'image sélectionnée en chemin relatif
         mpuCustomLogoPreview.src = mpuCustomLogoRelativePath;
+
+        
       });
 
       // Ouvrir la fenêtre modale de la médiathèque
@@ -323,6 +327,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   if (submitButton) {
     submitButton.addEventListener('click', function () {
 
+      
       var mpuInnerBackground = document.querySelector('.mpu_inner_background:checked').value;
       var mpuBorderStyle = document.querySelector('.mpu_border_style:checked').value;
 
@@ -449,61 +454,4 @@ document.addEventListener('DOMContentLoaded', function (event) {
     });
   }
 
-  const saveEditButton = document.querySelector('.mpu_save_edit_button');
-  const mpuShortcodeId = document.querySelector('.mpu_shortcode_id');
-  if (saveEditButton) {
-    saveEditButton.addEventListener('click', function () {
-      const data = {
-        status: 'publish',
-        mpu_post_title: mpuTitle.value,
-        mpu_activate: mpuActivate.checked ? '1' : '0',
-        mpu_is_all_pages: mpuIsAllPages.checked ? '1' : '0',
-        mpu_is_except: Array.from(mpuIsExcept)
-          .filter((input) => input.checked)
-          .map((input) => input.value),
-        mpu_is_all_articles: mpuIsAllArticles.checked ? '1' : '0',
-
-        // Visuel
-        mpu_add_site_logo: mpuAddSiteLogo.checked ? true : '0',
-        mpu_base_site_logo: mpuAddSiteLogo.checked ? true : '0',
-        mpu_custom_logo: mpuCustomLogoRelativePath,
-        mpu_is_title_visible: mpuIsTitleVisible.checked ? true : '0',
-        mpu_header_title: mpuHeaderTitle.value,
-      };
-
-      const xhr = new XMLHttpRequest();
-      xhr.open(
-        'PUT',
-        siteData.root_url +
-          '/wp-json/mpu-shortcodes/v1/manageShortcodes/' +
-          mpuShortcodeId.value
-      );
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.setRequestHeader('X-WP-Nonce', siteData.nonce);
-
-      xhr.onload = function () {
-        if (xhr.status === 200) {
-          const response = JSON.parse(xhr.responseText);
-          console.log('Bien ouej');
-          console.log(response);
-
-          // Réinitialisation des champs
-          mpuTitle.value = '';
-
-          if (response.data == 'Un problème est survenu !') {
-            errorMessage.style.display = 'block';
-            errorMessage.textContent = 'Un problème est survenu !';
-          }
-        } else {
-          const response = JSON.parse(xhr.responseText);
-          console.log('Dommage');
-          console.log(response.message);
-          errorMessage.style.display = 'block';
-          errorMessage.textContent = 'Un problème est survenu !';
-        }
-      };
-
-      xhr.send(JSON.stringify(data));
-    });
-  }
 });
