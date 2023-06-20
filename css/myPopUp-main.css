@@ -1,0 +1,115 @@
+body {
+  font: 100% Helvetica, sans-serif;
+}
+
+.mpu_notification {
+  background-color: #0a6ebd;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.mpu_notification h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  color: whitesmoke;
+}
+
+.informative_message {
+  background-color: #eaeaf2;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  padding: 0 3rem;
+}
+
+.mpu_button_admin_lg {
+  background-color: #0a6ebd;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mpu_button_admin_lg:hover {
+  background-color: #606c5d;
+  opacity: 0.5;
+  color: whitesmoke;
+}
+
+.mpu_button_container {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-self: right;
+}
+
+.mpu_button_admin_md {
+  background-color: #0a6ebd;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mpu_button_admin_md:hover {
+  background-color: #606c5d;
+  opacity: 0.5;
+  color: whitesmoke;
+}
+
+.mpu_button_admin_sm {
+  background-color: #0a6ebd;
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mpu_button_admin_sm:hover {
+  background-color: #606c5d;
+  opacity: 0.5;
+  color: whitesmoke;
+}
+
+.mpu_thanks {
+  background-color: #eaeaf2;
+  width: 90%;
+  display: block;
+  margin: 2rem auto 4rem auto;
+  padding: 0 3rem;
+}
+
+.mpu_thanks p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  color: #606c5d;
+}
+
+.mpu_message_no_popup {
+  background-color: #eaeaf2;
+  display: block;
+  margin: 2rem auto 4rem 2rem;
+  padding: 0 3rem;
+}/*# sourceMappingURL=myPopUp-main.css.map */

@@ -69,18 +69,20 @@ function display_mpu_shortcode_posts()
                             <th><?php echo $post_position; ?></th>
                             <td><?php echo $post_title; ?></td>
                             <td>[mpu_modal name="<?php echo $post_title; ?>"]</td>
-                            <td><a href="<?php echo admin_url('admin.php?page=myPopUp-options&id=' . $post_id); ?>" class="button is-warning">Editer</a></td>
+                            <td><a href="<?php echo admin_url('admin.php?page=myPopUp-options&id=' . $post_id); ?>" class="mpu_button_admin_sm">Editer</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
+
             </table>
-            <input type="submit" name="delete_selected_posts" value="Supprimer les posts sélectionnés" class="button is-danger">
+            <input type="submit" name="delete_selected_posts" value="Supprimer les posts sélectionnés" class="mpu_button_admin_sm">
         </form>
 
+
     <?php } else { ?>
-        <article class="message is-dark">
-            <div class="message-body is-flex is-align-items-center">
-                Aucun PopUp/Shortcode à afficher, vous pouvez commencer à créer votre premier PopUp<a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>" class="button is-primary mx-5">en cliquant ici</a>
+        <article class="message">
+            <div class="mpu_message_no_popup">
+                <h3>Aucun PopUp/Shortcode à afficher, vous pouvez commencer à créer votre premier PopUp</h3><a href="<?php echo admin_url('admin.php?page=myPopUp-options'); ?>" class="mpu_button_admin_sm">en cliquant ici</a>
             </div>
         </article>
 <?php }

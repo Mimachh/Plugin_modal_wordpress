@@ -17,10 +17,10 @@ function createModalHTML($atts)
   // Imaginons que l'attribut passé est un ID d'un shortcode crée par l'utilisateur, avec des champs de couleur, de texte etc.
   // Il suffit ici de faire une requête dans la bdd, de récupérer les infos du shortcode dont c'est l'ID et de les passer ensuite à la modale.
   // Je simule un shortcode qui viendrait de la bdd
-// [first-modal id="monpremiershortcode"]  Edit Delete
-// [first-modal id="monpremiershortcode"]
-// [first-modal id="monpremiershortcode"]
-// [first-modal id="monpremiershortcode"]
+  // [first-modal id="monpremiershortcode"]  Edit Delete
+  // [first-modal id="monpremiershortcode"]
+  // [first-modal id="monpremiershortcode"]
+  // [first-modal id="monpremiershortcode"]
   $shortcodes2 = array(
     array(
       'id' => 1,
@@ -34,7 +34,7 @@ function createModalHTML($atts)
     )
   );
 
-  
+
   $nameOfTheShortcode = $atts['name'];
 
   // Recherche des shortcodes et de la correspondance avec le nom
@@ -42,68 +42,67 @@ function createModalHTML($atts)
     'post_type' => 'mpu_shortcode',
     'posts_per_page' => 1,
     'post_status' => 'publish',
-    's' => $nameOfTheShortcode   
+    's' => $nameOfTheShortcode
   );
 
   $query = new WP_Query($args);
 
   if ($query->have_posts()) {
-      while ($query->have_posts()) {
-          $query->the_post();
+    while ($query->have_posts()) {
+      $query->the_post();
 
-          $post_id = get_the_ID();
-          $post_title = get_the_title();
+      $post_id = get_the_ID();
+      $post_title = get_the_title();
 
-          // On arrête tout si activate n'est pas coché.
-          $mpu_activate = get_post_meta($post_id, 'mpu_activate', true);
-          if($mpu_activate !== '1') {
-            return;
-          }
-
-          $mpu_is_all_pages = get_post_meta($post_id, 'mpu_is_all_pages', true);
-          $mpu_is_except = get_post_meta($post_id, 'mpu_is_except', true);
-          $mpu_is_except = is_array($mpu_is_except) ? $mpu_is_except : array();
-          // Articles
-          $mpu_is_all_articles = get_post_meta($post_id, 'mpu_is_all_articles', true);
-
-          // ici on affiche la modale
-
-          // VERIFICATION POUR LES PAGES
-          if(!is_single() AND $mpu_is_all_pages === '1') {
-
-            // S'il y a des exceptions
-            if(count($mpu_is_except) > 0) {
-              foreach($mpu_is_except as $page_id) {
-                if(!is_page($page_id)) {
-                  echo $post_title;
-                  echo $mpu_is_all_pages;
-                } else {
-                  echo 'page non acceptée';
-                }
-              }
-            } else {
-              // Si aucune exception donc toutes les pages
-              echo $post_title;
-              echo $mpu_is_all_pages;
-            }
-
-          } else if(!is_single() AND $mpu_is_all_pages !== '1') {
-            echo 'désactivé pour les pages';
-          }
-          
-          // VERIFICATION POUR LES ARTICLES
-          if(!is_page() AND $mpu_is_all_articles === "1" AND is_single()) {
-            echo 'activé pour les articles';
-          } else if(!is_page() AND $mpu_is_all_articles !== "1" AND is_single()) {
-            echo 'désactivé pour tous les articles';
-          }
+      // On arrête tout si activate n'est pas coché.
+      $mpu_activate = get_post_meta($post_id, 'mpu_activate', true);
+      if ($mpu_activate !== '1') {
+        return;
       }
 
-      // Réinitialiser la requête
-      wp_reset_postdata();
+      $mpu_is_all_pages = get_post_meta($post_id, 'mpu_is_all_pages', true);
+      $mpu_is_except = get_post_meta($post_id, 'mpu_is_except', true);
+      $mpu_is_except = is_array($mpu_is_except) ? $mpu_is_except : array();
+      // Articles
+      $mpu_is_all_articles = get_post_meta($post_id, 'mpu_is_all_articles', true);
+
+      // ici on affiche la modale
+
+      // VERIFICATION POUR LES PAGES
+      if (!is_single() and $mpu_is_all_pages === '1') {
+
+        // S'il y a des exceptions
+        if (count($mpu_is_except) > 0) {
+          foreach ($mpu_is_except as $page_id) {
+            if (!is_page($page_id)) {
+              echo $post_title;
+              echo $mpu_is_all_pages;
+            } else {
+              echo 'page non acceptée';
+            }
+          }
+        } else {
+          // Si aucune exception donc toutes les pages
+          echo $post_title;
+          echo $mpu_is_all_pages;
+        }
+      } else if (!is_single() and $mpu_is_all_pages !== '1') {
+        echo 'désactivé pour les pages';
+      }
+
+      // VERIFICATION POUR LES ARTICLES
+      if (!is_page() and $mpu_is_all_articles === "1" and is_single()) {
+        echo 'activé pour les articles';
+      } else if (!is_page() and $mpu_is_all_articles !== "1" and is_single()) {
+        echo 'désactivé pour tous les articles';
+      }
+    }
+
+    // Réinitialiser la requête
+    wp_reset_postdata();
   } else {
 
-      echo 'Aucune modale ne correspond à ce shortcode !';
+    echo 'Aucune modale ne correspond à ce shortcode !';
   }
 
 

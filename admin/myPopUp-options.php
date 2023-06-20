@@ -29,8 +29,8 @@ function myPopUp_options_page_html()
                     // Récupérer les données du custom post type
                     $post = get_post($post_id);
                     $post_title = $post->post_title;
-                    
-                    
+
+
                     // Récup des champs activation
                     $mpu_activate = get_post_meta($post_id, 'mpu_activate', true);
                     $mpu_is_all_pages = get_post_meta($post_id, 'mpu_is_all_pages', true);
@@ -41,44 +41,44 @@ function myPopUp_options_page_html()
                     $customLogoPath = get_post_meta($post_id, 'mpu_custom_logo', true);
                     $mpu_is_title_visible = get_post_meta($post_id, 'mpu_is_title_visible', true);
                     $mpu_header_title = get_post_meta($post_id, 'mpu_header_title', true);
-                        //Custom content
+                    //Custom content
                     $mpu_is_body_content_visible = get_post_meta($post_id, 'mpu_is_body_content_visible', true);
                     $mpu_body_content = get_post_meta($post_id, 'mpu_body_content', true);
-                        // Custom description
+                    // Custom description
                     $mpu_is_description_visible = get_post_meta($post_id, 'mpu_is_description_visible', true);
                     $mpu_description = get_post_meta($post_id, 'mpu_description', true);
-                        // Overlay
+                    // Overlay
                     $mpu_overlay = get_post_meta($post_id, 'mpu_overlay', true);
                     $mpu_overlay_opacity_value = get_post_meta($post_id, 'mpu_overlay_opacity_value', true);
                     $mpu_overlay_color = get_post_meta($post_id, 'mpu_overlay_color', true);
                     $mpu_overlay_blur_value = get_post_meta($post_id, 'mpu_overlay_blur_value', true);
-                        // Auteur
+                    // Auteur
                     $mpu_is_author_visible = get_post_meta($post_id, 'mpu_is_author_visible', true);
-                        // Choix du template
+                    // Choix du template
                     $mpu_template_choice = get_post_meta($post_id, 'mpu_template_choice', true);
-                        // Desktop screen
+                    // Desktop screen
                     $mpu_is_desktop_full_screen = get_post_meta($post_id, 'mpu_is_desktop_full_screen', true);
                     $mpu_desktop_min_width = get_post_meta($post_id, 'mpu_desktop_min_width', true);
                     $mpu_desktop_max_width = get_post_meta($post_id, 'mpu_desktop_max_width', true);
                     $mpu_desktop_min_height = get_post_meta($post_id, 'mpu_desktop_min_height', true);
                     $mpu_desktop_max_height = get_post_meta($post_id, 'mpu_desktop_max_height', true);
-                        // Mobile screen
+                    // Mobile screen
                     $mpu_is_mobile_full_screen = get_post_meta($post_id, 'mpu_is_mobile_full_screen', true);
                     $mpu_mobile_min_width = get_post_meta($post_id, 'mpu_mobile_min_width', true);
                     $mpu_mobile_max_width = get_post_meta($post_id, 'mpu_mobile_max_width', true);
                     $mpu_mobile_min_height = get_post_meta($post_id, 'mpu_mobile_min_height', true);
                     $mpu_mobile_max_height = get_post_meta($post_id, 'mpu_mobile_max_height', true);
-                        // Text style
+                    // Text style
                     $mpu_text_style = get_post_meta($post_id, 'mpu_text_style', true);
                     $mpu_text_color = get_post_meta($post_id, 'mpu_text_color', true);
                     $mpu_font_family = get_post_meta($post_id, 'mpu_font_family', true);
                     $mpu_font_size = get_post_meta($post_id, 'mpu_font_size', true);
-                        // Shadow
+                    // Shadow
                     $mpu_is_title_shadow = get_post_meta($post_id, 'mpu_is_title_shadow', true);
                     $mpu_title_shadow_type = get_post_meta($post_id, 'mpu_title_shadow_type', true);
                     $mpu_title_shadow_color = get_post_meta($post_id, 'mpu_title_shadow_color', true);
                     $mpu_title_shadow_size = get_post_meta($post_id, 'mpu_title_shadow_size', true);
-                
+
 
 
                 ?>
@@ -109,8 +109,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_all_pages">Afficher sur toutes les pages ?</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_all_pages" class="mpu_is_all_pages" type="checkbox" value="1" <?php if (isset($mpu_is_all_pages)) checked($mpu_is_all_pages, '1'); ?>
-                            >
+                            <input name="mpu_is_all_pages" class="mpu_is_all_pages" type="checkbox" value="1" <?php if (isset($mpu_is_all_pages)) checked($mpu_is_all_pages, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -125,18 +124,15 @@ function myPopUp_options_page_html()
                         foreach ($mpu_pages as $page) {
                             $page_id = $page->ID;
                             $page_title = $page->post_title;
-                            if(isset($mpu_is_except)) {
+                            if (isset($mpu_is_except)) {
                                 $checked = in_array($page_id, $mpu_is_except) ? 'checked' : '';
                             }
-                            
+
                         ?>
                             <div>
-                                <input type="checkbox" name="mpu_is_except[]" class="mpu_is_except" 
-                                value="<?php echo $page_id; ?>"
-                                <?php if(isset($mpu_is_except)) echo $checked; ?>
-                                >
-                                 <?php echo $page_title; 
-                                 ?>
+                                <input type="checkbox" name="mpu_is_except[]" class="mpu_is_except" value="<?php echo $page_id; ?>" <?php if (isset($mpu_is_except)) echo $checked; ?>>
+                                <?php echo $page_title;
+                                ?>
                             </div>
                         <?php }
                         ?>
@@ -146,9 +142,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_all_articles">Afficher sur tous les articles ?</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_all_articles" class="mpu_is_all_articles" type="checkbox"
-                            <?php if (isset($mpu_is_all_articles)) checked($mpu_is_all_articles, '1'); ?>
-                            >
+                            <input name="mpu_is_all_articles" class="mpu_is_all_articles" type="checkbox" <?php if (isset($mpu_is_all_articles)) checked($mpu_is_all_articles, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -162,18 +156,14 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_add_site_logo">Ajouter un logo à votre popup</label>
                         <label class="mpu_switch">
-                            <input name="mpu_add_site_logo" class="mpu_add_site_logo" type="checkbox" value="1"
-                            <?php if (isset($mpu_add_site_logo)) checked($mpu_add_site_logo, '1'); ?>
-                            >
+                            <input name="mpu_add_site_logo" class="mpu_add_site_logo" type="checkbox" value="1" <?php if (isset($mpu_add_site_logo)) checked($mpu_add_site_logo, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
                     <div class="mpu-input-field my-4 mpu_base_site_logo_div_hide_by_default">
                         <label for="mpu_base_site_logo">Utiliser le Logo de votre site </label>
                         <label class="mpu_switch">
-                            <input name="mpu_base_site_logo" class="mpu_base_site_logo" type="checkbox" value="1"
-                            <?php if (isset($mpu_base_site_logo)) checked($mpu_base_site_logo, '1'); ?>
-                            >
+                            <input name="mpu_base_site_logo" class="mpu_base_site_logo" type="checkbox" value="1" <?php if (isset($mpu_base_site_logo)) checked($mpu_base_site_logo, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                         <label for="mpu_base_site_logo">Utiliser un logo personnalisé </label>
@@ -189,9 +179,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_title_visible">Ajouter un titre</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_title_visible" class="mpu_is_title_visible" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_title_visible)) checked($mpu_is_title_visible, '1'); ?>
-                            >
+                            <input name="mpu_is_title_visible" class="mpu_is_title_visible" type="checkbox" value="1" <?php if (isset($mpu_is_title_visible)) checked($mpu_is_title_visible, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -199,18 +187,14 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="header_title">
                         <label for="mpu_header_title">Titre du Pop-Up</label>
                         <div class="control">
-                            <input class="input is-primary mpu_header_title" type="text" placeholder="Titre du Pop-Up"
-                            value="<?php if (isset($mpu_header_title)) echo $mpu_header_title; ?>"
-                            >
+                            <input class="input is-primary mpu_header_title" type="text" placeholder="Titre du Pop-Up" value="<?php if (isset($mpu_header_title)) echo $mpu_header_title; ?>">
                         </div>
                     </div>
                     <!-- SHOW DESCRIPTION -->
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_body_content_visible">Ajouter un contenu custom</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_body_content_visible" class="mpu_is_body_content_visible" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_body_content_visible)) checked($mpu_is_body_content_visible, '1'); ?>
-                            >
+                            <input name="mpu_is_body_content_visible" class="mpu_is_body_content_visible" type="checkbox" value="1" <?php if (isset($mpu_is_body_content_visible)) checked($mpu_is_body_content_visible, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -218,17 +202,14 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="custom_content_div">
                         <label for="mpu_body_content">Custom content</label>
                         <div class="control">
-                            <textarea class="textarea is-primary mpu_body_content" type="text" 
-                            placeholder="Custom Content"><?php if (isset($mpu_body_content)) echo $mpu_body_content; ?></textarea>
+                            <textarea class="textarea is-primary mpu_body_content" type="text" placeholder="Custom Content"><?php if (isset($mpu_body_content)) echo $mpu_body_content; ?></textarea>
                         </div>
                     </div>
                     <!-- SHOW DESCRIPTION -->
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_description_visible">Ajouter une description</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_description_visible" class="mpu_is_description_visible" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_description_visible)) checked($mpu_is_description_visible, '1'); ?>
-                            >
+                            <input name="mpu_is_description_visible" class="mpu_is_description_visible" type="checkbox" value="1" <?php if (isset($mpu_is_description_visible)) checked($mpu_is_description_visible, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -236,8 +217,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4" id="custom_description_div">
                         <label for="mpu_description">Custom Description</label>
                         <div class="control">
-                            <textarea class="textarea is-primary mpu_description" type="text" 
-                            placeholder="Description"><?php if (isset($mpu_description)) echo $mpu_description; ?></textarea>
+                            <textarea class="textarea is-primary mpu_description" type="text" placeholder="Description"><?php if (isset($mpu_description)) echo $mpu_description; ?></textarea>
                         </div>
                     </div>
                     <!-- OVERLAY -->
@@ -258,27 +238,21 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-2">
                             <label for="mpu_overlay_opacity_value">Opacité</label>
                             <div class="control">
-                                <input class="input is-primary mpu_overlay_opacity_value" type="number" placeholder="Valeur"
-                                value="<?php if (isset($mpu_overlay_opacity_value)) echo $mpu_overlay_opacity_value; ?>"
-                                >
+                                <input class="input is-primary mpu_overlay_opacity_value" type="number" placeholder="Valeur" value="<?php if (isset($mpu_overlay_opacity_value)) echo $mpu_overlay_opacity_value; ?>">
                             </div>
                         </div>
                         <!-- BACKDROP COLORPICKER -->
                         <div class="mpu-input-field my-4 column is-2">
                             <label for="mpu_overlay_color">Couleur</label>
                             <div class="control">
-                                <input class="input is-primary mpu_overlay_color" type="color" placeholder="Valeur"
-                                value="<?php if (isset($mpu_overlay_color)) echo $mpu_overlay_color; ?>"
-                                >
+                                <input class="input is-primary mpu_overlay_color" type="color" placeholder="Valeur" value="<?php if (isset($mpu_overlay_color)) echo $mpu_overlay_color; ?>">
                             </div>
                         </div>
                         <!-- BLUR VALUE -->
                         <div class="mpu-input-field my-4 column is-2">
                             <label for="mpu_overlay_blur_value">Flou</label>
                             <div class="control">
-                                <input class="input is-primary mpu_overlay_blur_value" type="number" placeholder="Valeur"
-                                value="<?php if (isset($mpu_overlay_blur_value)) echo $mpu_overlay_blur_value; ?>"
-                                >
+                                <input class="input is-primary mpu_overlay_blur_value" type="number" placeholder="Valeur" value="<?php if (isset($mpu_overlay_blur_value)) echo $mpu_overlay_blur_value; ?>">
                             </div>
                         </div>
                     </div>
@@ -286,9 +260,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_author_visible">Afficher l'auteur</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_author_visible" class="mpu_is_author_visible" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_author_visible)) checked($mpu_is_author_visible, '1'); ?>
-                            >
+                            <input name="mpu_is_author_visible" class="mpu_is_author_visible" type="checkbox" value="1" <?php if (isset($mpu_is_author_visible)) checked($mpu_is_author_visible, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -311,9 +283,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4 column is-3">
                         <label for="mpu_is_desktop_full_screen">Afficher le pop-up en plein écran sur ordinateur ?</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_desktop_full_screen" class="mpu_is_desktop_full_screen" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_desktop_full_screen)) checked($mpu_is_desktop_full_screen, '1'); ?>
-                            >
+                            <input name="mpu_is_desktop_full_screen" class="mpu_is_desktop_full_screen" type="checkbox" value="1" <?php if (isset($mpu_is_desktop_full_screen)) checked($mpu_is_desktop_full_screen, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -323,17 +293,13 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_desktop_min_width">Largeur minimale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_min_width" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_desktop_min_width)) echo $mpu_desktop_min_width; ?>"
-                                >
+                                <input class="input is-primary mpu_desktop_min_width" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_desktop_min_width)) echo $mpu_desktop_min_width; ?>">
                             </div>
                         </div>
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_desktop_max_width">Largeur maximale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_max_width" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_desktop_max_width)) echo $mpu_desktop_max_width; ?>"
-                                >
+                                <input class="input is-primary mpu_desktop_max_width" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_desktop_max_width)) echo $mpu_desktop_max_width; ?>">
                             </div>
                         </div>
 
@@ -341,18 +307,14 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_desktop_min_height">Hauteur minimale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_desktop_min_height)) echo $mpu_desktop_min_height; ?>"
-                                >
+                                <input class="input is-primary mpu_desktop_min_height" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_desktop_min_height)) echo $mpu_desktop_min_height; ?>">
                             </div>
                         </div>
                         <!-- IF NO, MIN-HEIGHT -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_desktop_max_height">Hauteur maximale : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_desktop_max_height" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_desktop_max_height)) echo $mpu_desktop_max_height; ?>"
-                                >
+                                <input class="input is-primary mpu_desktop_max_height" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_desktop_max_height)) echo $mpu_desktop_max_height; ?>">
                             </div>
                         </div>
                         <!-- END COLUMNS -->
@@ -362,9 +324,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_mobile_full_screen">Afficher en plein écran sur mobile ?</label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_mobile_full_screen" class="mpu_is_mobile_full_screen" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_mobile_full_screen)) checked($mpu_is_mobile_full_screen, '1'); ?>
-                            >
+                            <input name="mpu_is_mobile_full_screen" class="mpu_is_mobile_full_screen" type="checkbox" value="1" <?php if (isset($mpu_is_mobile_full_screen)) checked($mpu_is_mobile_full_screen, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -374,36 +334,28 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_mobile_min_width">Largeur minimale sur mobile : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_mobile_min_width" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_mobile_min_width)) echo $mpu_mobile_min_width; ?>"
-                                >
+                                <input class="input is-primary mpu_mobile_min_width" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_mobile_min_width)) echo $mpu_mobile_min_width; ?>">
                             </div>
                         </div>
                         <!-- IF NO, MAX WIDTH -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_mobile_max_width">Largeur maximale sur mobile : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_mobile_max_width" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_mobile_max_width)) echo $mpu_mobile_max_width; ?>"
-                                >
+                                <input class="input is-primary mpu_mobile_max_width" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_mobile_max_width)) echo $mpu_mobile_max_width; ?>">
                             </div>
                         </div>
                         <!-- IF NO, MIN-HEIGHT -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_mobile_min_height">Hauteur minimum sur mobile</label>
                             <div class="control">
-                                <input class="input is-primary mpu_mobile_min_height" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_mobile_min_height)) echo $mpu_mobile_min_height; ?>"
-                                >
+                                <input class="input is-primary mpu_mobile_min_height" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_mobile_min_height)) echo $mpu_mobile_min_height; ?>">
                             </div>
                         </div>
                         <!-- IF NO, HEIGHT -->
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_mobile_max_height">Hauteur maximale sur mobile</label>
                             <div class="control">
-                                <input class="input is-primary mpu_mobile_max_height" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_mobile_max_height)) echo $mpu_mobile_max_height; ?>"
-                                >
+                                <input class="input is-primary mpu_mobile_max_height" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_mobile_max_height)) echo $mpu_mobile_max_height; ?>">
                             </div>
                         </div>
 
@@ -412,23 +364,23 @@ function myPopUp_options_page_html()
 
                     <!-- COLUMNS START -->
                     <!-- <div class="columns"> -->
-                        <!-- IF NO, MAX WIDTH -->
-                        <!--//////////////////////////////////////////////// mpu_inner_padding_y TO CREATE PLEASE!!!!!!! -->
-                        <!-- <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                    <!-- IF NO, MAX WIDTH -->
+                    <!--//////////////////////////////////////////////// mpu_inner_padding_y TO CREATE PLEASE!!!!!!! -->
+                    <!-- <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_inner_padding_y">Padding vertical</label>
                             <div class="control">
                                 <input class="input is-primary mpu_inner_padding_y" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div> -->
-                        <!-- IF NO, HEIGHT -->
-                        <!--//////////////////////////////////////////////// mpu_inner_padding_x TO CREATE PLEASE!!!!!!! -->
-                        <!-- <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
+                    <!-- IF NO, HEIGHT -->
+                    <!--//////////////////////////////////////////////// mpu_inner_padding_x TO CREATE PLEASE!!!!!!! -->
+                    <!-- <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_inner_padding_x">Padding Horizontal</label>
                             <div class="control">
                                 <input class="input is-primary mpu_inner_padding_x" type="number" placeholder="Valeur en pixel">
                             </div>
                         </div> -->
-                        <!-- END COLUMNS -->
+                    <!-- END COLUMNS -->
                     <!-- </div> -->
 
                     <!-- COLUMNS START -->
@@ -440,12 +392,8 @@ function myPopUp_options_page_html()
                                 <label for="mpu_text_style">Style de texte</label>
                                 <div class="control">
                                     <select class="mpu_text_style">
-                                        <option value="option1"
-                                        <?php if (isset($mpu_text_style) && $mpu_text_style === 'option1') echo 'selected'; ?>
-                                        >Style de Texte 1</option>
-                                        <option value="option2"
-                                        <?php if (isset($mpu_text_style) && $mpu_text_style === 'option2') echo 'selected'; ?>
-                                        >Style de Texte 2</option>
+                                        <option value="option1" <?php if (isset($mpu_text_style) && $mpu_text_style === 'option1') echo 'selected'; ?>>Style de Texte 1</option>
+                                        <option value="option2" <?php if (isset($mpu_text_style) && $mpu_text_style === 'option2') echo 'selected'; ?>>Style de Texte 2</option>
                                     </select>
                                 </div>
                             </div>
@@ -455,9 +403,7 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
                             <label for="mpu_text_color">Couleur du texte</label>
                             <div class="control">
-                                <input class="input is-primary mpu_text_color" type="color" placeholder="Valeur"
-                                value="<?php if (isset($mpu_text_color)) echo $mpu_text_color; ?>"
-                                >
+                                <input class="input is-primary mpu_text_color" type="color" placeholder="Valeur" value="<?php if (isset($mpu_text_color)) echo $mpu_text_color; ?>">
                             </div>
                         </div>
 
@@ -467,15 +413,9 @@ function myPopUp_options_page_html()
                                 <label for="mpu_font_family">Style de texte</label>
                                 <div class="control">
                                     <select class="mpu_font_family">
-                                        <option value="fm1"
-                                        <?php if (isset($mpu_font_family) && $mpu_font_family === 'fm1') echo 'selected'; ?>
-                                        >Font Family 1</option>
-                                        <option value="fm2"
-                                        <?php if (isset($mpu_font_family) && $mpu_font_family === 'fm2') echo 'selected'; ?>
-                                        >Font Family 2</option>
-                                        <option value="fm3"
-                                        <?php if (isset($mpu_font_family) && $mpu_font_family === 'fm3') echo 'selected'; ?>
-                                        >Font Family 3</option>
+                                        <option value="fm1" <?php if (isset($mpu_font_family) && $mpu_font_family === 'fm1') echo 'selected'; ?>>Font Family 1</option>
+                                        <option value="fm2" <?php if (isset($mpu_font_family) && $mpu_font_family === 'fm2') echo 'selected'; ?>>Font Family 2</option>
+                                        <option value="fm3" <?php if (isset($mpu_font_family) && $mpu_font_family === 'fm3') echo 'selected'; ?>>Font Family 3</option>
                                     </select>
                                 </div>
                             </div>
@@ -484,9 +424,7 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_font_size">Taille de police</label>
                             <div class="control">
-                                <input class="input is-primary mpu_font_size" type="number" placeholder="Valeur en pixel"
-                                value="<?php if (isset($mpu_font_size)) echo $mpu_font_size; ?>"
-                                >
+                                <input class="input is-primary mpu_font_size" type="number" placeholder="Valeur en pixel" value="<?php if (isset($mpu_font_size)) echo $mpu_font_size; ?>">
                             </div>
                         </div>
                         <!-- ///////////////////////////////////////////////////////////////////////////TO DO NEXT /////////////////////////////////////////////////////////////////-->
@@ -498,9 +436,7 @@ function myPopUp_options_page_html()
                     <div class="mpu-input-field my-4">
                         <label for="mpu_is_title_shadow">Ajouter une ombre au titre </label>
                         <label class="mpu_switch">
-                            <input name="mpu_is_title_shadow" class="mpu_is_title_shadow" type="checkbox" value="1"
-                            <?php if (isset($mpu_is_title_shadow)) checked($mpu_is_title_shadow, '1'); ?>
-                            >
+                            <input name="mpu_is_title_shadow" class="mpu_is_title_shadow" type="checkbox" value="1" <?php if (isset($mpu_is_title_shadow)) checked($mpu_is_title_shadow, '1'); ?>>
                             <span class="mpu_slider mpu_round"></span>
                         </label>
                     </div>
@@ -514,12 +450,8 @@ function myPopUp_options_page_html()
                                 <label for="mpu_title_shadow_type">Style de l'ombre</label>
                                 <div class="control">
                                     <select class="mpu_title_shadow_type">
-                                        <option value="shadow1"
-                                        <?php if (isset($mpu_title_shadow_type) && $mpu_title_shadow_type === 'shadow1') echo 'selected'; ?>
-                                        >Intérieur</option>
-                                        <option value="shadow2"
-                                        <?php if (isset($mpu_title_shadow_type) && $mpu_title_shadow_type === 'shadow2') echo 'selected'; ?>
-                                        >Extérieur</option>
+                                        <option value="shadow1" <?php if (isset($mpu_title_shadow_type) && $mpu_title_shadow_type === 'shadow1') echo 'selected'; ?>>Intérieur</option>
+                                        <option value="shadow2" <?php if (isset($mpu_title_shadow_type) && $mpu_title_shadow_type === 'shadow2') echo 'selected'; ?>>Extérieur</option>
                                     </select>
                                 </div>
                             </div>
@@ -529,9 +461,7 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
                             <label for="mpu_title_shadow_color">Couleur de l'ombre</label>
                             <div class="control">
-                                <input class="input is-primary mpu_title_shadow_color" type="color" placeholder="Valeur en pixels"
-                                value="<?php if (isset($mpu_title_shadow_color)) echo $mpu_title_shadow_color; ?>"
-                                >
+                                <input class="input is-primary mpu_title_shadow_color" type="color" placeholder="Valeur en pixels" value="<?php if (isset($mpu_title_shadow_color)) echo $mpu_title_shadow_color; ?>">
                             </div>
                         </div>
 
@@ -541,15 +471,9 @@ function myPopUp_options_page_html()
                                 <label for="mpu_title_shadow_size">Taille de l'ombre</label>
                                 <div class="control">
                                     <select class="mpu_title_shadow_size">
-                                        <option value="size1"
-                                        <?php if (isset($mpu_title_shadow_size) && $mpu_title_shadow_size === 'size1') echo 'selected'; ?>
-                                        >Petite</option>
-                                        <option value="size2"
-                                        <?php if (isset($mpu_title_shadow_size) && $mpu_title_shadow_size === 'size2') echo 'selected'; ?>
-                                        >Medium</option>
-                                        <option class="size3"
-                                        <?php if (isset($mpu_title_shadow_size) && $mpu_title_shadow_size === 'size3') echo 'selected'; ?>
-                                        >Large</option>
+                                        <option value="size1" <?php if (isset($mpu_title_shadow_size) && $mpu_title_shadow_size === 'size1') echo 'selected'; ?>>Petite</option>
+                                        <option value="size2" <?php if (isset($mpu_title_shadow_size) && $mpu_title_shadow_size === 'size2') echo 'selected'; ?>>Medium</option>
+                                        <option class="size3" <?php if (isset($mpu_title_shadow_size) && $mpu_title_shadow_size === 'size3') echo 'selected'; ?>>Large</option>
                                     </select>
                                 </div>
                             </div>
@@ -620,7 +544,7 @@ function myPopUp_options_page_html()
 
 
                     <div class="columns">
-                            <p>Styles supplémentaires</p>
+                        <p>Styles supplémentaires</p>
                         <!-- ON SORT DU TITRE ON EST SUR LE CONTENU -->
                         <!-- Alignement du contenu  -->
                         <div class="mpu-input-field my-4 column is-2">
@@ -655,7 +579,7 @@ function myPopUp_options_page_html()
 
                     <!-- Arrière plan -->
                     <div class="columns">
-                        
+
                         <div class="mpu-input-field my-4 column is-2">
                             <label for="mpu_inner_background">Arrière plan de la pop-up</label>
                             <div class="control">
@@ -731,7 +655,7 @@ function myPopUp_options_page_html()
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Si !none Choix de la couleur -->
                     <div class="columns">
                         <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
@@ -741,7 +665,7 @@ function myPopUp_options_page_html()
                             </div>
                         </div>
                     </div>
-                        
+
                     <!-- Si !none choix du weight -->
                     <div class="columns">
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
@@ -968,10 +892,8 @@ function myPopUp_options_page_html()
                 </div>
                 <!-- MENU OPTION SUPPLEMENTAIRES -->
                 <div class="mpu-options-supp-section">
-                    <!-- J'attaque les options supp -->
 
                     <!-- Sound openning -->
-                    <h2>Hello From Options Supp Section</h2>
                     <div class="columns">
                         <div class="mpu-input-field my-4">
                             <label for="mpu_is_sound_on_open">Activer le son à l'ouverture ?</label>
@@ -987,7 +909,7 @@ function myPopUp_options_page_html()
                             <div class="my-4">
                                 <audio class="sound_opening_preview" controls></audio>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -1007,7 +929,7 @@ function myPopUp_options_page_html()
                             <div class="my-4">
                                 <audio class="sound_closing_preview" controls></audio>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

@@ -1,16 +1,17 @@
 .mpu_modal {
   max-width: 50ch;
   border: 0;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
   margin: auto auto !important;
   text-align: center;
 }
 
 .mpu_modal::backdrop {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(0 0 0 / 0.4);
 }
 
 /* extra styling */
+
 .mpu_button {
   border: 0;
   cursor: pointer;
@@ -48,4 +49,4 @@ form {
 
 .mpu_sm {
   font-size: 0.5em;
-}/*# sourceMappingURL=myPopUp-public.css.map */
+}

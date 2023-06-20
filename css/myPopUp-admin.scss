@@ -44,6 +44,7 @@ select.is-hovered {
 }
 
 /*  Switch Button */
+
 .mpu-input-field .mpu_switch {
   position: relative;
   display: inline-block;
@@ -65,17 +66,19 @@ select.is-hovered {
   right: 0;
   bottom: 0;
   background-color: var(--single-post-paginate-disabled-color);
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 .mpu-input-field .mpu_slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 20px;
   width: 20px;
   left: 5px;
   bottom: 5px;
   background-color: white;
+  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -88,6 +91,8 @@ select.is-hovered {
 }
 
 .mpu-input-field input:checked + .mpu_slider:before {
+  -webkit-transform: translateX(28px);
+  -ms-transform: translateX(28px);
   transform: translateX(28px);
 }
 
@@ -101,8 +106,9 @@ select.is-hovered {
 }
 
 /* Custom Logo Preview */
+
 .mpu_custom_logo_preview,
 .mpu_inner_background_image_preview {
   width: 150px;
   height: auto;
-}/*# sourceMappingURL=myPopUp-admin.css.map */
+}
