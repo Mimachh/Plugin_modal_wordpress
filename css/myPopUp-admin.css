@@ -1,3 +1,7 @@
+body {
+  font: 100% Helvetica, sans-serif;
+}
+
 :root {
   --single-post-paginate-primary-color: #0f0e17;
   --single-post-paginate-secondary-color: #ff8906;
@@ -41,6 +45,52 @@ select.is-hovered {
 .message-body {
   width: 90%;
   margin: auto;
+}
+
+/* Menu */
+.mpu_tabs_menu {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 3rem 0;
+  background-color: #0a6ebd;
+}
+
+.mpu_tabs_menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.mpu_tabs_menu ul li a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s linear;
+  justify-content: center;
+  align-items: center;
+}
+
+/*global form style */
+label {
+  font-size: 1rem;
+}
+
+.field {
+  margin: 1rem 0 2rem 0;
+}
+
+.mpu-input-field {
+  margin: 1rem 0 2rem 0;
 }
 
 /*  Switch Button */

@@ -10,7 +10,7 @@ function myPopUp_options_page_html()
 
             <h1 class="mb-5"><?php echo esc_html(get_admin_page_title()); ?></h1>
 
-            <div class="tabs is-centered is-box is-medium mt-6">
+            <div class="mpu_tabs_menu">
                 <ul>
                     <li class="is-active mpu-activation"><a>Activation</a></li>
                     <li><a class="mpu-visuel">Visuel</a></li>

@@ -39,12 +39,14 @@ body {
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+  transition: 0.4s linear;
 }
 
 .mpu_button_admin_lg:hover {
   background-color: #606c5d;
   opacity: 0.5;
   color: whitesmoke;
+  transition: 0.4s linear;
 }
 
 .mpu_button_container {
