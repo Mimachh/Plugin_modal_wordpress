@@ -96,6 +96,13 @@ function myPopUp_options_page_html()
                     $mpu_inner_background = get_post_meta($post_id, 'mpu_inner_background', true);
                     $mpu_inner_background_image = get_post_meta($post_id, 'mpu_inner_background_image', true);
                     $mpu_inner_background_color = get_post_meta($post_id, 'mpu_inner_background_color', true);
+                    $mpu_inner_background_image_style = get_post_meta($post_id, 'mpu_inner_background_image_style', true);
+
+                    // Border
+                    $mpu_border_style = get_post_meta($post_id, 'mpu_border_style', true);
+                    $mpu_border_color = get_post_meta($post_id, 'mpu_border_color', true);
+                    $mpu_border_weight = get_post_meta($post_id, 'mpu_border_weight', true);
+                    $mpu_animation_opening = get_post_meta($post_id, 'mpu_animation_opening', true);
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
                     <button type="submit" class="mpu_save_edit_button">Nouveau bouton edit</button>
@@ -676,8 +683,12 @@ function myPopUp_options_page_html()
                                 <label for="mpu_inner_background_image_style">Style de l'image : </label>
                                 <div class="control">
                                     <select class="mpu_inner_background_image_style">
-                                        <option value="cover">Cover</option>
-                                        <option value="contain">Contain</option>
+                                        <option value="cover"
+                                        <?php if (isset($mpu_inner_background_image_style) && $mpu_inner_background_image_style === 'cover') echo 'selected'; ?>
+                                        >Cover</option>
+                                        <option value="contain"
+                                        <?php if (isset($mpu_inner_background_image_style) && $mpu_inner_background_image_style === 'contain') echo 'selected'; ?>
+                                        >Contain</option>
                                     </select>
                                 </div>
                             </div>
@@ -690,23 +701,33 @@ function myPopUp_options_page_html()
                             <label for="mpu_border_style">Style de la bordure</label>
                             <div class="control">
                                 <label class="radio">
-                                    <input type="radio" name="mpu_border_style" checked class="mpu_border_style" value="none">
+                                    <input type="radio" name="mpu_border_style" checked class="mpu_border_style" value="none"
+                                    <?php if (isset($mpu_border_style) && $mpu_border_style === 'none') echo 'checked'; ?>
+                                    >
                                     Aucune
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="solid">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="solid"
+                                    <?php if (isset($mpu_border_style) && $mpu_border_style === 'solid') echo 'checked'; ?>
+                                    >
                                     Solide
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="thick double">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="thick double"
+                                    <?php if (isset($mpu_border_style) && $mpu_border_style === 'thick double') echo 'checked'; ?>
+                                    >
                                     Doublée
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="dashed">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="dashed"
+                                    <?php if (isset($mpu_border_style) && $mpu_border_style === 'dashed') echo 'checked'; ?>
+                                    >
                                     Hachurée
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="rigde">
+                                    <input type="radio" name="mpu_border_style" class="mpu_border_style" value="rigde"
+                                    <?php if (isset($mpu_border_style) && $mpu_border_style === 'rigde') echo 'checked'; ?>
+                                    >
                                     Ridge
                                 </label>
                             </div>
@@ -714,21 +735,25 @@ function myPopUp_options_page_html()
                     </div>
 
                     <!-- Si !none Choix de la couleur -->
-                    <div class="columns">
+                    <div class="columns" id="mpuBorderStyleDivHideByDefaultColor">
                         <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
                             <label for="mpu_border_color">Couleur de la bordure</label>
                             <div class="control">
-                                <input class="input is-primary mpu_border_color" type="color">
+                                <input class="input is-primary mpu_border_color" type="color"
+                                value="<?php if (isset($mpu_border_color)) echo $mpu_border_color; ?>"
+                                >
                             </div>
                         </div>
                     </div>
 
                     <!-- Si !none choix du weight -->
-                    <div class="columns">
+                    <div class="columns" id="mpuBorderStyleDivHideByDefaultWeight">
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <label for="mpu_border_weight">Epaisseur de la bordure</label>
                             <div class="control">
-                                <input class="input is-primary mpu_border_weight" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_border_weight" type="number" placeholder="Valeur en pixel"
+                                value="<?php if (isset($mpu_border_weight)) echo $mpu_border_weight; ?>"
+                                >
                             </div>
                         </div>
                     </div>
@@ -740,9 +765,15 @@ function myPopUp_options_page_html()
                                 <label for="mpu_animation_opening">Animation à l'ouverture/fermeture : </label>
                                 <div class="control">
                                     <select class="mpu_animation_opening">
-                                        <option value="ouv1">Choix 1</option>
-                                        <option value="ouv2">Choix 2</option>
-                                        <option value="ouv3">Choix 3</option>
+                                        <option value="ouv1"
+                                        <?php if (isset($mpu_animation_opening) && $mpu_animation_opening === 'ouv1') echo 'selected'; ?>
+                                        >Choix 1</option>
+                                        <option value="ouv2"
+                                        <?php if (isset($mpu_animation_opening) && $mpu_animation_opening === 'ouv2') echo 'selected'; ?>
+                                        >Choix 2</option>
+                                        <option value="ouv3"
+                                        <?php if (isset($mpu_animation_opening) && $mpu_animation_opening === 'ouv3') echo 'selected'; ?>
+                                        >Choix 3</option>
                                     </select>
                                 </div>
                             </div>

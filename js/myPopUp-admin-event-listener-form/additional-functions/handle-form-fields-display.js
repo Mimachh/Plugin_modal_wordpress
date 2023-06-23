@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
 
-    // Checkboxes pour l'arrière plan de la modale
+    // Radios pour l'arrière plan de la modale
     var mpuInnerBackground = document.querySelectorAll('.mpu_inner_background');
     const mpuInnerBackgroundDivHideByDefaultColor = document.querySelector('#mpuInnerBackgroundDivHideByDefaultColor');
     const mpuInnerBackgroundDivHideByDefaultImage = document.querySelector('#mpuInnerBackgroundDivHideByDefaultImage');
@@ -303,4 +303,58 @@ document.addEventListener('DOMContentLoaded', function (event) {
       initializeForm();
     }
 
+
+    // Radios pour la bordure
+    var mpuBorderStyle = document.querySelectorAll('.mpu_border_style');
+    const mpuBorderStyleDivHideByDefaultColor = document.querySelector('#mpuBorderStyleDivHideByDefaultColor');
+    const mpuBorderStyleDivHideByDefaultWeight = document.querySelector('#mpuBorderStyleDivHideByDefaultWeight');
+    
+    if (mpuBorderStyle) {
+      function handleSelectionChange(checkedValue) {
+        if(checkedValue === 'none') {
+          hideTextFieldElementGroup(
+            mpuBorderStyleDivHideByDefaultColor, '.mpu_border_color'
+          );
+          hideTextFieldElementGroup(
+            mpuBorderStyleDivHideByDefaultWeight, '.mpu_border_weight'
+          );
+        } else if (
+          checkedValue === 'solid' || 
+          checkedValue === 'dashed' || 
+          checkedValue === 'ridge') {
+          showElementGroup(mpuBorderStyleDivHideByDefaultColor);
+          showElementGroup(mpuBorderStyleDivHideByDefaultWeight);
+        } else if (checkedValue === 'thick double') {
+          showElementGroup(mpuBorderStyleDivHideByDefaultColor);
+          hideTextFieldElementGroup(
+            mpuBorderStyleDivHideByDefaultWeight, '.mpu_border_weight'
+          );
+        }
+      }
+      
+      function getCheckedValue() {
+        var checkedValue = '';
+        mpuBorderStyle.forEach(function(radio) {
+          if (radio.checked) {
+            checkedValue = radio.value;
+          }
+        });
+        return checkedValue;
+      }
+      
+      function initializeForm() {
+        var checkedValue = getCheckedValue();
+        handleSelectionChange(checkedValue);
+      }
+      
+      mpuBorderStyle.forEach(function(radio) {
+        radio.addEventListener('click', function() {
+          var checkedValue = this.value;
+          handleSelectionChange(checkedValue);
+        });
+      });
+      
+      // Appel initial lors du chargement de la page
+      initializeForm();
+    }
 })
