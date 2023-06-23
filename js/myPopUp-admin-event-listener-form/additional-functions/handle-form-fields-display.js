@@ -243,4 +243,53 @@ document.addEventListener('DOMContentLoaded', function (event) {
       });
     }
 
+
+
+
+    // Checkboxes pour l'arrière plan de la modale
+    var mpuInnerBackground = document.querySelectorAll('.mpu_inner_background');
+    const mpuInnerBackgroundDivHideByDefaultColor = document.querySelector('#mpuInnerBackgroundDivHideByDefaultColor');
+    const mpuInnerBackgroundDivHideByDefaultImage = document.querySelector('#mpuInnerBackgroundDivHideByDefaultImage');
+    if(mpuInnerBackground) {
+
+      var mpuInnerBackground = document.querySelectorAll('.mpu_inner_background');
+
+      function handleSelectionChange(checkedValue) {
+        if (checkedValue === 'couleur') {
+          hideImageButtonAndFieldGroup(
+            mpuInnerBackgroundDivHideByDefaultImage,
+            '.mpu_inner_background_image_preview'
+          );
+          showElementGroup(mpuInnerBackgroundDivHideByDefaultColor);
+      
+        } else if (checkedValue === 'image') {
+          hideTextFieldElementGroup(
+            mpuInnerBackgroundDivHideByDefaultColor, '.mpu_inner_background_color'
+          );
+          showElementGroup(mpuInnerBackgroundDivHideByDefaultImage);
+        
+        } else if (checkedValue === 'transparent') {
+          hideTextFieldElementGroup(
+            mpuInnerBackgroundDivHideByDefaultColor, '.mpu_inner_background_color'
+          );
+          hideImageButtonAndFieldGroup(
+            mpuInnerBackgroundDivHideByDefaultImage,
+            '.mpu_inner_background_image_preview'
+          );
+        }
+      }
+      
+      mpuInnerBackground.forEach(function(radio) {
+        radio.addEventListener('click', function() {
+          var checkedValue = this.value;
+          handleSelectionChange(checkedValue);
+        });
+      });
+      
+      // Appel initial avec la valeur par défaut (couleur)
+      handleSelectionChange('couleur');
+
+
+    }
+
 })

@@ -79,7 +79,18 @@ function myPopUp_options_page_html()
                     $mpu_title_shadow_color = get_post_meta($post_id, 'mpu_title_shadow_color', true);
                     $mpu_title_shadow_size = get_post_meta($post_id, 'mpu_title_shadow_size', true);
 
+                    // Titre
+                    $mpu_title_style = get_post_meta($post_id, 'mpu_title_style', true);
+                    $mpu_title_weight = get_post_meta($post_id, 'mpu_title_weight', true);
+                    $mpu_title_size = get_post_meta($post_id, 'mpu_title_size', true);
+                    $mpu_title_letter_spacing = get_post_meta($post_id, 'mpu_title_letter_spacing', true);
+                    $mpu_title_align = get_post_meta($post_id, 'mpu_title_align', true);
+                    
+                    // Content
+                    $mpu_content_align = get_post_meta($post_id, 'mpu_content_align', true);
 
+                    // Button
+                    $mpu_button_align = get_post_meta($post_id, 'mpu_button_align', true);
 
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
@@ -490,9 +501,15 @@ function myPopUp_options_page_html()
                                 <label for="mpu_title_style">Style de texte pour le titre : </label>
                                 <div class="control">
                                     <select class="mpu_title_style">
-                                        <option value="titre1">Italic</option>
-                                        <option value="titre2">Souligné</option>
-                                        <option value="titre3">Normal</option>
+                                        <option value="titre1"
+                                        <?php if (isset($mpu_title_style) && $mpu_title_style === 'titre1') echo 'selected'; ?>
+                                        >Italic</option>
+                                        <option value="titre2"
+                                        <?php if (isset($mpu_title_style) && $mpu_title_style === 'titre2') echo 'selected'; ?>
+                                        >Souligné</option>
+                                        <option value="titre3"
+                                        <?php if (isset($mpu_title_style) && $mpu_title_style === 'titre3') echo 'selected'; ?>
+                                        >Normal</option>
                                     </select>
                                 </div>
                             </div>
@@ -504,9 +521,15 @@ function myPopUp_options_page_html()
                                 <label for="mpu_title_weight">Epaisseur du titre : </label>
                                 <div class="control">
                                     <select class="mpu_title_weight">
-                                        <option value="ep1">Tight</option>
-                                        <option value="ep2">Normal</option>
-                                        <option value="ep3">Bold</option>
+                                        <option value="ep1"
+                                        <?php if (isset($mpu_title_weight) && $mpu_title_weight === 'ep1') echo 'selected'; ?>   
+                                        >Tight</option>
+                                        <option value="ep2"
+                                        <?php if (isset($mpu_title_weight) && $mpu_title_weight === 'ep2') echo 'selected'; ?>
+                                        >Normal</option>
+                                        <option value="ep3"
+                                        <?php if (isset($mpu_title_weight) && $mpu_title_weight === 'ep3') echo 'selected'; ?>
+                                        >Bold</option>
                                     </select>
                                 </div>
                             </div>
@@ -515,7 +538,9 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-2">
                             <label for="mpu_title_size">Taille du titre</label>
                             <div class="control">
-                                <input class="input is-primary mpu_title_size" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_title_size" type="number" placeholder="Valeur en pixel"
+                                value="<?php if (isset($mpu_title_size)) echo $mpu_title_size; ?>"
+                                >
                             </div>
                         </div>
 
@@ -523,7 +548,9 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-2">
                             <label for="mpu_title_letter_spacing">Espacement des lettres du titre : </label>
                             <div class="control">
-                                <input class="input is-primary mpu_title_letter_spacing" type="number" placeholder="Valeur en pixel">
+                                <input class="input is-primary mpu_title_letter_spacing" type="number" placeholder="Valeur en pixel"
+                                value="<?php if (isset($mpu_title_letter_spacing)) echo $mpu_title_letter_spacing; ?>"
+                                >
                             </div>
                         </div>
 
@@ -533,9 +560,15 @@ function myPopUp_options_page_html()
                                 <label for="mpu_title_align">Alignement du titre : </label>
                                 <div class="control">
                                     <select class="mpu_title_align">
-                                        <option value="gauche">Gauche</option>
-                                        <option value="centre">Centre</option>
-                                        <option value="droite">Droite</option>
+                                        <option value="gauche"
+                                        <?php if (isset($mpu_title_align) && $mpu_title_align === 'gauche') echo 'selected'; ?>
+                                        >Gauche</option>
+                                        <option value="centre"
+                                        <?php if (isset($mpu_title_align) && $mpu_title_align === 'centre') echo 'selected'; ?>
+                                        >Centre</option>
+                                        <option value="droite"
+                                        <?php if (isset($mpu_title_align) && $mpu_title_align === 'droite') echo 'selected'; ?>
+                                        >Droite</option>
                                     </select>
                                 </div>
                             </div>
@@ -552,9 +585,15 @@ function myPopUp_options_page_html()
                                 <label for="mpu_content_align">Alignement du contenu : </label>
                                 <div class="control">
                                     <select class="mpu_content_align">
-                                        <option value="gauche">Gauche</option>
-                                        <option value="centre">Centre</option>
-                                        <option value="droite">Droite</option>
+                                        <option value="gauche"
+                                        <?php if (isset($mpu_content_align) && $mpu_content_align === 'gauche') echo 'selected'; ?>
+                                        >Gauche</option>
+                                        <option value="centre"
+                                        <?php if (isset($mpu_content_align) && $mpu_content_align === 'centre') echo 'selected'; ?>
+                                        >Centre</option>
+                                        <option value="droite"
+                                        <?php if (isset($mpu_content_align) && $mpu_content_align === 'droite') echo 'selected'; ?>
+                                        >Droite</option>
                                     </select>
                                 </div>
                             </div>
@@ -567,9 +606,15 @@ function myPopUp_options_page_html()
                                 <label for="mpu_button_align">Alignement du bouton : </label>
                                 <div class="control">
                                     <select class="mpu_button_align">
-                                        <option value="gauche">Gauche</option>
-                                        <option value="centre">Centre</option>
-                                        <option value="droite">Droite</option>
+                                        <option value="gauche"
+                                        <?php if (isset($mpu_button_align) && $mpu_button_align === 'gauche') echo 'selected'; ?>
+                                        >Gauche</option>
+                                        <option value="centre"
+                                        <?php if (isset($mpu_button_align) && $mpu_button_align === 'centre') echo 'selected'; ?>
+                                        >Centre</option>
+                                        <option value="droite"
+                                        <?php if (isset($mpu_button_align) && $mpu_button_align === 'droite') echo 'selected'; ?>
+                                        >Droite</option>
                                     </select>
                                 </div>
                             </div>
@@ -599,7 +644,7 @@ function myPopUp_options_page_html()
                         </div>
                     </div>
                     <!-- Si choix de la couleur -->
-                    <div class="columns">
+                    <div class="columns" id="mpuInnerBackgroundDivHideByDefaultColor">
                         <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
                             <label for="mpu_inner_background_color">Couleur de l'arrière plan</label>
                             <div class="control">
@@ -608,7 +653,7 @@ function myPopUp_options_page_html()
                         </div>
                     </div>
                     <!-- Si choix de l'image -->
-                    <div class="columns">
+                    <div class="columns" id="mpuInnerBackgroundDivHideByDefaultImage">
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
                             <img class="mpu_inner_background_image_preview " id="image_preview" src="" alt="Aperçu de l'image" />
                             <button class="button is-primary mpu_inner_background_image_media_open" class="button">Sélectionner une image</button>

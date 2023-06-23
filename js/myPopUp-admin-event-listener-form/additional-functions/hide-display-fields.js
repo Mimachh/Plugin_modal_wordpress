@@ -28,7 +28,7 @@ function hideImageButtonAndFieldGroup(element, imgPreview) {
 // On clear l'image qui est dedans lorsqu'on ferme un switch
   function clearImagePreview(element) {
     const imagePreview = document.querySelector(element);
-    console.log(element);
+    // console.log(element);
     imagePreview.src = ''; // Efface l'URL de l'image
     imagePreview.alt = "Aperçu de l'imagsssssse"; // Rétablit le texte alternatif de l'image
   
