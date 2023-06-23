@@ -92,6 +92,10 @@ function myPopUp_options_page_html()
                     // Button
                     $mpu_button_align = get_post_meta($post_id, 'mpu_button_align', true);
 
+                    //Inner Background
+                    $mpu_inner_background = get_post_meta($post_id, 'mpu_inner_background', true);
+                    $mpu_inner_background_image = get_post_meta($post_id, 'mpu_inner_background_image', true);
+                    $mpu_inner_background_color = get_post_meta($post_id, 'mpu_inner_background_color', true);
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
                     <button type="submit" class="mpu_save_edit_button">Nouveau bouton edit</button>
@@ -629,15 +633,21 @@ function myPopUp_options_page_html()
                             <label for="mpu_inner_background">Arrière plan de la pop-up</label>
                             <div class="control">
                                 <label class="radio">
-                                    <input type="radio" name="mpu_inner_background" checked class="mpu_inner_background" value="couleur">
+                                    <input type="radio" name="mpu_inner_background" checked class="mpu_inner_background" value="couleur"
+                                    <?php if (isset($mpu_inner_background) && $mpu_inner_background === 'couleur') echo 'checked'; ?>
+                                    >
                                     Couleur
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="mpu_inner_background" class="mpu_inner_background" value="image">
+                                    <input type="radio" name="mpu_inner_background" class="mpu_inner_background" value="image"
+                                    <?php if (isset($mpu_inner_background) && $mpu_inner_background === 'image') echo 'checked'; ?>
+                                    >
                                     Image
                                 </label>
                                 <label class="radio">
-                                    <input type="radio" name="mpu_inner_background" class="mpu_inner_background" value="transparent">
+                                    <input type="radio" name="mpu_inner_background" class="mpu_inner_background" value="transparent"
+                                    <?php if (isset($mpu_inner_background) && $mpu_inner_background === 'transparent') echo 'checked'; ?>
+                                    >
                                     Transparent
                                 </label>
                             </div>
@@ -648,14 +658,16 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4 column is-2 is-flex-direction-row">
                             <label for="mpu_inner_background_color">Couleur de l'arrière plan</label>
                             <div class="control">
-                                <input class="input is-primary mpu_inner_background_color" type="color" placeholder="Valeur en pixels">
+                                <input class="input is-primary mpu_inner_background_color" type="color" placeholder="Valeur en pixels"
+                                value="<?php if (isset($mpu_inner_background_color)) echo $mpu_inner_background_color; ?>"
+                                >
                             </div>
                         </div>
                     </div>
                     <!-- Si choix de l'image -->
                     <div class="columns" id="mpuInnerBackgroundDivHideByDefaultImage">
                         <div class="mpu-input-field my-4 column is-3 is-flex-direction-row">
-                            <img class="mpu_inner_background_image_preview " id="image_preview" src="" alt="Aperçu de l'image" />
+                            <img class="mpu_inner_background_image_preview " id="image_preview" src="<?php if (isset($mpu_inner_background_image)) echo $mpu_inner_background_image; ?>" alt="Aperçu de l'image" />
                             <button class="button is-primary mpu_inner_background_image_media_open" class="button">Sélectionner une image</button>
                         </div>
                         <!-- Style de recouvrement d'image -->

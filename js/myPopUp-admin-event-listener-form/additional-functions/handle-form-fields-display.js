@@ -250,10 +250,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
     var mpuInnerBackground = document.querySelectorAll('.mpu_inner_background');
     const mpuInnerBackgroundDivHideByDefaultColor = document.querySelector('#mpuInnerBackgroundDivHideByDefaultColor');
     const mpuInnerBackgroundDivHideByDefaultImage = document.querySelector('#mpuInnerBackgroundDivHideByDefaultImage');
-    if(mpuInnerBackground) {
-
-      var mpuInnerBackground = document.querySelectorAll('.mpu_inner_background');
-
+    
+    if (mpuInnerBackground) {
       function handleSelectionChange(checkedValue) {
         if (checkedValue === 'couleur') {
           hideImageButtonAndFieldGroup(
@@ -279,6 +277,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
       }
       
+      function getCheckedValue() {
+        var checkedValue = '';
+        mpuInnerBackground.forEach(function(radio) {
+          if (radio.checked) {
+            checkedValue = radio.value;
+          }
+        });
+        return checkedValue;
+      }
+      
+      function initializeForm() {
+        var checkedValue = getCheckedValue();
+        handleSelectionChange(checkedValue);
+      }
+      
       mpuInnerBackground.forEach(function(radio) {
         radio.addEventListener('click', function() {
           var checkedValue = this.value;
@@ -286,10 +299,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         });
       });
       
-      // Appel initial avec la valeur par défaut (couleur)
-      handleSelectionChange('couleur');
-
-
+      // Appel initial lors du chargement de la page
+      initializeForm();
     }
 
 })
