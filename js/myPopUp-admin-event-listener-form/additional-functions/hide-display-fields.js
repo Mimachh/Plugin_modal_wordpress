@@ -41,6 +41,12 @@ function hideImageButtonAndFieldGroup(element, imgPreview) {
     imagePreview.alt = "Erreur de chargement de l'image";
   }
   
+
+// ------------------------------ SOUND ----------------------------------- //
+function hideSoundButtonAndFieldGroup(element, soundPreview) {
+  element.style.display = 'none'; 
+}
+
 // ----------------------------- TEXT FIELD ------------------------------ //
 
   // Fonctions pour gérer un groupe a cacher avec un texte field dedans

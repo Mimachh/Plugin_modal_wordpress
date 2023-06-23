@@ -83,6 +83,7 @@ function enqueue_admin_styles()
     // Scripts relié au formulaire de shortcode 
     wp_enqueue_script('myPopUp-admin-form-validate-fields', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/handle-form-fields-display.js', array(), '1.0', true);
     wp_enqueue_script('myPopUp-admin-form-hide-and-display', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/hide-display-fields.js', array(), '1.0', true);
+    wp_enqueue_script('myPopUp-admin-handle-form-fields-display-options-supp', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/handle-form-fields-display-options-supp.js', array(), '1.0', true);
     wp_enqueue_script('myPopUp-admin-form-validate-fields', plugin_dir_url(__FILE__) . 'js/myPopUp-admin-event-listener-form/additional-functions/validate-fields.js', array(), '1.0', true);
 
 

@@ -103,6 +103,16 @@ function myPopUp_options_page_html()
                     $mpu_border_color = get_post_meta($post_id, 'mpu_border_color', true);
                     $mpu_border_weight = get_post_meta($post_id, 'mpu_border_weight', true);
                     $mpu_animation_opening = get_post_meta($post_id, 'mpu_animation_opening', true);
+
+
+                    // OPTIONS SUPP
+                    // Open Sound
+                    $mpu_is_sound_on_open = get_post_meta($post_id, 'mpu_is_sound_on_open', true);
+                    $mpu_sound_open = get_post_meta($post_id, 'mpu_sound_open', true);
+
+                    // Close Sound
+                    $mpu_is_sound_on_closing = get_post_meta($post_id, 'mpu_is_sound_on_closing', true);
+                    $mpu_sound_closing = get_post_meta($post_id, 'mpu_sound_closing', true);
                 ?>
                     <input type="hidden" value="<?php echo $post_id; ?>" class="mpu_shortcode_id">
                     <button type="submit" class="mpu_save_edit_button">Nouveau bouton edit</button>
@@ -986,16 +996,22 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4">
                             <label for="mpu_is_sound_on_open">Activer le son à l'ouverture ?</label>
                             <label class="mpu_switch">
-                                <input name="mpu_is_sound_on_open" class="mpu_is_sound_on_open" type="checkbox" value="1">
+                                <input name="mpu_is_sound_on_open" class="mpu_is_sound_on_open" type="checkbox" value="1"
+                                <?php if (isset($mpu_is_sound_on_open)) checked($mpu_is_sound_on_open, '1'); ?>
+                                >
                                 <span class="mpu_slider mpu_round"></span>
                             </label>
                         </div>
                     </div>
-                    <div class="columns">
-                        <div class="">
+                    <div class="columns" id="mpuOpeningSoundDivHideByDefault">
+                        <div>
                             <button class="button is-primary mpu_sound_opening_media_open">Sélectionner un fichier audio</button>
                             <div class="my-4">
-                                <audio class="sound_opening_preview" controls></audio>
+                            <audio class="sound_opening_preview" controls
+                                <?php if (isset($mpu_sound_open)) : ?>
+                                    src="<?php echo $mpu_sound_open; ?>"
+                                <?php endif; ?>
+                            ></audio>
                             </div>
 
                         </div>
@@ -1006,16 +1022,22 @@ function myPopUp_options_page_html()
                         <div class="mpu-input-field my-4">
                             <label for="mpu_is_sound_on_closing">Activer le son à la fermeture ?</label>
                             <label class="mpu_switch">
-                                <input name="mpu_is_sound_on_closing" class="mpu_is_sound_on_closing" type="checkbox" value="1">
+                                <input name="mpu_is_sound_on_closing" class="mpu_is_sound_on_closing" type="checkbox" value="1"
+                                <?php if (isset($mpu_is_sound_on_closing)) checked($mpu_is_sound_on_closing, '1'); ?>
+                                >
                                 <span class="mpu_slider mpu_round"></span>
                             </label>
                         </div>
                     </div>
-                    <div class="columns">
+                    <div class="columns" id="mpuClosingSoundDivHideByDefault">
                         <div class="">
                             <button class="button is-primary mpu_sound_closing_media_open">Sélectionner un fichier audio</button>
                             <div class="my-4">
-                                <audio class="sound_closing_preview" controls></audio>
+                                <audio class="sound_closing_preview" controls
+                                    <?php if (isset($mpu_sound_closing)) : ?>
+                                        src="<?php echo $mpu_sound_closing; ?>"
+                                    <?php endif; ?>
+                                ></audio>
                             </div>
 
                         </div>

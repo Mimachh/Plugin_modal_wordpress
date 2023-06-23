@@ -213,11 +213,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // Le path
   let mpuSoundOpenRelativePath = "";
 
-  if (audioOpenElement && audioOpenElement.src != "") {
-    audioOpenElement.style.display = 'block'; // ou autre style pour l'afficher
-  } else if (audioOpenElement && audioOpenElement.src === "") {
-    audioOpenElement.style.display = 'none'; // pour la masquer
-  }
+
   if(mpuSoundOpeningMediaOpen) {
     mpuSoundOpeningMediaOpen.addEventListener('click', function(event) {
       event.preventDefault();
@@ -271,11 +267,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
   // Le path
   let mpuSoundClosingRelativePath = "";
 
-  if (audioCloseElement && audioCloseElement.src != "") {
-    audioCloseElement.style.display = 'block'; // ou autre style pour l'afficher
-  } else if (audioCloseElement && audioCloseElement.src === "") {
-    audioCloseElement.style.display = 'none'; // pour la masquer
-  }
   if(mpuSoundClosingMediaOpen) {
     mpuSoundClosingMediaOpen.addEventListener('click', function(event) {
       event.preventDefault();
@@ -463,6 +454,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var mpuInnerBackground = document.querySelector('.mpu_inner_background:checked').value;
       var mpuBorderStyle = document.querySelector('.mpu_border_style:checked').value;
 
+      var EditOpenSound = "";
+      if(audioOpenElement && audioOpenElement.src != "") {
+        EditOpenSound = audioOpenElement.src
+      }
+
       const data = {
         status: 'publish',
         mpu_post_title: mpuTitle.value,
@@ -538,6 +534,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         // Animation opening
         'mpu_animation_opening': mpuAnimationOpening.value,
+
+
+        // Options Supp
+          //open sound
+        'mpu_is_sound_on_open' : mpuIsSoundOnOpen.checked ? true : '0',
+        'mpu_sound_open' : EditOpenSound,
+          //close sound
+        'mpu_is_sound_on_closing' : mpuIsSoundOnClosing.checked ? true : '0',
+        'mpu_sound_closing' : mpuSoundClosingRelativePath,
       };
 
       const xhr = new XMLHttpRequest();

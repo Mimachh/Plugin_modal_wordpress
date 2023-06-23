@@ -109,6 +109,19 @@ function editMpuShortcode($data) {
             $mpu_animation_opening = sanitize_text_field($data['mpu_animation_opening']);
 
 
+                // OPTIONS SUPP
+            // Sound open
+            $mpu_is_sound_on_open = isset($data['mpu_is_sound_on_open']) && $data['mpu_is_sound_on_open'] === 'on' ? true : false;
+            $mpu_is_sound_on_open = sanitize_text_field($data['mpu_is_sound_on_open']);
+            // File sound open
+            $mpu_sound_open = sanitize_text_field($data['mpu_sound_open']);
+            // Sound close
+            $mpu_is_sound_on_closing = isset($data['mpu_is_sound_on_closing']) && $data['mpu_is_sound_on_closing'] === 'on' ? true : false;
+            $mpu_is_sound_on_closing = sanitize_text_field($data['mpu_is_sound_on_closing']);
+            // File sound close
+            $mpu_sound_closing = sanitize_text_field($data['mpu_sound_closing']);
+
+
             return wp_update_post(array(
                 'ID' => $shortcode_id,
                 'post_title' => $mpu_post_title,
@@ -176,6 +189,14 @@ function editMpuShortcode($data) {
      
                         // Animation opening
                     'mpu_animation_opening' => $mpu_animation_opening,
+
+                    // OPTIONS SUPP
+                        // Sound on open
+                    'mpu_is_sound_on_open' => $mpu_is_sound_on_open,
+                    'mpu_sound_open' => $mpu_sound_open,
+                        // Sound on closing
+                    'mpu_is_sound_on_closing' => $mpu_is_sound_on_closing,
+                    'mpu_sound_closing' => $mpu_sound_closing,
                 ),
             ));
         } else {
